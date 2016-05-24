@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 
   has_many :expeditions
   has_many :participations
+  has_many :feedbacks
 end
