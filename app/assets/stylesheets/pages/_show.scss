@@ -20,10 +20,16 @@
   color: white;
 }
 
-.boxie {
+.box-line-bottom {
   margin: 20px 0px;
   padding-bottom: 20px;
   border-bottom: 2px solid lightgrey;
+}
+
+.box-line-top {
+  margin: 20px 0px;
+  padding-bottom: 20px;
+  border-top: 2px solid lightgrey;
 }
 
 .bio {

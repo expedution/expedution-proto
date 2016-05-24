@@ -25,6 +25,15 @@
             <% end %>
           </div>
         </div>
+        <% if policy(@user).update? %>
+          <div class="box-line-top">
+            <h3>Private information</h3>
+            <p>All informations displayed here are only visible by you and the organiser of the Event</p>
+            <ul class="list-inline list-unstyled">
+              <li><%= @user.diet %></li>
+            </ul>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
