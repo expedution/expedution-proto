@@ -1,0 +1,27 @@
+.lateral-navbar {
+  display: flex;
+  position: fixed;
+  background-color: #45BBFF;
+  width: 60px;
+}
+
+.nav-sections {
+  width: 60px;
+}
+
+.nav-li {
+  position: relative;
+  width: 60px;
+  height: 60px;
+}
+
+
+.nav-icon:hover {
+  background-color: #82d3ff;
+}
+
+.nav-link {
+  text-decoration: none;
+  -webkit-filter: invert(100%);
+}
+
