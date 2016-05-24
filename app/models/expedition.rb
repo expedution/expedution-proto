@@ -1,5 +1,6 @@
 class Expedition < ActiveRecord::Base
   belongs_to :user
+  has_many :days
 
   validates :title, presence: true
   validates :description, presence: true
