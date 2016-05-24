@@ -1,8 +1,11 @@
+
 .lateral-navbar {
-  display: flex;
   position: fixed;
   background-color: #45BBFF;
   width: 60px;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
 }
 
 .nav-sections {
@@ -11,12 +14,12 @@
 
 .nav-li {
   position: relative;
+  list-style-type: none;
   width: 60px;
   height: 60px;
 }
 
-
-.nav-icon:hover {
+.nav-li:hover {
   background-color: #82d3ff;
 }
 
@@ -24,4 +27,3 @@
   text-decoration: none;
   -webkit-filter: invert(100%);
 }
-

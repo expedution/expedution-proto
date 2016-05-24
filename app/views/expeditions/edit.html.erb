@@ -1,2 +1,60 @@
 <h1>Expeditions#edit</h1>
 <p>Find me in app/views/expeditions/edit.html.erb</p>
+
+  <%= render 'shared/navbar' %>
+
+  <div class="central-content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="lex-banner">
+          <%= image_tag "banner-paceholder.jpg" %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-3">
+          <div class="lex-days">
+            <div class="row">
+              <div class="day-box">
+                <div class="day-box-text">
+                  <p>Day 1</p>
+                  <p><strong>Day 1 title</strong></p>
+                </div>
+                <div class="day-box-chevron">
+                  <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <button class="btn btn-primary input-lg">New day</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-9">
+          <div class="lex-activities">
+            <div class="row">
+              <p>Title</p>
+            </div>
+            <div class="row">
+              <div class="activity-box">
+                <p>Activity 1</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right-sidebar">
+    <div class="right-sidebar-tabs">
+      <div class="container">
+        <div class="col-xs-10 col-offset-1">
+          <div class="right-sidebar-tab">
+            <p>Participants</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-sidebar-content">
+    </div>
+  </div>

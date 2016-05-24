@@ -1,0 +1,91 @@
+.central-content {
+  margin-left: 60px;
+  margin-right: 300px;
+}
+
+.right-sidebar {
+  position: fixed;
+  width: 300px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: blue;
+}
+
+.lex-banner {
+  background-color: red;
+  height: 200px;
+}
+
+.lex-days {
+  border-left: 1px solid #D3D3D3;
+  border-right: 1px solid #D3D3D3;
+}
+
+.lex-activities {
+  border-right: 1px solid #D3D3D3;
+}
+
+.day-box {
+  position: relative;
+  background-color: orange;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.day-box:hover {
+  background-color: #1AAFD0;
+}
+
+.day-box-chevron {
+  position: absolute;
+  right: 5px
+  font-weight: bold;
+  color: #D3D3D3;
+}
+
+.day-box-chevron:hover {
+  color: #1AAFD0;
+}
+
+.activity-box {
+  background-color: yellow;
+  position: relative;
+
+}
+
+.activity-box:hover {
+  box-shadow: 0 0 2em #D3D3D3;
+  transition: box-shadow 0.3s ease;
+}
+
+
+
+
+
+.right-sidebar-content {
+  overflow-y: hidden;
+}
+
+.right-sidebar-tabs {
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.right-sidebar-tab p {
+  color: #3BE8B0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
