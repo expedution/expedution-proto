@@ -8,4 +8,5 @@ class ExpeditionPolicy < ApplicationPolicy
   def create?
     user.organizer
   end
+
 end
