@@ -32,6 +32,84 @@
 
   <body>
 
+    <!-- Navbar
+    ================================================== -->
+
+    <div class="navbar-wagon">
+      <!-- Logo -->
+      <a href="/" class="navbar-wagon-brand">
+        <%= image_tag("logo_expedution.png", :alt => "logo") %>
+      </a>
+
+      <!-- Right Navigation -->
+      <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+        <!-- Search form -->
+        <!-- <form action="" class="navbar-wagon-search">
+          <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+          <button type="submit" class="navbar-wagon-search-btn">
+            <i class="fa fa-search"></i>
+          </button>
+        </form> -->
+
+        <!-- Different navigation if login or not -->
+        <% if user_signed_in? %>
+
+          <!-- Notification -->
+          <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
+            <div class="badge-container">
+              <i class="fa fa-envelope-o"></i>
+              <div class="badge badge-blue">3</div>
+            </div>
+          <% end %>
+
+          <!-- Profile picture and dropdown -->
+          <div class="navbar-wagon-item">
+            <div class="dropdown">
+              <%= image_tag "http://placehold.it/30x30", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+              <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+                <li>
+                  <%= link_to "#" do %>
+                    <i class="fa fa-user"></i> <%= t ".profile", default: "Profile" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to "#" do %>
+                    <i class="fa fa-home"></i>  <%= t ".profile", default: "Home" %>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_user_session_path, method: :delete do %>
+                    <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
+                  <% end %>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        <% else %>
+
+          <!-- Login text link -->
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
+        <% end %>
+
+        <!-- Button (call-to-action) -->
+       <!--  <%= link_to t(".top_call_to_action", default: "Post stuff"), "#", class: "navbar-wagon-item navbar-wagon-button btn" %> -->
+      </div>
+
+      <!-- Dropdown list appearing on mobile only -->
+      <div class="navbar-wagon-item hidden-md hidden-lg">
+        <div class="dropdown">
+          <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><a href="#">Some mobile link</a></li>
+            <li><a href="#">Other one</a></li>
+            <li><a href="#">Other one</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     <!-- Hero Section
     ================================================== -->
@@ -272,5 +350,40 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer
+    ================================================== -->
+
+    <footer class="footer-distributed">
+      <div class="footer-left">
+        <a href="/" class="navbar-wagon-brand">
+        <%= image_tag("logo_expedution.png", :alt => "logo") %>
+        </a>
+        <p class="footer-links">
+          <a href="#">Home</a>
+          <a href="#">Blog</a>
+          <a href="#">Pricing</a>
+          <a href="#">About</a>
+          <a href="#">Faq</a>
+          <a href="#">Contact</a>
+        </p>
+        <p class="footer-company-name">Expedution &copy; 2016</p>
+        <div class="footer-icons">
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          <a href="#"><i class="fa fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-right">
+        <p>Contact Us</p>
+        <form action="#" method="post">
+          <input type="text" name="email" placeholder="Email" />
+          <textarea name="message" placeholder="Message"></textarea>
+          <button>Send</button>
+        </form>
+      </div>
+    </footer>
+
   </body>
 </html>
