@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524151108) do
+
+ActiveRecord::Schema.define(version: 20160524151952) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160524151108) do
     t.string   "photo"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "location"
   end
 
   add_index "expeditions", ["user_id"], name: "index_expeditions_on_user_id", using: :btree
