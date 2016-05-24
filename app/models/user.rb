@@ -7,4 +7,6 @@ class User < ActiveRecord::Base
   has_many :expeditions
   has_many :participations
   has_many :feedbacks
+
+  mount_uploader :photo, PhotoUploader
 end

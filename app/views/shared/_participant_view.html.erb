@@ -1,0 +1,55 @@
+
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+<!--   <div class="card-category">Popular</div> -->
+  <div class="card-description">
+    <h1> Nom de la learning expedition: <%= @expedition.title %> <h1>
+    <h2>Du <%= @expedition.starts_on.strftime("%d/%m/%Y") %> au <%= @expedition.ends_on.strftime("%d/%m/%Y") %> </h2>
+  </div>
+  <a class="card-link" href="#" ></a>
+</div>
+  <div class="card-content">
+
+    <div class="row">
+      <div class="col-xs-12 col-md-9 ">
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <span class ="fa fa-plane">Localisation:
+            </span>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+            <span class="mgc">Blablabla</span>
+            </p>
+          </div>
+        </div>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="fa fa-map-marker">Description de la learning expedition:
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%= @expedition.description %></span>
+            </p>
+          </div>
+        </div>
+        <div class = "row place-row">
+          <div class="col-md-4">
+            <h5>
+              <span class ="fa fa-users">Nombre de participants:
+              </span>
+            </h5>
+          </div>
+          <div class="col-md-8">
+            <p class ="place-content">
+              <span class="mgc"><%#= @expedition.capacity %></span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

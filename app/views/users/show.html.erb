@@ -1,0 +1,40 @@
+<div class="wrapper style1">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <div class="flex-box">
+          <div class="img-box">
+            <% if current_user.photo.url == nil %>
+              <img src="http://placehold.it/100" class="avatar-xl">
+            <% else %>
+              <%= image_tag @user.photo.url, class: "avatar-xl" %>
+            <% end %>
+          </div>
+          <div class="headbox text-center">
+            <h2><%= @user.first_name %> <%= @user.last_name %></h2>
+            <ul class="list-inline list-unstyled">
+              <li><%= @user.job %></li>
+            </ul>
+            <h4 class="bio">" <%= @user.bio %> "</h4>
+            <ul class="list-inline list-unstyled">
+              <li>Mail: <%= @user.email %></li>
+              <li>Company: <%= @user.company %></li>
+            </ul>
+            <% if policy(@user).update? %>
+              <div class="text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn" %></div>
+            <% end %>
+          </div>
+        </div>
+        <% if policy(@user).update? %>
+          <div class="box-line-top">
+            <h3>Private information</h3>
+            <p>All informations displayed here are only visible by you and the organiser of the Event</p>
+            <ul class="list-inline list-unstyled">
+              <li><%= @user.diet %></li>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

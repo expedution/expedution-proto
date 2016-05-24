@@ -1,0 +1,15 @@
+.wrapper {
+  min-height: 100vh;
+}
+
+.style1 {
+  background-color: $navy;
+  color: white;
+}
+
+.style1 p {
+  font-style: italic;
+  font-family: $header-font;
+}
+
+
