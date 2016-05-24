@@ -9,4 +9,6 @@ class Expedition < ActiveRecord::Base
   # validates :ends_on, presence: true
   # validates :capacity, presence: true
   # validates :theme, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
