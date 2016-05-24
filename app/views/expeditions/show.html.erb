@@ -1,23 +1,26 @@
-<h1> Nom de la learning expedition: <%= @expedition.title %> <h1>
-<h2>Du <%= @expedition.starts_on.strftime("%d/%m/%Y") %> au <%= @expedition.ends_on.strftime("%d/%m/%Y") %> </h2>
 
 
-<div class="container">
+
+<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+<!--   <div class="card-category">Popular</div> -->
+  <div class="card-description">
+    <h1> Nom de la learning expedition: <%= @expedition.title %> <h1>
+    <h2>Du <%= @expedition.starts_on.strftime("%d/%m/%Y") %> au <%= @expedition.ends_on.strftime("%d/%m/%Y") %> </h2>
+  </div>
+  <a class="card-link" href="#" ></a>
+
   <div class="wrapper padded">
+
     <div class="row">
       <div class="col-xs-12 col-md-9 ">
-<!--         <div class ="organizer">
-          <h2>The organizer</h2>
-        </div> -->
-
         <div class = "row place-row">
           <div class="col-md-4">
-              <span class ="fa fa-plane">Localisation:
-              </span>
+            <span class ="fa fa-plane">Localisation:
+            </span>
           </div>
           <div class="col-md-8">
             <p class ="place-content">
-              <span class="mgc">Blablabla</span>
+            <span class="mgc">Blablabla</span>
             </p>
           </div>
         </div>
@@ -47,3 +50,7 @@
             </p>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
