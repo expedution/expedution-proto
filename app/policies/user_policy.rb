@@ -9,6 +9,10 @@ class UserPolicy < ApplicationPolicy
     is_record_current_user? || do_record_and_user_participate_to_the_same_expedition? || does_record_participate_to_an_expe_organized_by_user? || does_user_participate_to_an_expe_organized_by_record?
   end
 
+  def update?
+    is_record_current_user? || does_record_participate_to_an_expe_organized_by_user
+  end
+
   private
 
   # user => current_user
