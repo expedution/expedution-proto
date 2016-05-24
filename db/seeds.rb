@@ -3,6 +3,7 @@ d2 = Date.new(2017,11,10)
 
 b = User.create({
     email: "boris@lewagon.org",
+    password: "lewagon"
     first_name: "Boris",
     last_name: "Paillard",
     job: "Teal Leader",
@@ -19,8 +20,9 @@ a = Expedition.new({
   theme: "Tech innovations",
   starts_on: d1,
   ends_on: d2,
-  capacity: 15,
   location: "New York City"
   })
 a.user = b
 a.save
+
+
