@@ -1,3 +1,4 @@
+
 class ExpeditionPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve
@@ -6,6 +7,11 @@ class ExpeditionPolicy < ApplicationPolicy
   end
 
   def create?
-    user.organizer
+    user.organiser
   end
+
+  def show?
+    true
+  end
+
 end
