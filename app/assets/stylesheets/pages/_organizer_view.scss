@@ -1,15 +1,8 @@
-.central-content {
-  margin-left: 40px;
-  margin-right: 300px;
-}
+// CENTRAL CONTENT CSS
 
-.right-sidebar {
-  position: fixed;
-  border-left: 1px solid #D3D3D3;
-  width: 300px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
+.central-content {
+  margin-left: 60px;
+  margin-right: 350px;
 }
 
 .lex-banner {
@@ -22,8 +15,7 @@
   border-right: 1px solid #D3D3D3;
 }
 
-.lex-activities {
-}
+// LEX DAYS SUB SECTION
 
 .day-box {
   position: relative;
@@ -34,6 +26,9 @@
 .day-box:hover {
   background-color: #eaf7ff;
   transition: background-color 0.3s ease;
+  .day-box-chevron {
+  color: #1AAFD0;
+  transition: color 0.3s ease;}
 }
 
 .day-box-chevron {
@@ -45,24 +40,76 @@
   color: #D3D3D3;
 }
 
-.day-box-chevron:hover {
-  color: #1AAFD0;
-  transition: color 0.3s ease;
+.day-box-text p {
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+
+// LEX ACTIVITIES SUB-SECTION
+
+.lex-activities {
 }
 
 .activity-box {
   position: relative;
-
+  padding-left: 5px;
 }
 
 .activity-box:hover {
+  .edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.edit-logo {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  background-size: cover !important;
+  width: 25px;
+  height: 25px;
+  color: blue;
+  opacity: 0;
+}
+
+.delete-logo {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-size: cover !important;
+  width: 25px;
+  height: 25px;
+  color: blue;
+  opacity: 0;
+}
+
+
+.resource-box {
+  position: relative;
+}
+
+.resource-box:hover {
   box-shadow: 0 0 2em #D3D3D3;
   transition: box-shadow 0.3s ease;
 }
 
 
+// RIGHT SIDEBAR SCSS
 
-
+.right-sidebar {
+  position: fixed;
+  border-left: 1px solid #D3D3D3;
+  width: 350px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
 
 .right-sidebar-content {
   overflow-y: hidden;
@@ -70,12 +117,25 @@
 
 .right-sidebar-tabs {
   border-bottom: 1px solid #D3D3D3;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 5px;
+  height: 35px;
 }
 
 .right-sidebar-tab p {
-  color: #2BBBAD;
-  text-align: center;
-  padding-top: 5px;
+  margin-bottom: 5px;
 }
 
+
+.tab-participants {
+  color: #1AAFD0;
+  border-bottom: 2px solid #1AAFD0;
+  height: 35px;
+}
+
+.tab-feedbacks {
+  color: #D3D3D3;
+  height: 35px;
+}
 

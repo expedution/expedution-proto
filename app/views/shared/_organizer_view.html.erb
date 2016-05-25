@@ -1,12 +1,18 @@
   <%= render 'shared/lateral_navbar' %>
 
   <div class="central-content">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="lex-banner" style="background: url(<%= asset_path 'banner-paceholder.jpg' %>")>
-        </div>
+    <div class="">
+      <div class="">
+        <div class="lex-banner" style='background: url(
+          <% if current_user.photo.url == nil %>
+            <%= "https://unsplash.it/900/200" %>
+          <% else %>
+            <%= image_tag @expedition.photo %>
+          <% end %>
+        ')>
       </div>
-      <div class="row">
+      </div>
+      <div class="">
         <div class="col-xs-3">
           <div class="lex-days">
             <div class="row">
@@ -31,9 +37,20 @@
               <p>Title</p>
             </div>
             <div class="row">
-              <div class="activity-box">
+              <div class="activity-box hoverable">
+                <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+                <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
                 <p>Activity 1</p>
                 <p>activity description</p>
+                <div class="">
+                  <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                      <div class="resource-box">
+                        <p>Resource</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -44,10 +61,15 @@
 
   <div class="right-sidebar">
     <div class="right-sidebar-tabs">
-      <div class="container">
-        <div class="col-xs-10 col-offset-1">
-          <div class="right-sidebar-tab">
+      <div class="">
+        <div class="col-xs-6">
+          <div class="right-sidebar-tab tab-participants">
             <p>Participants</p>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="right-sidebar-tab tab-feedbacks">
+            <p>Feedbacks</p>
           </div>
         </div>
       </div>
