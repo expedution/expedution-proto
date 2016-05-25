@@ -19,6 +19,7 @@ gem 'autoprefixer-rails'
 gem 'cloudinary'
 gem "pundit"
 gem 'carrierwave'
+gem 'materialize-sass'
 
 group :development, :test do
   gem 'binding_of_caller'

@@ -1,0 +1,77 @@
+.participant-body {
+  background-color: #F4F7FB;
+}
+
+.expedution-sections {
+  border-radius: 40px;
+}
+
+.day {
+  border-radius: 5px;
+}
+
+video {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background-size: cover;
+  transition: 1s opacity;
+
+}
+.stopfade {
+   opacity: .5;
+}
+
+#map {
+  margin-right: -11px;
+  margin-left: -11px;
+}
+
+.day-title {
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    top: 0;
+    padding: 1rem 1rem 1rem 3.75rem;
+    z-index: 30;
+    max-width: calc(43rem - 2px);
+    border-bottom: 1px solid transparent;
+    -webkit-transform: translate3d(0,0,0);
+    -webkit-transition-property: border-bottom-color;
+    -moz-transition-property: border-bottom-color;
+    transition-property: border-bottom-color;
+    -webkit-transition-duration: .25s;
+    -moz-transition-duration: .25s;
+    transition-duration: .25s;
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+
+#sticky {
+    padding: 0.5ex;
+    width: 600px;
+    background-color: #333;
+    color: #fff;
+    font-size: 2em;
+    border-radius: 0.5ex;
+}
+
+#sticky.stick {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+    border-radius: 0 0 0.5em 0.5em;
+}
