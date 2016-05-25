@@ -3,7 +3,7 @@ d2 = Date.new(2017,11,10)
 
 b = User.create({
     email: "boris@lewagon.org",
-    password: "lewagon"
+    password: "lewagon",
     first_name: "Boris",
     last_name: "Paillard",
     job: "Teal Leader",

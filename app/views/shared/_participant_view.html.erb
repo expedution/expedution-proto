@@ -1,55 +1,53 @@
 
+  <video autoplay  poster="http://i.imgur.com/Fhv7N23.png" id="bgvid" loop>
+    <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+  </video>
 
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-<!--   <div class="card-category">Popular</div> -->
-  <div class="card-description">
-    <h1> Nom de la learning expedition: <%= @expedition.title %> <h1>
-    <h2>Du <%= @expedition.starts_on.strftime("%d/%m/%Y") %> au <%= @expedition.ends_on.strftime("%d/%m/%Y") %> </h2>
-  </div>
-  <a class="card-link" href="#" ></a>
-</div>
-  <div class="card-content">
 
-    <div class="row">
-      <div class="col-xs-12 col-md-9 ">
-        <div class = "row place-row">
-          <div class="col-md-4">
-            <span class ="fa fa-plane">Localisation:
-            </span>
-          </div>
-          <div class="col-md-8">
-            <p class ="place-content">
-            <span class="mgc">Blablabla</span>
-            </p>
+  <!-- Cover photo
+    ================================================== -->
+    <div class="banner-small img-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('http://static.livedemo00.template-help.com/wt_58888_v2/images/intros/intro-04-1920x955.jpg');">
+      <div class="banner-content">
+        <h2>Expedition Title</h2>
+      </div>
+    </div>
+
+    <!-- Expeditions details
+    ================================================== -->
+
+    <div class="container padded">
+      <div class="row">
+        <div class="day">
+          <div class="col s12 m1 l1 pull-l1 white z-depth-1 center-align" style="border-radius: 5px;">
+            <p style="margin-top: 10px">DAY 1</p>
+            <p>DAY 1</p>
+            <p>DAY 1</p>
           </div>
         </div>
-        <div class = "row place-row">
-          <div class="col-md-4">
-            <h5>
-              <span class ="fa fa-map-marker">Description de la learning expedition:
-              </span>
-            </h5>
-          </div>
-          <div class="col-md-8">
-            <p class ="place-content">
-              <span class="mgc"><%= @expedition.description %></span>
-            </p>
+        <div class="activities">
+          <div class="col s12 m8 l8 white z-depth-1" style="border-radius: 5px;">
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
+            <h4>Activity 1</h4>
           </div>
         </div>
-        <div class = "row place-row">
-          <div class="col-md-4">
-            <h5>
-              <span class ="fa fa-users">Nombre de participants:
-              </span>
-            </h5>
-          </div>
-          <div class="col-md-8">
-            <p class ="place-content">
-              <span class="mgc"><%#= @expedition.capacity %></span>
-            </p>
-          </div>
+        <div class="col s12 m3 l3 white push-l1 z-depth-1" style="border-radius: 5px;">
+          <ul class="collection with-header">
+            <li class="collection-header"><h4>Participants</h4></li>
+            <li class="collection-item"><div>Romain<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Margaux<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Nicolas<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Yoann<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Pierre<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Jack<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>John<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+            <li class="collection-item"><div>Eric<a href="#!" class="secondary-content"><i class="material-icons">email</i></a></div></li>
+          </ul>
         </div>
       </div>
     </div>
-  </div>
 
