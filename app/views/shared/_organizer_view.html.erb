@@ -10,27 +10,23 @@
             <%= image_tag @expedition.photo %>
           <% end %>
         ')>
-        <h1 class="expedition-title">Expedition name (@expedition.name)</h1>
+        <h1 class="expedition-title"><%= @expedition.title %></h1>
         <p class="expedition-participant-number">(x) participants confirmed</p>
       </div>
       </div>
       <div class="">
         <div class="col-xs-4">
           <div class="lex-days">
-            <div class="row">
-              <div class="day-box">
-                <div class="day-box-text">
-                  <p class="day-number">Day 1</p>
-                  <p class="day-title"><strong>Day title</strong></p>
-                </div>
-                <div class="day-box-chevron">
-                  <i class="fa fa-angle-right" aria-hidden="true"></i>
-                </div>
+            <div class="day-box">
+              <div class="day-box-text">
+                <p class="day-number">Day 1</p>
+                <p class="day-title"><strong>Day title</strong></p>
+              </div>
+              <div class="day-box-chevron">
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
               </div>
             </div>
-            <div class="row">
-            <p class="custom-btn"><strong>+</strong>  New Day</p>
-            </div>
+            <p class="custom-btn">+ New Day</p>
           </div>
         </div>
         <div class="col-xs-8">
@@ -89,6 +85,23 @@
                     </div>
                   </div>
                 </div>
+                <div class="row">
+                  <div class="col-xs-12 col-md-8" style="margin-left: -14px">
+                    <div class="resource-box">
+                      <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+                      <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+                      <div class="resource-photo" style='background: url(
+                        <%# if @activity.photo == nil %>
+                          <%= "https://unsplash.it/50/50" %>
+                        <%# else %>
+                          <%#= image_tag @activity.photo %>
+                        <%# end %>)
+                      '></div>
+                      <p class="resource-title">Resource title</p>
+                      <p class="resource-url">Link to resource URL</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -99,43 +112,37 @@
 
   <div class="right-sidebar">
     <div class="right-sidebar-tabs">
-      <div class="">
-        <div class="col-xs-6">
-          <div class="right-sidebar-tab tab-participants">
-            <p>Participants</p>
-          </div>
+      <div class="col-xs-6">
+        <div class="right-sidebar-tab tab-participants">
+          <p>Participants</p>
         </div>
-        <div class="col-xs-6">
-          <div class="right-sidebar-tab tab-feedbacks">
-            <p>Feedbacks</p>
-          </div>
+      </div>
+      <div class="col-xs-6">
+        <div class="right-sidebar-tab tab-feedbacks">
+          <p>Feedbacks</p>
         </div>
-
-        <div class="">
-            <div class = "participation-card">
-<!--               <div class = "participant-number">
-                Participant 1
-              </div> -->
-              <div class="col-xs-3">
-                <img src="http://placehold.it/100x100" alt="user" class="avatar">
-              </div>
-              <div class="col-xs-9 content-participant">
-                <div class = "participant-name">
-                  <p>Nom: Maurice Paillette</p>
-                </div>
-                <div class = "participant-contact">
-                  <i class="fa fa-phone"> 0102039201</i>
-                </div>
-              </div>
-            </div>
-        </div>
-
-        <button class="btn new-day">Add a participant</button>
-          </div>
-        </div>
-
-  </div>
-
-    <div class="right-sidebar-content">
+      </div>
     </div>
-
+    <div class="right-sidebar-content">
+      <div class = "participant-box">
+        <div class="user-photo avatar" style='background: url(
+          <% if current_user.photo.url == nil %>
+            <%= "https://unsplash.it/50/50" %>
+          <% else %>
+            <%= image_tag @expedition.photo %>
+          <% end %>
+          ')>
+        </div>
+        <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+        <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+        <div class="content-participant">
+          <p class="participant-name"> Last_name</p>
+          <p class="participant-job">Job - Company</p>
+          <p class="participant-details">details</p>
+        </div>
+      </div>
+      <div class="row">
+        <p class="add-participant">+ New Participant</p>
+      </div>
+    </div>
+  </div>
