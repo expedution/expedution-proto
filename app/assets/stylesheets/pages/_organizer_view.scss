@@ -43,7 +43,7 @@
 .lex-days {
   border-left: 1px solid #D3D3D3;
   border-right: 1px solid #D3D3D3;
-  min-height: 100%;
+  min-height: 1000px;
 }
 
 // LEX DAYS SUB SECTION
@@ -52,6 +52,7 @@
   position: relative;
   border-bottom: 1px solid #D3D3D3;
   padding-left: 10px;
+  margin-bottom: 5px;
 }
 
 .day-box:hover {
@@ -108,6 +109,7 @@
   position: relative;
   padding-left: 20px;
   padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 .activity-box:hover {
@@ -116,6 +118,14 @@
     transition: opacity 0.3s ease;
   }
   .delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .rb-edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .rb-delete-logo {
     opacity: 1;
     transition: opacity 0.3s ease;
   }
@@ -160,6 +170,29 @@
   color: blue;
   opacity: 0;
 }
+
+.rb-edit-logo {
+  position: absolute;
+  top: 30px;
+  right: -28px;
+  background-size: cover !important;
+  width: 20px;
+  height: 20px;
+  color: blue;
+  opacity: 0;
+}
+
+.rb-delete-logo {
+  position: absolute;
+  top: 3px;
+  right: -28px;
+  background-size: cover !important;
+  width: 20px;
+  height: 20px;
+  color: blue;
+  opacity: 0;
+}
+
 
 .add-activity {
   position: absolute;
@@ -302,7 +335,7 @@
   position: relative;
   padding-left: 80px;
   height: 70px;
-  margin-bottom: 10px;
+  margin-bottom: 0px;
   border: solid 1px #DCDCDC;
   border-radius: 3px;
 }
@@ -315,7 +348,17 @@
   height: 70px;
 }
 
+.resource-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
 
+.resource-url {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #808080;
+}
 
 // RIGHT SIDEBAR SCSS
 
@@ -344,7 +387,6 @@
   margin-bottom: 5px;
 }
 
-
 .tab-participants {
   color: #1AAFD0;
   border-bottom: 2px solid #1AAFD0;
@@ -355,6 +397,89 @@
   color: #C0C0C0;
   height: 35px;
 }
+
+.participant-box {
+  position: relative;
+  height: 65px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.participant-box:hover {
+  box-shadow: 0 0 2em #D3D3D3;
+  transition: box-shadow 0.3s ease;
+  .edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .participant-details {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.user-photo {
+  position: absolute;
+  background-size: cover !important;
+  left: 5px;
+  width: 55px;
+  height: 55px;
+}
+
+.content-participant {
+  position: absolute;
+  left: 90px;
+}
+
+.participant-name {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.participant-job {
+  margin-bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.participant-name {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.participant-details {
+  margin-bottom: 0px;
+  color: #1AAFD0;
+  font-size: 14px;
+  opacity: 0
+}
+
+.participant-details:hover {
+  text-decoration: underline;
+}
+
+.add-participant {
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.add-participant:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
 
 // BUTTON
 
