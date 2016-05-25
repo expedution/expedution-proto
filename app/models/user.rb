@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :expeditions
   has_many :participations
+  has_many :participant_expeditions, :class_name => "Expedition", :through => :participations, :source => :expedition
   has_many :feedbacks
 
   mount_uploader :photo, PhotoUploader

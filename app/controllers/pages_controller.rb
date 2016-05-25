@@ -10,8 +10,11 @@ class PagesController < ApplicationController
 
   def dashboard
     find_user
-    @expeditions = current_user.expeditions.all
-    @participation = current_user.participations.all
+    if current_user.organiser
+      @expeditions = current_user.expeditions
+    else
+      @expeditions = current_user.participant_expeditions
+    end
   end
 
 
