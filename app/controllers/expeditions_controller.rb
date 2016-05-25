@@ -1,6 +1,6 @@
 class ExpeditionsController < ApplicationController
 
-  before_action :find_expedition, only: [:show]#, :edit, :update, :destroy]
+  before_action :find_expedition, only: [:show, :create, :edit, :update, :destroy]
 
 
   def index
@@ -41,7 +41,7 @@ class ExpeditionsController < ApplicationController
   private
 
   def expedition_params
-    params.require(:expedition).permit(:title, :location, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache, :user_id)
+    params.require(:expedition).permit(:title, :location, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
   end
 
   def find_expedition
