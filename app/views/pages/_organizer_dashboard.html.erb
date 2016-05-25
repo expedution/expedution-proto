@@ -1,14 +1,28 @@
+<!-- ORGANIZER DASHBOARD -->
+
 <div class="container top-padded">
   <% @expeditions.each do |expedition| %>
     <div class="row">
       <div class="col s12">
-        <div class="card small">
+        <div class="card my_card small hoverable">
           <div class="card-image">
             <% if expedition.photo.url == nil %>
               <img src="http://placehold.it/500">
             <% else %>
               <%= image_tag @expedition.photo.url %>
             <% end %>
+            <div class="appearing-btn">
+              <%= link_to expedition_path(expedition) do %>
+                <div class="btn-floating blue">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                </div>
+              <% end %>
+              <%= link_to expedition_path(expedition), method: :delete do %>
+                <div class="btn-floating red">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+              <% end %>
+            </div>
             <span class="card-title"><%= expedition.title %></span>
           </div>
           <div class="card-content">
