@@ -23,12 +23,13 @@
         <div class="day">
           <div class="col s12 m1 l1 pull-l1 white z-depth-1" style="border-radius: 5px;">
             <div class="collection" style="margin-right: -11px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
-              <a href="#!" class="collection-item">Day 1</a>
-              <a href="#!" class="collection-item">Day 2</a>
-              <a href="#!" class="collection-item">Day 3</a>
+              <a href="#day1" class="collection-item">Day 1</a>
+              <a href="#day2" class="collection-item">Day 2</a>
+              <a href="#day3" class="collection-item">Day 3</a>
             </div>
           </div>
         </div>
+
 
     <!-- Activities
     ================================================== -->
@@ -58,7 +59,7 @@
 
             <!-- Day 1 ================================================== -->
 
-            <div class="day">
+            <div class="day" id="day1">
               <h5 class="day-title padded-extra-small">Day 1 arrival in San Francisco</h5>
               <hr>
               <!-- FLIGHT ================================================== -->
@@ -260,7 +261,7 @@
             <!-- END DAY1 ================================================== -->
             <!-- DAY 2 ================================================== -->
 
-            <div class="day">
+            <div class="day" id="day2">
               <h5 class="day-title padded-extra-small">Day 2 arrival Palo Alto</h5>
               <hr>
               <!-- FLIGHT ================================================== -->
@@ -397,7 +398,7 @@
                       <span class="card-title">Card Title</span>
                       <div class="row">
                         <div class="col s4">
-                          <div class="card-image">
+                          <div class="card-image materialboxed">
                             <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
                           </div>
                         </div>
@@ -468,7 +469,7 @@
     ================================================== -->
         <div class="participants">
           <div class="col s12 m3 l3 white push-l1 z-depth-1" style="border-radius: 5px;">
-            <ul class="collection with-header" style="margin-right: -12px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
+            <ul class="collection with-header pinned" style="margin-right: -12px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
               <li class="collection-header"><h4>Participants</h4></li>
               <li class="collection-item"><div>Romain<a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">email</i></a></div></li>
               <li class="collection-item"><div>Margaux<a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">email</i></a></div></li>
@@ -489,11 +490,32 @@
       <!-- Modal Structure -->
       <div id="modal1" class="modal bottom-sheet">
         <div class="modal-content">
-          <h4>Modal Header</h4>
-          <p>A bunch of text</p>
+          <h4>modal header</h4>
+          <div class="row">
+            <div class="col s12">
+              <div class="card white darken-1 hoverable">
+                <div class="card-content grey-text">
+                  <span class="card-title">Card Title</span>
+                  <div class="row">
+                    <div class="col s4">
+                      <div class="card-image">
+                        <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
+                      </div>
+                    </div>
+                    <div class="col s7">
+                      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                    </div>
+                    <div class="col s1" style="margin-top: 15px">
+                      <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <div class="modal-footer">
-          <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+          <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
         </div>
       </div>
 
