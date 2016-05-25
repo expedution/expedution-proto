@@ -11,6 +11,7 @@ class PagesController < ApplicationController
   def dashboard
     find_user
     @expeditions = current_user.expeditions.all
+    @participation = current_user.participations.all
   end
 
 

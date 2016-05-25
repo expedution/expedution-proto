@@ -1,0 +1,25 @@
+<div class="container top-padded">
+  <h4>Your next expedition</h4>
+  <% @participation.reverse_each do |participation| %>
+    <div class="row">
+      <div class="col s12">
+        <div class="card small">
+          <div class="card-image">
+            <% if participation.expedition.photo.url == nil %>
+              <img src="http://placehold.it/500">
+            <% else %>
+              <%= image_tag participation.expedition.photo.url %>
+            <% end %>
+            <span class="card-title"><%= participation.expedition.title %></span>
+          </div>
+          <div class="card-content">
+            <p><%= participation.expedition.description %></p>
+          </div>
+  <!--         <div class="card-action">
+            <a href="#">This is a link</a>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
