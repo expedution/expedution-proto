@@ -1,36 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Land.io: Free Landing Page HTML Template | Codrops</title>
-    <meta name="description" content="A free HTML template and UI Kit built on Bootstrap" />
-    <meta name="keywords" content="free html template, bootstrap, ui kit, sass" />
-    <meta name="author" content="Peter Finlan and Taty Grassini Codrops" />
-    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-touch-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-touch-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-touch-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-touch-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-touch-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-touch-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-touch-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-touch-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
-    <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
-    <link rel="manifest" href="img/favicon/manifest.json">
-    <link rel="shortcut icon" href="img/favicon/favicon.ico">
-    <meta name="msapplication-TileColor" content="#663fb5">
-    <meta name="msapplication-TileImage" content="img/favicon/mstile-144x144.png">
-    <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
-    <meta name="theme-color" content="#663fb5">
-    <link rel="stylesheet" href="css/landio.css">
-  </head>
 
-  <body>
 
     <!-- Navbar
     ================================================== -->
@@ -90,7 +58,7 @@
         <% else %>
 
           <!-- Login text link -->
-          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+          <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link green-text hoverable" %>
 
         <% end %>
 
@@ -118,14 +86,21 @@
       <div class="banner-content">
         <h1>Expedution, blissful innovation.</h1>
         <p>Craft your journey with Expedution</p>
-        <a class="navbar-edu-button">LEARN MORE</a>
+        <a class="waves-effect waves-light waves-purple btn-large green grey-text"><i class="material-icons left">thumb_up</i>DISCOVER NOW</a>
       </div>
     </div>
+
+
+    <video autoplay  poster="http://susanreep.com/blog/wp-content/uploads/2010/07/Sky-from-plane.jpg" id="bgvid" loop>
+      <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
+    <source src="" type="video/webm">
+    <source src="" type="video/mp4">
+    </video>
 
     <!-- Intro
     ================================================== -->
 
-    <section class="section-intro text-center">
+    <section class="section-intro text-center valign-wrapper">
       <div class="container">
         <h2>powerful Learning expeditions management tool for organisers</h2>
         <div class="row">
@@ -143,13 +118,13 @@
     <!-- Features
     ================================================== -->
 
-    <section class="section-features padded">
+    <section class="section-features valign-wrapper">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
             <div class="col-md-12">
               <div class="card-feature">
-                <div class="card-image">
+                <div class="card-image hoverable">
                   <img src="http://dummyimage.com/500x300/000/fff" alt="" class="img-responsive">
                 </div>
               </div>
@@ -162,7 +137,7 @@
                   <span class="icon-thunderbolt display-1"></span>
                   <h2>See how it works</h2>
                   <p class="card-text">Start to organise your own Learning Expeditions and save countless hours</p>
-                  <a class="navbar-edu-button" id="button-features">LEARN MORE</a>
+                  <a class="waves-effect waves-light btn green grey-text"><i class="material-icons left"></i>GET ONBOARD!</a>
                 </div>
               </div>
             </div>
@@ -176,14 +151,14 @@
     <!-- Extra features
     ================================================== -->
 
-    <section class="section-extra-features padded">
+    <section class="section-extra-features valign-wrapper">
       <div class="container">
         <div class="text-center">
           <h1>check this out</h1>
         </div>
         <div class="row">
           <div class="col s12 m4 l4">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="http://dummyimage.com/500x300/000/fff">
                 <span class="card-title activator">Card Title</span>
@@ -202,7 +177,7 @@
             </div>
           </div>
           <div class="col s12 m4 l4">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="http://dummyimage.com/500x300/000/fff">
                 <span class="card-title activator">Card Title</span>
@@ -221,7 +196,7 @@
             </div>
           </div>
           <div class="col s12 m4 l4">
-            <div class="card">
+            <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
                 <img class="activator" src="http://dummyimage.com/500x300/000/fff">
                 <span class="card-title activator">Card Title</span>
@@ -369,10 +344,10 @@
         </p>
         <p class="footer-company-name">Expedution &copy; 2016</p>
         <div class="footer-icons">
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
+          <a href="#" class="green hoverable"><i class="fa fa-facebook grey-text"></i></a>
+          <a href="#" class="green hoverable"><i class="fa fa-twitter grey-text"></i></a>
+          <a href="#" class="green hoverable"><i class="fa fa-linkedin grey-text"></i></a>
+          <a href="#" class="green hoverable"><i class="fa fa-github grey-text"></i></a>
         </div>
       </div>
       <div class="footer-right">
@@ -380,10 +355,36 @@
         <form action="#" method="post">
           <input type="text" name="email" placeholder="Email" />
           <textarea name="message" placeholder="Message"></textarea>
-          <button>Send</button>
+          <a class="waves-effect waves-light btn green grey-text hoverable"><i class="material-icons right">send</i>SIGN UP</a>
         </form>
       </div>
     </footer>
 
-  </body>
-</html>
+<script>
+var vid = document.getElementById("bgvid");
+var pauseButton = document.querySelector("#polina button");
+
+function vidFade() {
+  vid.classList.add("stopfade");
+}
+
+vid.addEventListener('ended', function()
+{
+// only functional if "loop" is removed
+vid.pause();
+// to capture IE10
+vidFade();
+});
+
+
+pauseButton.addEventListener("click", function() {
+  vid.classList.toggle("stopfade");
+  if (vid.paused) {
+    vid.play();
+    pauseButton.innerHTML = "Pause";
+  } else {
+    vid.pause();
+    pauseButton.innerHTML = "Paused";
+  }
+})
+</script>
