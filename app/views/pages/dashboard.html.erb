@@ -1,23 +1,40 @@
 <%= render 'shared/lateral_navbar' %>
 
-<div class="container">
-  <div class="wrapper-mini style1 padded text-center">
-    <ul class="list-unstyled">
-      <li>
-        <% if current_user.photo.url == nil %>
-          <img src="http://placehold.it/100" class="avatar-xl">
-        <% else %>
-          <%= image_tag @user.photo.url, class: "avatar-xl" %>
+<div class="wrapper-mini style1 padded text-center">
+  <div class="top-right-corner-btn">
+    <% if current_user %>
+      <div class="btn-floating">
+        <%= link_to edit_user_path(current_user) do %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         <% end %>
-      </li>
-      <li>
-        <h5>Welcome <%= @user.first_name %> <%= @user.last_name %> !</h5>
-      </li>
-    </ul>
-    <% if policy(@user).update? %>
-      <div class="text-center"><%= link_to "Create Expedition", new_expedition_path, class: "btn btn-success" %></div>
+      </div>
     <% end %>
+    <div class="btn-floating">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </div>
   </div>
+  <ul class="list-unstyled">
+    <li>
+      <% if current_user.photo.url == nil %>
+        <img src="http://placehold.it/100" class="avatar-xl">
+      <% else %>
+        <%= image_tag @user.photo.url, class: "avatar-xl" %>
+      <% end %>
+    </li>
+    <li>
+      <h5>Welcome <%= @user.first_name %> <%= @user.last_name %> !</h5>
+    </li>
+    <li>
+      <% if policy(Expedition.new).create? %>
+        <div class="text-center"><%= link_to "Create Expedition", new_expedition_path, class: "btn btn-success" %></div>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
+<div class="container top-padded">
   <% @expeditions.each do |expedition| %>
     <div class="row">
       <div class="col s12">
