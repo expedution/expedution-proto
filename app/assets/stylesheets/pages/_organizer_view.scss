@@ -1,19 +1,19 @@
 .central-content {
-  margin-left: 60px;
+  margin-left: 40px;
   margin-right: 300px;
 }
 
 .right-sidebar {
   position: fixed;
+  border-left: 1px solid #D3D3D3;
   width: 300px;
   top: 0px;
   right: 0px;
   bottom: 0px;
-  background-color: blue;
 }
 
 .lex-banner {
-  background-color: red;
+  background-size: cover !important;
   height: 200px;
 }
 
@@ -23,32 +23,34 @@
 }
 
 .lex-activities {
-  border-right: 1px solid #D3D3D3;
 }
 
 .day-box {
   position: relative;
-  background-color: orange;
   border-bottom: 1px solid #D3D3D3;
+  padding-left: 5px;
 }
 
 .day-box:hover {
-  background-color: #1AAFD0;
+  background-color: #eaf7ff;
+  transition: background-color 0.3s ease;
 }
 
 .day-box-chevron {
   position: absolute;
-  right: 5px
+  right: 5px;
+  top: 5px;
   font-weight: bold;
+  font-size: 40px;
   color: #D3D3D3;
 }
 
 .day-box-chevron:hover {
   color: #1AAFD0;
+  transition: color 0.3s ease;
 }
 
 .activity-box {
-  background-color: yellow;
   position: relative;
 
 }
@@ -71,8 +73,9 @@
 }
 
 .right-sidebar-tab p {
-  color: #3BE8B0;
+  color: #2BBBAD;
   text-align: center;
+  padding-top: 5px;
 }
 
 
