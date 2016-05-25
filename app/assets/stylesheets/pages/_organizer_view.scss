@@ -1,15 +1,8 @@
-.central-content {
-  margin-left: 40px;
-  margin-right: 300px;
-}
+// CENTRAL CONTENT CSS
 
-.right-sidebar {
-  position: fixed;
-  border-left: 1px solid #D3D3D3;
-  width: 300px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
+.central-content {
+  margin-left: 60px;
+  margin-right: 350px;
 }
 
 .lex-banner {
@@ -22,8 +15,7 @@
   border-right: 1px solid #D3D3D3;
 }
 
-.lex-activities {
-}
+// LEX DAYS SUB SECTION
 
 .day-box {
   position: relative;
@@ -34,6 +26,9 @@
 .day-box:hover {
   background-color: #eaf7ff;
   transition: background-color 0.3s ease;
+  .day-box-chevron {
+  color: #1AAFD0;
+  transition: color 0.3s ease;}
 }
 
 .day-box-chevron {
@@ -45,24 +40,167 @@
   color: #D3D3D3;
 }
 
-.day-box-chevron:hover {
-  color: #1AAFD0;
-  transition: color 0.3s ease;
+.day-box-text p {
+  margin-bottom: 0px;
+  padding-top: 5px;
+}
+
+.new-day {
+  margin-left: 10px;
+}
+
+
+
+// LEX ACTIVITIES SUB-SECTION
+
+.lex-activities {
 }
 
 .activity-box {
   position: relative;
-
+  padding-left: 20px;
+  padding-right: 5px;
 }
 
 .activity-box:hover {
+  .edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.edit-logo {
+  position: absolute;
+  top: 5px;
+  right: 35px;
+  background-size: cover !important;
+  width: 25px;
+  height: 25px;
+  color: blue;
+  opacity: 0;
+}
+
+.delete-logo {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-size: cover !important;
+  width: 25px;
+  height: 25px;
+  color: blue;
+  opacity: 0;
+}
+
+.activity-icon {
+  position: absolute;
+  top: 4px;
+  left: -17px;
+  background-size: cover !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.activity-icon-flight {
+  border: solid 1px #FFB900;
+}
+
+.activity-icon-restaurant {
+  border: solid 1px #1AAFD0;
+}
+
+.activity-icon-hotel {
+  border: solid 1px #6A67CE;
+}
+
+.activity-icon-transportation {
+  border: solid 1px #3BE8B0;
+}
+
+.activity-icon-meeting {
+  border: solid 1px #D7263D;
+}
+
+.label-activity {
+  font-size: 14px;
+  padding-top: 4px;
+  margin-bottom: 2px;
+}
+
+.label-flight {
+  color: #FFB900;
+}
+
+.label-hotel {
+  color: #6A67CE;
+}
+
+.label-transportation {
+  color: #3BE8B0;
+}
+
+.label-meeting {
+  color: #D7263D;
+}
+
+.label-restaurant {
+  color: #1AAFD0;
+}
+
+.activity-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  margin-top: 0px;
+}
+
+.activity-description {
+  font-size: 14px;
+  text-align: justify;
+  padding-right: 5px;
+}
+
+.activity-address {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #808080;
+}
+
+.resource-box {
+  position: relative;
+  padding-left: 80px;
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.resource-box:hover {
   box-shadow: 0 0 2em #D3D3D3;
   transition: box-shadow 0.3s ease;
 }
 
+.resource-photo {
+  position: absolute;
+  background-size: cover !important;
+  left: 0px;
+  width: 70px;
+  height: 70px;
+}
 
 
+// RIGHT SIDEBAR SCSS
 
+.right-sidebar {
+  position: fixed;
+  border-left: 1px solid #D3D3D3;
+  width: 350px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+}
 
 .right-sidebar-content {
   overflow-y: hidden;
@@ -70,12 +208,25 @@
 
 .right-sidebar-tabs {
   border-bottom: 1px solid #D3D3D3;
+  text-align: center;
+  font-weight: lighter;
+  margin-top: 5px;
+  height: 35px;
 }
 
 .right-sidebar-tab p {
-  color: #2BBBAD;
-  text-align: center;
-  padding-top: 5px;
+  margin-bottom: 5px;
 }
 
+
+.tab-participants {
+  color: #1AAFD0;
+  border-bottom: 2px solid #1AAFD0;
+  height: 35px;
+}
+
+.tab-feedbacks {
+  color: #C0C0C0;
+  height: 35px;
+}
 
