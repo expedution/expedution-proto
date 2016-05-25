@@ -6,13 +6,44 @@
 }
 
 .lex-banner {
+  position: relative;
   background-size: cover !important;
   height: 200px;
+}
+
+.lex-banner:hover {
+  .expedition-title {
+    background-color: rgba(215,215,215,0.5);
+    transition: background-color 1s ease;
+  }
+}
+
+.expedition-title {
+  position: absolute;
+  left: 17px;
+  top: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 6px;
+  color: white;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: rgba(215,215,215,0.3);
+}
+
+.expedition-participant-number {
+  position: absolute;
+  left: 22px;
+  top: 50px;
+  color: white;
+  font-size: 12px;
+  font-style: italic;
 }
 
 .lex-days {
   border-left: 1px solid #D3D3D3;
   border-right: 1px solid #D3D3D3;
+  min-height: 100%;
 }
 
 // LEX DAYS SUB SECTION
@@ -20,7 +51,7 @@
 .day-box {
   position: relative;
   border-bottom: 1px solid #D3D3D3;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .day-box:hover {
@@ -34,10 +65,11 @@
 .day-box-chevron {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 0px;
   font-weight: bold;
   font-size: 40px;
   color: #D3D3D3;
+  line-height: 50px;
 }
 
 .day-box-text p {
@@ -49,11 +81,27 @@
   margin-left: 10px;
 }
 
+.day-number {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.day-title {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  line-height: 20px;
+}
 
 
 // LEX ACTIVITIES SUB-SECTION
 
 .lex-activities {
+}
+
+.activity-box-section {
+  border-bottom: 1px solid #D3D3D3;
 }
 
 .activity-box {
@@ -71,6 +119,24 @@
     opacity: 1;
     transition: opacity 0.3s ease;
   }
+  .add-resource {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .resource-box {
+    box-shadow: 0 0 2em #D3D3D3;
+    transition: box-shadow 1s ease;
+  }
+}
+
+.edit-logo:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+.delete-logo:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
 }
 
 .edit-logo {
@@ -93,6 +159,68 @@
   height: 25px;
   color: blue;
   opacity: 0;
+}
+
+.add-activity {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 120px;
+  margin-left: 10px;
+}
+
+.add-activity:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+.activity-header {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.activity-day-header {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  width: 35px;
+  border-right: solid 1px #D3D3D3;
+}
+
+.activity-day-header p {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.add-resource {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 130px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.add-resource:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
 }
 
 .activity-icon {
@@ -175,11 +303,8 @@
   padding-left: 80px;
   height: 70px;
   margin-bottom: 10px;
-}
-
-.resource-box:hover {
-  box-shadow: 0 0 2em #D3D3D3;
-  transition: box-shadow 0.3s ease;
+  border: solid 1px #DCDCDC;
+  border-radius: 3px;
 }
 
 .resource-photo {
@@ -189,6 +314,7 @@
   width: 70px;
   height: 70px;
 }
+
 
 
 // RIGHT SIDEBAR SCSS
@@ -229,4 +355,24 @@
   color: #C0C0C0;
   height: 35px;
 }
+
+// BUTTON
+
+.custom-btn {
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 110px;
+  margin-left: 10px;
+}
+
+.custom-btn:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+
+
 

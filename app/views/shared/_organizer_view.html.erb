@@ -5,11 +5,13 @@
       <div class="">
         <div class="lex-banner" style='background: url(
           <% if current_user.photo.url == nil %>
-            <%= "https://unsplash.it/900/200" %>
+            <%= "https://unsplash.it/900/201" %>
           <% else %>
             <%= image_tag @expedition.photo %>
           <% end %>
         ')>
+        <h1 class="expedition-title">Expedition name (@expedition.name)</h1>
+        <p class="expedition-participant-number">(x) participants confirmed</p>
       </div>
       </div>
       <div class="">
@@ -18,8 +20,8 @@
             <div class="row">
               <div class="day-box">
                 <div class="day-box-text">
-                  <p>Day 1</p>
-                  <p><strong>Day 1 title</strong></p>
+                  <p class="day-number">Day 1</p>
+                  <p class="day-title"><strong>Day title</strong></p>
                 </div>
                 <div class="day-box-chevron">
                   <i class="fa fa-angle-right" aria-hidden="true"></i>
@@ -27,19 +29,25 @@
               </div>
             </div>
             <div class="row">
-              <button class="btn new-day">New day</button>
+            <p class="custom-btn"><strong>+</strong>  New Day</p>
             </div>
           </div>
         </div>
         <div class="col-xs-8">
           <div class="lex-activities">
-            <div class="row">
-              <p>Title</p>
+            <div class="activity-header">
+              <div class="activity-day-header">
+                <p>Day</p>
+                <p>1</p>
+              </div>
+              <p>Day Title</p>
+              <p class="add-activity">+ New Activity</p>
             </div>
-            <div class="row">
+            <div class="activity-box-section">
               <div class="activity-box hoverable">
                 <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
                 <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+                <p class="add-resource">+ New Resource</p>
                 <div class="activity-icon activity-icon-flight" style="background: url(<%= asset_path 'activity-icon-flight.png' %>")></div>
                 <%# if @activity.category == "flight" %>
                   <%#= "<div class="activity-icon activity-icon-flight" style="background: url(" + asset_path 'activity-icon-flight.png' + '")></div>' %>
@@ -67,15 +75,16 @@
                 <h2 class="activity-title">Activity name (@activity.title)</h2>
                 <p class="activity-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. (@activity.description)</p>
                 <div class="row">
-                  <div class="col-xs-12 col-md-8">
+                  <div class="col-xs-12 col-md-8" style="margin-left: -14px">
                     <div class="resource-box">
                       <div class="resource-photo" style='background: url(
-                        <% if current_user.photo.url == nil %>
+                        <%# if @activity.photo == nil %>
                           <%= "https://unsplash.it/50/50" %>
-                        <% else %>
-                          <%= image_tag @activity.photo %>
-                        <% end %>)
+                        <%# else %>
+                          <%#= image_tag @activity.photo %>
+                        <%# end %>)
                       '></div>
+                      <p class="activity-address"></p>
                       <p class="activity-address">Times Square, Manhattan, NYC (@activity.address)</p>
                     </div>
                   </div>
