@@ -46,7 +46,7 @@
 /////////////////////////////////////////////INTRO//////////////////////////////////////
 
 .section-intro {
-  background: linear-gradient(158deg, rgba(88, 214, 243,0.3) 0%, rgba(96, 220, 222,0.3) 50%);
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 18%, rgba(242,242,242,1) 47%, rgba(240,240,240,1) 68%, rgba(237,237,237,1) 93%);
 }
 
 .section-intro h2 {
@@ -67,6 +67,10 @@
 .section-testimonials {
   background: linear-gradient(167deg, rgb(88, 214, 243) 0%, rgb(96, 220, 222) 100%);
   height: auto;
+}
+
+.section-testimonials h3 {
+  margin-top: 50px;
 }
 
 .testimonial-list {
@@ -151,13 +155,19 @@ section-features h2 {
 }
 
 .section-extra-features h3 {
-  padding-bottom: 5em;
+  margin-top: 50px;
 }
 
 
-//////////////////////////////////////// TESTIMONIALS//////////////////////////////////
+//////////////////////////////////////// SECTION TEXT//////////////////////////////////
 
+.section-text {
+  background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 18%, rgba(242,242,242,1) 47%, rgba(240,240,240,1) 68%, rgba(237,237,237,1) 93%);
+}
 
+.section-text h3 {
+  margin-top: 50px;
+}
 
 
 video {
@@ -177,6 +187,9 @@ video {
 .stopfade {
    opacity: .5;
 }
+
+
+
 
 
 

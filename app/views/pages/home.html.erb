@@ -82,7 +82,7 @@
     <!-- Hero Section
     ================================================== -->
 
-    <div class="banner img-responsive" style="background-image: linear-gradient(158deg, rgba(243,143,56,0.6) 0%, rgba(242, 126, 80,0.6) 50%), url('http://i.imgur.com/M0qx9fN.jpg');">
+    <div class="banner img-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('http://static.livedemo00.template-help.com/wt_58888_v2/images/intros/intro-04-1920x955.jpg');">
       <div class="banner-content">
         <h1>Expedution, blissful innovation.</h1>
         <p>Craft your journey with Expedution</p>
@@ -93,8 +93,6 @@
 
     <video autoplay  poster="http://susanreep.com/blog/wp-content/uploads/2010/07/Sky-from-plane.jpg" id="bgvid" loop>
       <!-- WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button  -->
-    <source src="" type="video/webm">
-    <source src="" type="video/mp4">
     </video>
 
     <!-- Intro
@@ -153,10 +151,8 @@
 
     <section class="section-extra-features valign-wrapper">
       <div class="container">
-        <div class="text-center">
-          <h1>check this out</h1>
-        </div>
-        <div class="row">
+        <h3 class="text-center">check this out</h1>
+        <div class="row padded">
           <div class="col s12 m4 l4">
             <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
@@ -220,12 +216,12 @@
 
     <!-- Testimonials
     ================================================== -->
-    <section class="section-testimonials padded">
+    <section class="section-testimonials">
      <div class="testimonials-container section-container text-center">
       <div class="container">
+      <h3 class="text-center">What they say about us</h3>
           <div class="row">
               <div class="col-sm-12 testimonials section-description">
-                  <h2><strong>What they say about us</strong></h2>
                   <div class="divider-1 wow fadeInUp"><span></span></div>
               </div>
           </div>
@@ -312,10 +308,10 @@
     <!-- Text Content
     ================================================== -->
 
-    <section class="section-text padded">
+    <section class="section-text">
       <div class="container">
-        <h3 class="text-xs-center">Make your mark on the product industry</h3>
-        <div class="row p-y-3">
+        <h3 class="text-center">Make your mark on the product industry</h3>
+        <div class="row padded valign-wrapper">
           <div class="col-md-5">
             <p class="wp wp-7">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
           </div>
@@ -359,32 +355,3 @@
         </form>
       </div>
     </footer>
-
-<script>
-var vid = document.getElementById("bgvid");
-var pauseButton = document.querySelector("#polina button");
-
-function vidFade() {
-  vid.classList.add("stopfade");
-}
-
-vid.addEventListener('ended', function()
-{
-// only functional if "loop" is removed
-vid.pause();
-// to capture IE10
-vidFade();
-});
-
-
-pauseButton.addEventListener("click", function() {
-  vid.classList.toggle("stopfade");
-  if (vid.paused) {
-    vid.play();
-    pauseButton.innerHTML = "Pause";
-  } else {
-    vid.pause();
-    pauseButton.innerHTML = "Paused";
-  }
-})
-</script>
