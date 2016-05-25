@@ -1,10 +1,9 @@
-  <%= render 'shared/navbar' %>
+  <%= render 'shared/lateral_navbar' %>
 
   <div class="central-content">
     <div class="container-fluid">
       <div class="row">
-        <div class="lex-banner">
-          <%= image_tag "banner-paceholder.jpg" %>
+        <div class="lex-banner" style="background: url(<%= asset_path 'banner-paceholder.jpg' %>")>
         </div>
       </div>
       <div class="row">
@@ -34,6 +33,7 @@
             <div class="row">
               <div class="activity-box">
                 <p>Activity 1</p>
+                <p>activity description</p>
               </div>
             </div>
           </div>
