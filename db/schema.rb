@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20160526130125) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,7 +25,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.datetime "starts_on"
     t.datetime "ends_on"
     t.string   "photo"
-    t.string   "adress"
+    t.string   "address"
     t.integer  "day_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -37,6 +39,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.integer  "expedition_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.string   "title"
   end
 
   add_index "days", ["expedition_id"], name: "index_days_on_expedition_id", using: :btree
@@ -46,8 +49,8 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.string   "title"
     t.text     "description"
     t.string   "theme"
-    t.datetime "starts_on"
-    t.datetime "ends_on"
+    t.date     "starts_on"
+    t.date     "ends_on"
     t.integer  "capacity"
     t.string   "photo"
     t.datetime "created_at",  null: false
@@ -97,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.integer  "activity_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.string   "category"
   end
 
   add_index "ressources", ["activity_id"], name: "index_ressources_on_activity_id", using: :btree
@@ -131,6 +135,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
+    t.boolean  "accepted",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,3 +1,9 @@
+require 'nokogiri'
+require 'open-uri'
+
+d1 = Date.new(2017,01,04)
+d2 = Date.new(2017,11,10)
+
 d0 = Date.new(2017,01,03)
 
 d1 = Date.new(2017,01,03)
@@ -5,6 +11,7 @@ d2 = Date.new(2017,02,07)
 
 h1 = DateTime.new(2017,01,03, 13, 30, 0)
 h2 = DateTime.new(2017,01,03, 16, 0, 0)
+
 
 b = User.create({
     email: "boris@lewagon.org",
@@ -33,6 +40,7 @@ a.save
 d = Day.new({
   position: 1,
   date: d0,
+  title: "En route pour L.A."
   })
 d.expedition = a
 d.save
@@ -43,13 +51,14 @@ e = Activity.new({
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
   starts_on: h1,
   ends_on: h2,
-  adress: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+  address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
   })
 e.day = d
 e.save
 
 c = Ressource.new({
   name: "Visited company background",
+  category: "Website"
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
   url: "www.spacex.com",
   })
@@ -65,4 +74,15 @@ Expedition.create!({
   location: "Silicon Valley",
   user: User.find(1),
   })
+
+
+
+# response = open("https://angel.co/companies")
+# doc = Nokogiri::HTML(response, nil, 'utf-8')
+# doc.css('.itemName').each do |element|
+#   name = element.search('a').inner_text
+#   resource = Resource.create!(name: name)
+# end
+
+
 

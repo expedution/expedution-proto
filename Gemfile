@@ -8,6 +8,8 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'devise_invitable'
+gem 'redis'
+gem 'nokogiri'
 
 gem 'redis'
 gem 'sass-rails'

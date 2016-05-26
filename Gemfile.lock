@@ -206,6 +206,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   materialize-sass
+  nokogiri
   pg
   pry-byebug
   pry-rails

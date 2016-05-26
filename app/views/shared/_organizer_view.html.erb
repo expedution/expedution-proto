@@ -17,15 +17,9 @@
       <div class="">
         <div class="col-xs-4">
           <div class="lex-days">
-            <div class="day-box">
-              <div class="day-box-text">
-                <p class="day-number">Day 1</p>
-                <p class="day-title"><strong>Day title</strong></p>
-              </div>
-              <div class="day-box-chevron">
-                <i class="fa fa-angle-right" aria-hidden="true"></i>
-              </div>
-            </div>
+
+            <%= render 'expeditions/organizer_exp_day_box' %>
+
             <p class="custom-btn">+ New Day</p>
           </div>
         </div>
@@ -40,69 +34,9 @@
               <p class="add-activity">+ New Activity</p>
             </div>
             <div class="activity-box-section">
-              <div class="activity-box hoverable">
-                <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
-                <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
-                <p class="add-resource">+ New Resource</p>
-                <div class="activity-icon activity-icon-flight" style="background: url(<%= asset_path 'activity-icon-flight.png' %>")></div>
-                <%# if @activity.category == "flight" %>
-                  <%#= "<div class="activity-icon activity-icon-flight" style="background: url(" + asset_path 'activity-icon-flight.png' + '")></div>' %>
-                <%# elsif @activity.category == "hotel" %>
-                  <%#= "<div class="activity-icon activity-icon-hotel" style="background: url(" + asset_path 'activity-icon-hotel.png' + '")></div>' %>
-                <%# elsif @activity.category == "transportation" %>
-                  <%#= "<div class="activity-icon activity-icon-transportation" style="background: url(" + asset_path 'activity-icon-transportation.png' + '")></div>' %>
-                <%# elsif @activity.category == "restaurant" %>
-                  <%#= "<div class="activity-icon activity-icon-restaurant" style="background: url(" + asset_path 'activity-icon-restaurant.png' + '")></div>' %>
-                <%# elsif @activity.category == meeting %>
-                  <%#= "<div class="activity-icon activity-icon-meeting" style="background: url(" + asset_path 'activity-icon-meeting.png' + '")></div>' %>
-                <%# end %>
-                <p class="label-activity label-flight">@activity.starts_on 11:30AM ARRIVAL</p>
-                <%# if @activity.category == "flight" %>
-                  <%#= "<p class="label-activity label-flight">" + @activity.starts_on + "DEPARTURE (local time)  |  " + @activity.ends_on "ARRIVAL (local time) + "</p>" %>
-                <%# elsif @activity.category == "hotel" %>
-                  <%#= "<p class="label-activity label-hotel">" + @activity.starts_on + "CHECK-IN" + "</p>" %>
-                <%# elsif @activity.category == "transportation" %>
-                  <%#= "<p class="label-activity label-transportation">" + @activity.starts_on + "DEPARTURE (length :" + (@activity.ends_on - @activity.starts_on) + ")" + "</p>" %>
-                <%# elsif @activity.category == "restaurant" %>
-                  <%#= "<p class="label-activity label-restaurant">" + @activity.starts_on + "</p>" %>
-                <%# elsif @activity.category == meeting %>
-                  <%#= "<p class="label-activity label-meeting">" + @activity.starts_on + " | " + @activity.ends_on + "</p>" %>
-                <%# end %>
-                <h2 class="activity-title">Activity name (@activity.title)</h2>
-                <p class="activity-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi. (@activity.description)</p>
-                <div class="row">
-                  <div class="col-xs-12 col-md-8" style="margin-left: -14px">
-                    <div class="resource-box">
-                      <div class="resource-photo" style='background: url(
-                        <%# if @activity.photo == nil %>
-                          <%= "https://unsplash.it/50/50" %>
-                        <%# else %>
-                          <%#= image_tag @activity.photo %>
-                        <%# end %>)
-                      '></div>
-                      <p class="activity-address"></p>
-                      <p class="activity-address">Times Square, Manhattan, NYC (@activity.address)</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-xs-12 col-md-8" style="margin-left: -14px">
-                    <div class="resource-box">
-                      <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
-                      <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
-                      <div class="resource-photo" style='background: url(
-                        <%# if @activity.photo == nil %>
-                          <%= "https://unsplash.it/50/50" %>
-                        <%# else %>
-                          <%#= image_tag @activity.photo %>
-                        <%# end %>
-                      )'></div>
-                      <p class="resource-title">Resource title</p>
-                      <p class="resource-url">Link to resource URL</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+
+              <%= render 'expeditions/organizer_exp_activity_box' %>
+
             </div>
           </div>
         </div>
