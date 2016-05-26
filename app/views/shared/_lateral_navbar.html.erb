@@ -1,34 +1,45 @@
 <div class="lateral-navbar">
   <ul class="nav-sections">
     <li class="nav-li nav-profile-link">
-      <%= link_to root_path, class: "nav-link" do %>
+      <%= link_to user_path(current_user), class: "nav-link" do %>
         <%= image_tag "avatar-icon.png", width: '45' %>
       <% end %>
 <!--       <span>"View/Edit profile"</span>
- -->    </li>
-    <li class="nav-li nav-lex-link">
+ --></li>
+
+    <li class="nav-li">
       <%= link_to dashboard_path, class: "nav-link" do %>
         <%= image_tag "lex-icon.png", width: '50' %>
       <% end %>
 <!--       <span>"Manage Learning Expeditions"</span>
  --></li>
-    <li class="nav-li nav-sourcing-link">
+
+    <li class="nav-li">
       <%= link_to root_path, class: "nav-link" do %>
         <%= image_tag "sourcing-icon.png", width: '45' %>
       <% end %>
 <!--       <span>"LEX catalogue"</span>
- -->    </li>
-    <li class="nav-li nav-rfp-link">
+ --></li>
+
+    <li class="nav-li">
       <%= link_to root_path, class: "nav-link" do %>
         <%= image_tag "rfp-icon.png", width: '45' %>
       <% end %>
 <!--       <span>"LEX logistics platform"</span>
- -->    </li>
-    <li class="nav-li nav-organizers-link">
+ --></li>
+
+    <li class="nav-li">
       <%= link_to root_path, class: "nav-link" do %>
         <%= image_tag "organizers-icon.png", width: '45' %>
       <% end %>
 <!--       <span>"Organizers"</span>
- -->    </li>
+ --></li>
+
+    <li class="nav-li bottom-sections text-center">
+      <%= link_to destroy_user_session_path, method: :delete do %>
+        <i class="fa fa-sign-out"></i>
+      <% end %>
+    </li>
   </ul>
 </div>
+

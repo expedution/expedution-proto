@@ -18,9 +18,15 @@
   position: relative;
   list-style-type: none;
   height: 60px;
+  width: 60px;
   margin-top: 15px;
   margin-bottom: 15px;
   padding: 7px;
+
+  i {
+    color: white;
+    font-size: 30px;
+  }
 }
 
 .nav-li:hover {
@@ -31,4 +37,11 @@
 .nav-link {
   text-decoration: none;
   -webkit-filter: invert(100%);
+}
+
+.bottom-sections {
+  position: absolute;
+  height: 40px;
+  bottom: 0px;
+  margin-bottom: 0px;
 }

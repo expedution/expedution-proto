@@ -23,7 +23,12 @@
               <li>Company: <%= @user.company %></li>
             </ul>
             <% if policy(@user).update? %>
-              <div class="text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn" %></div>
+
+              <!-- Modal Trigger -->
+              <div class="text-center"><%= link_to "Edit profile", "#modal1", class: "modal-trigger waves-effect waves-light btn" %></div>
+
+              <%= render 'users/edit' %>
+
             <% end %>
           </div>
         </div>
@@ -42,3 +47,4 @@
 </div>
 
 <%= render 'shared/lateral_navbar' %>
+
