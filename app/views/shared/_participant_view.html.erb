@@ -40,16 +40,15 @@
           <div class="col s12 m8 l8 white z-depth-1" style="border-radius: 5px;">
             <div class="banner-small image-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg'); padding: off">
               <div class="banner-content">
-                <h2>3 Days In San Francisco</h2>
+                <h2><%= @expedition.title %></h2>
               </div>
             </div>
 
             <!-- Description ================================================== -->
-
             <div class="expedition-description">
-              <h5>3 Days In San Francisco</h5>
+              <h5><%= @expedition.title %></h5>
               <p class="padded-extra-small">
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+              <%= @description.description %>
               </p>
             </div>
 
@@ -187,12 +186,12 @@
                 </div>
               </div>
               <!-- Ressources ================================================== -->
-              <h5 class="padded-extra-small">Ressources</h5>
               <hr>
+              <h5>Ressources</h5>
               <div class="row">
                 <div class="col s12">
                 <a class="modal-trigger" href="#modal2">
-                  <div class="card white darken-1 hoverable">
+                  <div class="card white darken-1 hoverable z-depth-0">
                     <div class="card-content grey-text">
                       <span class="card-title">Card Title</span>
                       <div class="row">
@@ -384,7 +383,58 @@
                           <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
                         </div>
                       </div>
-                    </div>
+                      <!-- Ressources ================================================== -->
+                      <hr>
+                      <h5>Ressources</h5>
+                      <div class="row">
+                        <div class="col s12">
+                        <a class="modal-trigger" href="#modal2">
+                          <div class="card white darken-1 z-depth-0 hoverable">
+                            <div class="card-content grey-text">
+                              <span class="card-title">Card Title</span>
+                              <div class="row">
+                                <div class="col s4">
+                                  <div class="card-image materialboxed">
+                                    <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
+                                  </div>
+                                </div>
+                                <div class="col s7">
+                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
+                                </div>
+                                <div class="col s1" style="margin-top: 15px">
+                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col s12">
+                        <a class="modal-trigger" href="#modal2">
+                          <div class="card white darken-1 hoverable">
+                            <div class="card-content grey-text">
+                              <span class="card-title">Card Title</span>
+                              <div class="row">
+                                <div class="col s4">
+                                  <div class="card-image">
+                                    <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
+                                  </div>
+                                </div>
+                                <div class="col s7">
+                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                                </div>
+                                <div class="col s1" style="margin-top: 15px">
+                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                        </div>
+                      </div>
+                      <!-- End Ressources ================================================== -->
                     <div class="card-action">
                       <a class="activator">Check all ressources</a>
                     </div>
@@ -395,84 +445,8 @@
                   </div>
                 </div>
               </div>
-              <!-- Ressources ================================================== -->
-              <h5 class="padded-extra-small">Ressources</h5>
-              <hr>
-              <div class="row">
-                <div class="col s12">
-                <a class="modal-trigger" href="#modal2">
-                  <div class="card white darken-1 hoverable">
-                    <div class="card-content grey-text">
-                      <span class="card-title">Card Title</span>
-                      <div class="row">
-                        <div class="col s4">
-                          <div class="card-image materialboxed">
-                            <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
-                          </div>
-                        </div>
-                        <div class="col s7">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                        <div class="col s1" style="margin-top: 15px">
-                          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                <a class="modal-trigger" href="#modal2">
-                  <div class="card white darken-1 hoverable">
-                    <div class="card-content grey-text">
-                      <span class="card-title">Card Title</span>
-                      <div class="row">
-                        <div class="col s4">
-                          <div class="card-image">
-                            <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
-                          </div>
-                        </div>
-                        <div class="col s7">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                        <div class="col s1" style="margin-top: 15px">
-                          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col s12">
-                  <div class="card white darken-1 hoverable">
-                  <a class="modal-trigger" href="#modal2">
-                    <div class="card-content grey-text">
-                      <span class="card-title">Card Title</span>
-                      <div class="row">
-                        <div class="col s4">
-                          <div class="card-image">
-                            <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
-                          </div>
-                        </div>
-                        <div class="col s7">
-                          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                        </div>
-                        <div class="col s1" style="margin-top: 15px">
-                          <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                  </div>
-                </div>
-              </div>
               <!-- End Activity ================================================== -->
             </div>
-
             <!-- END DAY 2 ================================================== -->
 
           </div>

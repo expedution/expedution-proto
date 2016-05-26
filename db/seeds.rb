@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'open-uri'
+
 d1 = Date.new(2017,01,04)
 d2 = Date.new(2017,11,10)
 
@@ -34,4 +37,15 @@ Expedition.create!({
   location: "Silicon Valley",
   user: User.find(1),
   })
+
+
+
+# response = open("https://angel.co/companies")
+# doc = Nokogiri::HTML(response, nil, 'utf-8')
+# doc.css('.itemName').each do |element|
+#   name = element.search('a').inner_text
+#   resource = Resource.create!(name: name)
+# end
+
+
 
