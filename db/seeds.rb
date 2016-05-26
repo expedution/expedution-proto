@@ -58,7 +58,7 @@ e.save
 
 c = Ressource.new({
   name: "Visited company background",
-  category: "Website"
+  category: "Website",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
   url: "www.spacex.com",
   })
