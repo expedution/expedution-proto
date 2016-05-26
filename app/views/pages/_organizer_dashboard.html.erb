@@ -9,7 +9,7 @@
             <% if expedition.photo.url == nil %>
               <img src="http://placehold.it/500">
             <% else %>
-              <%= image_tag @expedition.photo.url %>
+              <%= image_tag expedition.photo.url %>
             <% end %>
             <div class="appearing-btn">
               <%= link_to expedition_path(expedition) do %>
