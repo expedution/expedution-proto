@@ -23,7 +23,20 @@
               <li>Company: <%= @user.company %></li>
             </ul>
             <% if policy(@user).update? %>
-              <div class="text-center"><%= link_to "Edit profile", edit_user_path(current_user), class: "btn" %></div>
+              <!-- Modal Trigger -->
+
+              <div class="text-center"><%= link_to "Edit profile", "#modal1", class: "modal-trigger waves-effect waves-light btn" %></div>
+              <!--<div class="text-center"><%#= link_to "Edit profile", edit_user_path(current_user), class: "btn" %></div>-->
+
+              <div id="modal1" class="modal modal-fixed-footer">
+                <div class="modal-content">
+                  <h4>Edit your profil</h4>
+                  <%= render 'users/edit' %>
+                </div>
+                <div class="modal-footer">
+                  <%= link_to 'submit', "", :onclick => "$('#edit_account').submit()", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
+                </div>
+              </div>
             <% end %>
           </div>
         </div>
@@ -42,3 +55,4 @@
 </div>
 
 <%= render 'shared/lateral_navbar' %>
+

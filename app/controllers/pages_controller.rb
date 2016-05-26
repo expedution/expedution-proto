@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
 
   def home
+    find_user
   end
 
   def dashboard
