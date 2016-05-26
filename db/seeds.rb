@@ -50,7 +50,7 @@ e = Activity.new({
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
   starts_on: h1,
   ends_on: h2,
-  adress: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+  address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
   })
 e.day = d
 e.save
