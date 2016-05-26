@@ -4,12 +4,12 @@
     <div class="">
       <div class="">
         <div class="lex-banner" style='background: url(
-          <% if current_user.photo.url == nil %>
+          <% if @expedition.photo.url == nil %>
             <%= "https://unsplash.it/900/201" %>
           <% else %>
-            <%= image_tag @expedition.photo %>
+            <%= @expedition.photo %>
           <% end %>
-        ')>
+        )'>
         <h1 class="expedition-title"><%= @expedition.title %></h1>
         <p class="expedition-participant-number">(x) participants confirmed</p>
       </div>
