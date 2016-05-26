@@ -465,6 +465,26 @@
   text-decoration: underline;
 }
 
+.participant-invite {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  height: 25px;
+// same as add participant
+  border-radius: 3px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  width: 150px;
+  margin: 0px;
+  text-align: center;
+}
+
+.participant-invite:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
 .add-participant {
   border-radius: 5px;
   border: solid 1px #1AAFD0;
@@ -498,6 +518,8 @@
   transition: background-color 0.3s ease;
 }
 
+
+//
 
 
 
