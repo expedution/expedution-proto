@@ -1,6 +1,6 @@
 class ExpeditionsController < ApplicationController
 
-  before_action :find_expedition, only: [:show, :create, :edit, :update, :destroy]
+  before_action :find_expedition, only: [:show, :edit, :update, :destroy]
 
 
   def index
@@ -14,6 +14,7 @@ class ExpeditionsController < ApplicationController
 
   def create
     @expedition = Expedition.new(expedition_params)
+    @expedition.user = current_user
     authorize @expedition
     if @expedition.save
       redirect_to expedition_path(@expedition)
