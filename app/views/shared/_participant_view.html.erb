@@ -20,6 +20,7 @@
     <!-- Days
     ================================================== -->
 
+
         <div class="day">
           <div class="col s12 m1 l1 pull-l1 white z-depth-1" style="border-radius: 5px;">
             <div class="collection" style="margin-right: -11px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
@@ -29,6 +30,7 @@
             </div>
           </div>
         </div>
+
 
 
     <!-- Activities
@@ -48,10 +50,9 @@
             <div class="expedition-description">
               <h5><%= @expedition.title %></h5>
               <p class="padded-extra-small">
-              <%= @description.description %>
+              <%= @expedition.description %>
               </p>
             </div>
-
             <!-- Map ================================================== -->
 
             <div id="map" style="width: auto; height: 200px; margin-right: -11px; margin-left: -11px; "></div>
@@ -59,7 +60,13 @@
             <!-- Day 1 ================================================== -->
 
             <div class="day" id="day1">
-              <h5 class="day-title padded-extra-small">Day 1 arrival in San Francisco</h5>
+              <h5 class="day-title padded-extra-small">
+              <% if @days_expedition == nil %>
+                <%= "the day has no title" %>
+              <% else %>
+                <%= @days_expedition.title %>
+              <% end %>
+              </h5>
               <hr>
               <!-- FLIGHT ================================================== -->
               <div class="row padded-extra-small">
@@ -215,7 +222,7 @@
               <div class="row">
                 <div class="col s12">
                 <a class="modal-trigger" href="#modal2">
-                  <div class="card white darken-1 hoverable">
+                  <div class="card white darken-1 hoverable z-depth-0">
                     <div class="card-content grey-text">
                       <span class="card-title">Card Title</span>
                       <div class="row">
@@ -239,7 +246,7 @@
               <div class="row">
                 <div class="col s12">
                 <a class="modal-trigger" href="#modal2">
-                  <div class="card white darken-1 hoverable">
+                  <div class="card white darken-1 hoverable z-depth-0">
                     <div class="card-content grey-text">
                       <span class="card-title">Card Title</span>
                       <div class="row">
@@ -413,7 +420,7 @@
                       <div class="row">
                         <div class="col s12">
                         <a class="modal-trigger" href="#modal2">
-                          <div class="card white darken-1 hoverable">
+                          <div class="card white darken-1 hoverable z-depth-0">
                             <div class="card-content grey-text">
                               <span class="card-title">Card Title</span>
                               <div class="row">

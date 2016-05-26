@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :expeditions
+  resources :days
+
 
   get 'dashboard' => 'pages#dashboard'
   # The priority is based upon order of creation: first created -> highest priority.
