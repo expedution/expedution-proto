@@ -1,6 +1,19 @@
 <%= render 'shared/lateral_navbar' %>
 
-<div class="wrapper-mini style1 padded text-center">
+
+<div class="navbar-fixed" style="margin-left: 60px;">
+  <nav>
+    <div class="nav-wrapper" style="margin-right: 60px; background-color: #00405D">
+      <p class="brand-logo center">Dashboard</p>
+      <ul class="right hide-on-med-and-down">
+        <% if policy(Expedition.new).create? %>
+        <li><%= link_to "Create Expedition", new_expedition_path, class: "waves-effect waves-light btn" %></li>
+        <% end %>
+      </ul>
+    </div>
+  </nav>
+</div>
+
 
 <!--   <div class="top-right-corner-btn">
     <div class="btn-floating">
@@ -15,26 +28,7 @@
     </div>
   </div> -->
 
-  <ul class="list-unstyled">
-    <li>
-      <%= link_to user_path(current_user) do %>
-        <% if current_user.photo.url == nil %>
-          <img src="http://placehold.it/100" class="avatar-xl" data-toggle="tooltip" data-placement="right" title="View your profile">
-        <% else %>
-          <%= image_tag @user.photo.url, class: "avatar-xl", "data-toggle": "tooltip", "data-placement": "right", title: "Tooltip on right" %>
-        <% end %>
-      <% end %>
-    </li>
-    <li>
-      <h5>Welcome <%= @user.first_name %> <%= @user.last_name %> !</h5>
-    </li>
-    <li>
-      <% if policy(Expedition.new).create? %>
-        <div class="text-center"><%= link_to "Create Expedition", new_expedition_path, class: "btn btn-success" %></div>
-      <% end %>
-    </li>
-  </ul>
-</div>
+
 
 <% if current_user.organiser %>
   <%= render 'pages/organizer_dashboard' %>

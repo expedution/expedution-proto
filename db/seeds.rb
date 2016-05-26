@@ -71,15 +71,7 @@ c = Ressource.new({
 c.activity = e
 c.save
 
-Expedition.create!({
-  title: "Google",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-  theme: "Tech innovations",
-  starts_on: d1,
-  ends_on: d2,
-  location: "Silicon Valley",
-  user: User.find(1),
-  })
+
 
 
 
