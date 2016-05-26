@@ -1,50 +1,65 @@
 <!-- ORGANIZER DASHBOARD -->
-
 <div class="container top-padded">
-  <% @expeditions.reverse_each do |expedition| %>
-    <div class="row">
-      <div class="col s12">
-        <%= link_to expedition_path(expedition) do %>
-          <div class="card my_card small hoverable">
-            <div class="card-image">
+<% @expeditions.each do |expedition| %>
+  <div class="row">
+    <div class="col s12">
+    <a class="modal-trigger" href="#modal2">
+      <div class="card white darken-1 hoverable z-depth-0">
+        <div class="card-content grey-text">
+          <span class="card-title"><%= expedition.title %></span>
+          <div class="row">
+            <div class="col s4">
+              <div class="card-image">
               <% if expedition.photo.url == nil %>
-                <img src="http://placehold.it/500">
+                <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
               <% else %>
                 <%= image_tag expedition.photo.url %>
               <% end %>
-              <div class="appearing-btn">
-                <!-- BOUTON EDIT EXPEDITION -->
-                <%= link_to "#edit-exp-modal-#{expedition.id}", class: "modal-trigger waves-effect waves-light" do %>
-                  <div class="btn-floating blue">
-                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-                  </div>
-                <% end %>
-
-                <!-- BOUTON DELETE EXPEDITION -->
-                <%= link_to expedition_path(expedition), method: :delete do %>
-                  <div class="btn-floating red">
-                    <i class="fa fa-times" aria-hidden="true"></i>
-                  </div>
-                <% end %>
               </div>
-              <%= render 'expeditions/edit', expedition: expedition %>
-              <span class="card-title"><%= expedition.title %></span>
             </div>
-            <div class="card-content">
+            <div class="col s7">
               <p><%= expedition.description %></p>
-              <p>Capacity : <%= expedition.capacity %></p>
-              <p>Theme : <%= expedition.theme %></p>
-              <p>Programmed from <%= expedition.starts_on %>, to <%= expedition.ends_on %></p>
+              <div style="position: relative; height: 70px;">
+                <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 20px; top:20px;">
+                  <a class="btn-floating btn-large red">
+                    <i class="material-icons">menu</i>
+                  </a>
+                  <ul>
+                    <li>
+                      <%= link_to "#edit-exp-modal-#{expedition.id}", class: "modal-trigger btn-floating red" do %>
+                      <i class="material-icons">insert_chart</i>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to expedition_path(expedition), class: "btn-floating yellow darken1", method: :delete do %>
+                      <i class="material-icons">format_quote</i>
+                      <% end %>
+                    </li>
+                  </ul>
+                  <%= render 'expeditions/edit', expedition: expedition %>
+                </div>
+              </div>
             </div>
-            <!--<div class="card-action">
-              <a href="#">This is a link</a>
-            </div> -->
+            <div class="col s1" style="margin-top: 15px">
+              <i class="fa fa-chevron-right" aria-hidden="true"></i>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
+    </a>
     </div>
+  </div>
+  <hr>
   <% end %>
 </div>
+
+
+
+
+
+
+
+
 
 <script>
   $(function() {
