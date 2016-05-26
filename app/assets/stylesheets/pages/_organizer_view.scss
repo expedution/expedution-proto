@@ -6,13 +6,44 @@
 }
 
 .lex-banner {
+  position: relative;
   background-size: cover !important;
   height: 200px;
+}
+
+.lex-banner:hover {
+  .expedition-title {
+    background-color: rgba(215,215,215,0.5);
+    transition: background-color 1s ease;
+  }
+}
+
+.expedition-title {
+  position: absolute;
+  left: 17px;
+  top: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 6px;
+  color: white;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: rgba(215,215,215,0.3);
+}
+
+.expedition-participant-number {
+  position: absolute;
+  left: 22px;
+  top: 50px;
+  color: white;
+  font-size: 12px;
+  font-style: italic;
 }
 
 .lex-days {
   border-left: 1px solid #D3D3D3;
   border-right: 1px solid #D3D3D3;
+  min-height: 1000px;
 }
 
 // LEX DAYS SUB SECTION
@@ -20,7 +51,8 @@
 .day-box {
   position: relative;
   border-bottom: 1px solid #D3D3D3;
-  padding-left: 5px;
+  padding-left: 10px;
+  margin-bottom: 5px;
 }
 
 .day-box:hover {
@@ -34,10 +66,11 @@
 .day-box-chevron {
   position: absolute;
   right: 5px;
-  top: 5px;
+  top: 0px;
   font-weight: bold;
   font-size: 40px;
   color: #D3D3D3;
+  line-height: 50px;
 }
 
 .day-box-text p {
@@ -49,6 +82,18 @@
   margin-left: 10px;
 }
 
+.day-number {
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.day-title {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-bottom: 5px;
+  margin-top: 0px;
+  line-height: 20px;
+}
 
 
 // LEX ACTIVITIES SUB-SECTION
@@ -56,10 +101,15 @@
 .lex-activities {
 }
 
+.activity-box-section {
+  border-bottom: 1px solid #D3D3D3;
+}
+
 .activity-box {
   position: relative;
   padding-left: 20px;
   padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 .activity-box:hover {
@@ -71,6 +121,32 @@
     opacity: 1;
     transition: opacity 0.3s ease;
   }
+  .rb-edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .rb-delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .add-resource {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .resource-box {
+    box-shadow: 0 0 2em #D3D3D3;
+    transition: box-shadow 1s ease;
+  }
+}
+
+.edit-logo:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+.delete-logo:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
 }
 
 .edit-logo {
@@ -93,6 +169,91 @@
   height: 25px;
   color: blue;
   opacity: 0;
+}
+
+.rb-edit-logo {
+  position: absolute;
+  top: 30px;
+  right: -28px;
+  background-size: cover !important;
+  width: 20px;
+  height: 20px;
+  color: blue;
+  opacity: 0;
+}
+
+.rb-delete-logo {
+  position: absolute;
+  top: 3px;
+  right: -28px;
+  background-size: cover !important;
+  width: 20px;
+  height: 20px;
+  color: blue;
+  opacity: 0;
+}
+
+
+.add-activity {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 120px;
+  margin-left: 10px;
+}
+
+.add-activity:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+.activity-header {
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding-left: 20px;
+}
+
+.activity-day-header {
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  width: 35px;
+  border-right: solid 1px #D3D3D3;
+}
+
+.activity-day-header p {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 12px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.add-resource {
+  position: absolute;
+  bottom: 0px;
+  right: 5px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 130px;
+  margin-left: 10px;
+  opacity: 0;
+}
+
+.add-resource:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
 }
 
 .activity-icon {
@@ -174,12 +335,9 @@
   position: relative;
   padding-left: 80px;
   height: 70px;
-  margin-bottom: 10px;
-}
-
-.resource-box:hover {
-  box-shadow: 0 0 2em #D3D3D3;
-  transition: box-shadow 0.3s ease;
+  margin-bottom: 0px;
+  border: solid 1px #DCDCDC;
+  border-radius: 3px;
 }
 
 .resource-photo {
@@ -190,6 +348,17 @@
   height: 70px;
 }
 
+.resource-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0px;
+}
+
+.resource-url {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #808080;
+}
 
 // RIGHT SIDEBAR SCSS
 
@@ -218,7 +387,6 @@
   margin-bottom: 5px;
 }
 
-
 .tab-participants {
   color: #1AAFD0;
   border-bottom: 2px solid #1AAFD0;
@@ -229,4 +397,107 @@
   color: #C0C0C0;
   height: 35px;
 }
+
+.participant-box {
+  position: relative;
+  height: 65px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.participant-box:hover {
+  box-shadow: 0 0 2em #D3D3D3;
+  transition: box-shadow 0.3s ease;
+  .edit-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .delete-logo {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+  .participant-details {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+  }
+}
+
+.user-photo {
+  position: absolute;
+  background-size: cover !important;
+  left: 5px;
+  width: 55px;
+  height: 55px;
+}
+
+.content-participant {
+  position: absolute;
+  left: 90px;
+}
+
+.participant-name {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.participant-job {
+  margin-bottom: 0px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+.participant-name {
+  margin-bottom: 0px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.participant-details {
+  margin-bottom: 0px;
+  color: #1AAFD0;
+  font-size: 14px;
+  opacity: 0
+}
+
+.participant-details:hover {
+  text-decoration: underline;
+}
+
+.add-participant {
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.add-participant:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+
+// BUTTON
+
+.custom-btn {
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  width: 110px;
+  margin-left: 10px;
+}
+
+.custom-btn:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+
+
 

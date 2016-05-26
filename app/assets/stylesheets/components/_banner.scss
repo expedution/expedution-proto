@@ -19,3 +19,16 @@
   color: rgba(255, 255, 255, 0.7);
   margin-bottom: 20px;
 }
+
+.banner-small {
+  color: white;
+  text-align: center;
+  height: 20vh;
+  /* if you have a 70px navbar => height: calc(100vh - 70px); */
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: -11px;
+  margin-left: -11px;
+}

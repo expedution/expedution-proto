@@ -1,5 +1,10 @@
-d1 = Date.new(2017,01,04)
-d2 = Date.new(2017,11,10)
+d0 = Date.new(2017,01,03)
+
+d1 = Date.new(2017,01,03)
+d2 = Date.new(2017,02,07)
+
+h1 = DateTime.new(2017,01,03, 13, 30, 0)
+h2 = DateTime.new(2017,01,03, 16, 0, 0)
 
 b = User.create({
     email: "boris@lewagon.org",
@@ -24,6 +29,32 @@ a = Expedition.new({
   })
 a.user = b
 a.save
+
+d = Day.new({
+  position: 1,
+  date: d0,
+  })
+d.expedition = a
+d.save
+
+e = Activity.new({
+  title: "Space X meeting with innovation team",
+  category: "Meeting",
+  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+  starts_on: h1,
+  ends_on: h2,
+  adress: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+  })
+e.day = d
+e.save
+
+c = Ressource.new({
+  name: "Visited company background",
+  description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
+  url: "www.spacex.com",
+  })
+c.activity = e
+c.save
 
 Expedition.create!({
   title: "Google",
