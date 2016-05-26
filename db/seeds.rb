@@ -40,6 +40,7 @@ a.save
 d = Day.new({
   position: 1,
   date: d0,
+  title: "En route pour L.A."
   })
 d.expedition = a
 d.save
@@ -50,13 +51,14 @@ e = Activity.new({
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
   starts_on: h1,
   ends_on: h2,
-  adress: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+  address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
   })
 e.day = d
 e.save
 
 c = Ressource.new({
   name: "Visited company background",
+  category: "Website"
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
   url: "www.spacex.com",
   })
