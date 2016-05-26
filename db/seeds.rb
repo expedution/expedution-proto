@@ -1,6 +1,13 @@
 require 'nokogiri'
 require 'open-uri'
 
+Ressource.delete_all
+Activity.delete_all
+Day.delete_all
+Expedition.delete_all
+User.delete_all
+
+
 d1 = Date.new(2017,01,04)
 d2 = Date.new(2017,11,10)
 
@@ -11,7 +18,6 @@ d2 = Date.new(2017,02,07)
 
 h1 = DateTime.new(2017,01,03, 13, 30, 0)
 h2 = DateTime.new(2017,01,03, 16, 0, 0)
-
 
 b = User.create({
     email: "boris@lewagon.org",
@@ -58,7 +64,7 @@ e.save
 
 c = Ressource.new({
   name: "Visited company background",
-  category: "Website"
+  category: "Website",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
   url: "www.spacex.com",
   })

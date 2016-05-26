@@ -4,4 +4,7 @@ class Activity < ActiveRecord::Base
   has_many :feedbacks
 
   mount_uploader :photo, PhotoUploader
+
+  ACTIVITY_CATEGORY = ["Flight", "Hotel", "Transportation", "Restaurant", "Meeting"]
+
 end
