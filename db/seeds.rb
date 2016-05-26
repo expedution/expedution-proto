@@ -40,6 +40,7 @@ a.save
 d = Day.new({
   position: 1,
   date: d0,
+  title: "En route pour L.A."
   })
 d.expedition = a
 d.save
@@ -57,6 +58,7 @@ e.save
 
 c = Ressource.new({
   name: "Visited company background",
+  category: "Website"
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
   url: "www.spacex.com",
   })
