@@ -123,6 +123,7 @@
         </div>
       </div>
     </div>
+
     <div class="right-sidebar-content">
       <div class = "participant-box">
         <div class="user-photo avatar" style='background: url(
@@ -136,10 +137,20 @@
         <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
         <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
         <div class="content-participant">
-          <p class="participant-name"> Last_name</p>
-          <p class="participant-job">Job - Company</p>
-          <p class="participant-details">details</p>
+          <div>
+            <p class="participant-name"> Last_name</p>
+            <p class="participant-job">Job - Company</p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+          </div>
+          <!-- <p class="participant-details">details</p> -->
         </div>
+        <div class ="participant-invite">
+          <p>Invite participant</p>
+        </div>
+
       </div>
       <div class="row">
         <p class="add-participant">+ New Participant</p>
