@@ -17,6 +17,7 @@ class ExpeditionsController < ApplicationController
     @expedition.user = current_user
     authorize @expedition
     if @expedition.save
+      UserMailer.expeditioncreation(@expedition.user).deliver_now
       redirect_to expedition_path(@expedition)
       # Créer un message d'alerte: Félicitations, votre LEX est crée #
     else
@@ -34,6 +35,15 @@ class ExpeditionsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    if @expedition.update(expedition_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+    authorize @expedition
   end
 
   # def destroy
