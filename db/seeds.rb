@@ -4,6 +4,7 @@ require 'open-uri'
 Ressource.delete_all
 Activity.delete_all
 Day.delete_all
+Participation.delete_all
 Expedition.delete_all
 User.delete_all
 
@@ -24,7 +25,7 @@ b = User.create({
     password: "lewagon",
     first_name: "Boris",
     last_name: "Paillard",
-    job: "Teal Leader",
+    job: "Team Leader",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -42,6 +43,8 @@ a = Expedition.new({
   })
 a.user = b
 a.save
+
+Participation.create(user: b, expedition: a)
 
 d = Day.new({
   position: 1,
@@ -71,15 +74,7 @@ c = Ressource.new({
 c.activity = e
 c.save
 
-Expedition.create!({
-  title: "Google",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-  theme: "Tech innovations",
-  starts_on: d1,
-  ends_on: d2,
-  location: "Silicon Valley",
-  user: User.find(1),
-  })
+
 
 
 

@@ -11,9 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20160526130125) do
-
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -87,9 +85,8 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.datetime "starts_on"
     t.integer  "capacity"
     t.string   "location"
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.boolean  "accepted",   default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "ressources", force: :cascade do |t|
@@ -107,7 +104,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false
-    t.string   "encrypted_password",     default: ""
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -127,6 +124,7 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.string   "phone"
     t.string   "diet"
     t.boolean  "organiser",              default: false
+    t.boolean  "accepted",               default: false
     t.string   "invitation_token"
     t.datetime "invitation_created_at"
     t.datetime "invitation_sent_at"
@@ -135,7 +133,6 @@ ActiveRecord::Schema.define(version: 20160526130125) do
     t.integer  "invited_by_id"
     t.string   "invited_by_type"
     t.integer  "invitations_count",      default: 0
-    t.boolean  "accepted",               default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

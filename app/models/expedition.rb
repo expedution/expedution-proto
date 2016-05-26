@@ -2,7 +2,7 @@ class Expedition < ActiveRecord::Base
   belongs_to :user
   has_many :days
   has_many :participations
-  has_many :participants, :class_name => "User", :through => :participations, :source => :users
+  has_many :participants, :class_name => "User", :through => :participations, source: :user
 
   validates :title, presence: true
   validates :description, presence: true
