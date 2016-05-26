@@ -1,0 +1,30 @@
+<% @expedition.participants.each do |participant| %>
+
+      <div class = "participant-box">
+        <div class="user-photo avatar" style='background: url(
+          <% if current_user.photo.url == nil %>
+            <%= "https://unsplash.it/50/50" %>
+          <% else %>
+            <%= image_tag @expedition.photo %>
+          <% end %>
+          ')>
+        </div>
+        <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+        <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+        <div class="content-participant">
+          <div>
+            <p class="participant-name"><%= participant.first_name %> <%= participant.last_name %></p>
+            <p class="participant-job"><%= participant.job %></p>
+          </div>
+          <div>
+            <i class="fa fa-phone"></i>
+            <i class="fa fa-envelope"></i>
+          </div>
+          <!-- <p class="participant-details">details</p> -->
+        </div>
+        <div class ="participant-invite">
+          <p>Invite participant</p>
+        </div>
+      </div>
+
+<% end %>

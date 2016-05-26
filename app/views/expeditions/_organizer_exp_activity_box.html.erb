@@ -1,7 +1,7 @@
 
 <% @expedition.days.each do |day| %>
   <% day.activities.each do |activity| %>
-    <div id="<%= activity.day %>" class="activity-box hoverable">
+    <div id="day_id_<%= activity.day.id %>" class="activity-box hoverable">
       <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
       <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
       <p class="add-resource">+ New Resource</p>
