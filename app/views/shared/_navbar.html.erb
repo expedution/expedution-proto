@@ -7,40 +7,14 @@
   <!-- Right Navigation -->
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
-
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
-
-        <ul class="list-inline list-unstyled">
-          <li class="navbar-wagon-link">
-            <%= link_to "Profile", user_path(current_user) %>
-
-            <!-- ********* USER PHOTO ******
-
-            <%#= link_to user_path(current_user) do %>
-              <%# if current_user.photo.url == nil %>
-                <img src="http://placehold.it/100" class="avatar-xl" data-toggle="tooltip" data-placement="right" title="View your profile">
-              <%# else %>
-                <%#= image_tag @user.photo.url, class: "avatar", "data-toggle": "tooltip", "data-placement": "right", title: "Tooltip on right" %>
-              <%# end %>
-            <%# end %> -->
-          </li>
-          <li class="navbar-wagon-link">
-            <%= link_to "Dashboard", dashboard_path %>
-          </li>
-          <li class="navbar-wagon-link">
-            <%= link_to destroy_user_session_path, method: :delete do %>
-              <i class="fa fa-sign-out"></i>  <%= t ".sign_out", default: "Log out" %>
-            <% end %>
-          </li>
+        <ul class="list-inline list-unstyled hidden-xs hidden-sm">
+          <%= render 'shared/navbar_links' %>
         </ul>
-
-
     <% else %>
-
       <!-- Login text link -->
       <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
     <% end %>
 
     <!-- Button (call-to-action) -->
@@ -52,9 +26,7 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <%= render 'shared/navbar_links' %>
       </ul>
     </div>
   </div>

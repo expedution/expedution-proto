@@ -1,7 +1,7 @@
 <!-- ORGANIZER DASHBOARD -->
 
 <div class="container top-padded">
-  <% @expeditions.each do |expedition| %>
+  <% @expeditions.reverse_each do |expedition| %>
     <div class="row">
       <div class="col s12">
         <%= link_to expedition_path(expedition) do %>
@@ -32,6 +32,9 @@
             </div>
             <div class="card-content">
               <p><%= expedition.description %></p>
+              <p>Capacity : <%= expedition.capacity %></p>
+              <p>Theme : <%= expedition.theme %></p>
+              <p>Programmed from <%= expedition.starts_on %>, to <%= expedition.ends_on %></p>
             </div>
             <!--<div class="card-action">
               <a href="#">This is a link</a>

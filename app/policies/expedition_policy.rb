@@ -7,7 +7,7 @@ class ExpeditionPolicy < ApplicationPolicy
   end
 
   def create?
-    user_is_organiser
+    user_is_organiser?
   end
 
   def show?
@@ -15,11 +15,11 @@ class ExpeditionPolicy < ApplicationPolicy
   end
 
   def update?
-    user_is_organiser
+    user_is_organiser?
   end
 
   def destroy?
-    user_is_organiser
+    user_is_organiser?
   end
 
   private
