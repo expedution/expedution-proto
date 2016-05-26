@@ -33,6 +33,15 @@ class ExpeditionsController < ApplicationController
   def edit
   end
 
+  def update
+    if @expedition.update(expedition_params)
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
+    authorize @expedition
+  end
+
   # def destroy
   #   find_expedition
   #   @expedition.destroy

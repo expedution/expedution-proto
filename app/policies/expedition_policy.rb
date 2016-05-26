@@ -7,11 +7,25 @@ class ExpeditionPolicy < ApplicationPolicy
   end
 
   def create?
-    user.organiser
+    user_is_organiser
   end
 
   def show?
     true
+  end
+
+  def update?
+    user_is_organiser
+  end
+
+  def destroy?
+    user_is_organiser
+  end
+
+  private
+
+  def user_is_organiser?
+    user.organiser
   end
 
 end

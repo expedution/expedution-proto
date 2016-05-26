@@ -13,17 +13,21 @@
                 <%= image_tag expedition.photo.url %>
               <% end %>
               <div class="appearing-btn">
-                <%= link_to edit_expedition_path(expedition) do %>
+                <!-- BOUTON EDIT EXPEDITION -->
+                <%= link_to "#edit-exp-modal-#{expedition.id}", class: "modal-trigger waves-effect waves-light" do %>
                   <div class="btn-floating blue">
-                      <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                   </div>
                 <% end %>
+
+                <!-- BOUTON DELETE EXPEDITION -->
                 <%= link_to expedition_path(expedition), method: :delete do %>
                   <div class="btn-floating red">
-                      <i class="fa fa-times" aria-hidden="true"></i>
+                    <i class="fa fa-times" aria-hidden="true"></i>
                   </div>
                 <% end %>
               </div>
+              <%= render 'expeditions/edit', expedition: expedition %>
               <span class="card-title"><%= expedition.title %></span>
             </div>
             <div class="card-content">
@@ -38,3 +42,9 @@
     </div>
   <% end %>
 </div>
+
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker();
+  });
+</script>
