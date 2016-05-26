@@ -14,6 +14,7 @@ class ExpeditionsController < ApplicationController
 
   def create
     @expedition = Expedition.new(expedition_params)
+    @expedition.user = current_user
     authorize @expedition
     if @expedition.save
       redirect_to expedition_path(@expedition)
