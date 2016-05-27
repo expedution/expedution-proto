@@ -5,7 +5,11 @@ Rails.application.routes.draw do
 
 
   resources :users
-  resources :expeditions
+  resources :expeditions do
+    resources :participations, only: [:create, :update, :destroy]
+    resources :activities, only: [:create, :update, :destroy]
+    resources :days, only: [:create, :update, :destroy]
+  end
   resources :days
 
 

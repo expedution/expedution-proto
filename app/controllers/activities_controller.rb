@@ -1,27 +1,18 @@
 class ActivitiesController < ApplicationController
 
-  def index
-    @activity = Activities.all
-  end
-
-  def show
-  end
-
-  def new
-    @activity = Activity.new
-    authorize @activity
-  end
-
   def create
-    @activity = Activity.new
-    @activity.day =
+    @activity = Activity.create(activity_params)
     authorize @activity
-  end
-
-  def edit
+    redirect_to expedition_path(@expedition)
   end
 
   def destroy
+  end
+
+  private
+
+  def activity_params
+    params.require(:activity).permit(:title, :day_id, :description, :category, :address, :starts_on, :ends_on, :photo, :photo_cache)
   end
 
 end

@@ -1,59 +1,36 @@
-# class ExpeditionsController < ApplicationController
+class ParticipationsController < ApplicationController
+  before_action :find_participation, only: [:update, :destroy]
+  before_action :find_expedition
 
-#   before_action :find_participation, only: [:show, :edit, :update, :destroy]
+  def create
+    @participation = @expedition.participations.new
+    # Check if user exist if not create it
+    @user = User.where(email: params[:participation][:email]).first_or_initialize do |user|
+      user.first_name = params[:participation][:first_name]
+      user.last_name = params[:participation][:last_name]
+      # Fake password for validation
+      user.password = Devise.friendly_token[0,20]
+    end
 
-#   def index
-#     @participations = Participation.all
-#   end
+    @user.save
+    # Set participation user_id
+    @participation.user = @user
+    if @participation.save
+      redirect_to expedition_path(@expedition)
+    else
+      render "expeditions/show"
+    end
+    authorize @participation
+  end
 
-#   def new
-#     @participation = Participation.new
-#     authorize @participation
-#   end
+  private
 
-#   def create
-#     @participation = Participation.new(participation_params)
-#     @participation.user = current_user
-#     authorize @participation
-#     if @participation.save
-#       User.invite!(:email => participation.user, :first_name => user.first_name, :last_name.last_name)
-#       redirect_to participation_path(@participation)
-#       # Créer un message d'alerte: Félicitations, votre LEX est crée #
-#     else
-#       render "participations/new"
-#     end
-#   end
+  def find_participation
+    @participation = Participation.find(params[:id])
+  end
 
+  def find_expedition
+    @expedition = Expedition.find(params[:expedition_id])
+  end
 
-#   # def show
-#   #   find_participation
-#   #   authorize @participation
-#   #   @days = Day.all
-#   #   @participations = participation.all
-#   #   @days_participation = Day.find_by(participation_id: @participation.id)
-#   # end
-
-#   # def edit
-#   # end
-
-#   # def update
-#   #   if @participation.update(participation_params)
-#   #     redirect_to dashboard_path
-#   #   else
-#   #     render :edit
-#   #   end
-#   #   authorize @expedition
-#   # end
-
-
-#   private
-
-#   def expedition_params
-#     params.require(:particitaton).permit(:title, :location, :description, :theme, :capacity, :starts_on, :ends_on, :photo, :photo_cache)
-#   end
-
-#   def find_expedition
-#     @expedition = Expedition.find(params[:id])
-#   end
-
-# end
+end
