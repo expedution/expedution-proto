@@ -30,9 +30,9 @@
             <div class="activity-header">
               <div class="activity-day-header">
                 <p>Day</p>
-                <p>1</p>
+                <p class="day-index">1</p>
               </div>
-              <p>Day Title</p>
+              <p class="day-name">Day name</p>
 
               <%= link_to "#new-activity-modal-#{@expedition.id}", class: "modal-trigger" do %>
                 <p class="add-activity">+ New Activity</p>
@@ -81,14 +81,23 @@
 
 <%= content_for :after_js do %>
   <script>
+    $(function() {
+      $(".day-box").first().click();
+    });
+
     $('.day-box').click(function(){
       console.log($(this).data('day_id'));
       var day_id = $(this).data('day_id');
       var activities_day_id = "#activities_day_id_" + day_id;
+      var $day = $(activities_day_id);
 
-      console.log(activities_day_id);
       $(".day-activities").addClass("hidden");
-      $(activities_day_id).removeClass("hidden", "active");
+      $day.removeClass("hidden", "active");
+
+      var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
+      var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
+      $(".lex-activities .day-name").html(day_title);
+      $(".lex-activities .activity-day-header .day-index").html(day_index);
     })
   </script>
 <% end %>

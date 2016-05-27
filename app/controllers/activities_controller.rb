@@ -2,7 +2,7 @@ class ActivitiesController < ApplicationController
 
   def create
     @activity = Activity.create(activity_params)
-    authorize @activity
+    # authorize @activity
     redirect_to expedition_path(@expedition)
   end
 
