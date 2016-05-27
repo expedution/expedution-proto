@@ -31,7 +31,12 @@
                 <p>1</p>
               </div>
               <p>Day Title</p>
-              <p class="add-activity">+ New Activity</p>
+
+              <%= link_to "#new-activity-modal-#{@expedition.id}", class: "modal-trigger" do %>
+                <p class="add-activity">+ New Activity</p>
+              <% end %>
+              <%= render 'activities/new' %>
+
             </div>
             <div class="activity-box-section">
 
