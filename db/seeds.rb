@@ -8,17 +8,8 @@ Participation.delete_all
 Expedition.delete_all
 User.delete_all
 
-
-d1 = Date.new(2017,01,04)
-d2 = Date.new(2017,11,10)
-
-d0 = Date.new(2017,01,03)
-
-d1 = Date.new(2017,01,03)
-d2 = Date.new(2017,02,07)
-
-h1 = DateTime.new(2017,01,03, 13, 30, 0)
-h2 = DateTime.new(2017,01,03, 16, 0, 0)
+t1 = Time.new(2017, 01, 03, 9, 30, 00)
+t2 = Time.new(2017, 01, 03, 11, 00, 00)
 
 b = User.create({
     email: "boris@lewagon.org",
@@ -37,8 +28,8 @@ a = Expedition.new({
   title: "L'Oreal",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
   theme: "Tech innovations",
-  starts_on: d1,
-  ends_on: d2,
+  starts_on: Date.new(2017,01,03),
+  ends_on: Date.new(2017,02,07),
   location: "New York City"
   })
 a.user = b
@@ -48,7 +39,7 @@ Participation.create(user: b, expedition: a)
 
 d = Day.new({
   position: 1,
-  date: d0,
+  date: Date.new(2017,01,03),
   title: "En route pour L.A."
   })
 d.expedition = a
@@ -68,8 +59,8 @@ e = Activity.new({
   title: "Space X meeting with innovation team",
   category: "Meeting",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
-  starts_on: h1,
-  ends_on: h2,
+  starts_on: t1,
+  ends_on: t2,
   address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
   })
 e.day = d
@@ -80,8 +71,8 @@ h = Activity.new({
   title: "Let's go",
   category: "Flight",
   description: "AF N° ...",
-  starts_on: h1,
-  ends_on: h2,
+  starts_on: t1,
+  ends_on: t2,
   address: "Airport CDG"
   })
 h.day = d
@@ -92,8 +83,8 @@ i = Activity.new({
   title: "Go to next meeting",
   category: "Transportation",
   description: "jkhkjhkjhjk",
-  starts_on: h1,
-  ends_on: h2,
+  starts_on: t1,
+  ends_on: t2,
   address: "Silicon Valley"
   })
 i.day = g

@@ -3,9 +3,11 @@ class DaysController < ApplicationController
 
   def create
     @day = Day.new(day_params)
-    @day.expedition = @expedition.id
+    @expedition = Expedition.find(params[:expedition_id])
+    @day.expedition = @expedition
     @day.save
     authorize @day
+    redirect_to expedition_path(@expedition)
   end
 
   def update

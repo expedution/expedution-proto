@@ -25,6 +25,7 @@
             <%= render 'days/new' %>
           </div>
         </div>
+        </div>
         <div class="col-xs-8">
           <div class="lex-activities">
             <div class="activity-header">
@@ -50,6 +51,8 @@
       </div>
     </div>
   </div>
+
+
 
   <div class="right-sidebar">
     <div class="right-sidebar-tabs">
@@ -87,6 +90,7 @@
       </div>
     </div>
   </div>
+</div>
 
 <%= @expedition.participations.each do |participation| %>
   <%= render 'users/edit', user: participation.user %>
@@ -109,8 +113,11 @@
 
       var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
       var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
-      $(".lex-activities .day-name").html(day_title);
+      var day_label = "day"
+      var day_concat = day_label.concat(day_title)
+      $(".lex-activities .day-name").html(day_concat);
       $(".lex-activities .activity-day-header .day-index").html(day_index);
+      debugger;
     })
   </script>
 <% end %>
