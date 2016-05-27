@@ -54,6 +54,16 @@ d = Day.new({
 d.expedition = a
 d.save
 
+g = Day.new({
+  position: 2,
+  date: Date.new(2017,01,04),
+  title: "En route pour NYC"
+  })
+g.expedition = a
+g.save
+
+
+
 e = Activity.new({
   title: "Space X meeting with innovation team",
   category: "Meeting",
@@ -64,6 +74,32 @@ e = Activity.new({
   })
 e.day = d
 e.save
+
+
+h = Activity.new({
+  title: "Let's go",
+  category: "Flight",
+  description: "AF N° ...",
+  starts_on: h1,
+  ends_on: h2,
+  address: "Airport CDG"
+  })
+h.day = d
+h.save
+
+
+i = Activity.new({
+  title: "Go to next meeting",
+  category: "Transportation",
+  description: "jkhkjhkjhjk",
+  starts_on: h1,
+  ends_on: h2,
+  address: "Silicon Valley"
+  })
+i.day = g
+i.save
+
+
 
 c = Ressource.new({
   name: "Visited company background",
