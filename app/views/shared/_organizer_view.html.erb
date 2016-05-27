@@ -66,3 +66,21 @@
       </div>
     </div>
   </div>
+
+
+<%= content_for :after_js do %>
+  <script>
+    $('.day-box').click(function(){
+      console.log($(this).data('day_id'));
+      var day_id = $(this).data('day_id');
+      var activities_day_id = "#activities_day_id_" + day_id;
+      console.log(activities_day_id);
+      $(activities_day_id).removeClass("hidden", "active");
+    })
+  </script>
+<% end %>
+
+
+
+
+

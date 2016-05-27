@@ -1,5 +1,5 @@
 <% @expedition.days.each do |day| %>
-  <div class="day-box">
+  <div data-day_id="<%= day.id %>" class="day-box">
     <div class="day-box-text">
       <p class="day-number">Day #</p>
       <p class="day-title"><%= day.title %> </p>
