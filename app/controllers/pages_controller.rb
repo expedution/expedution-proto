@@ -1,12 +1,11 @@
 class PagesController < ApplicationController
-  before_action :find_user, only: [:dashboard]
+  before_action :find_user, only: [:home, :dashboard]
   skip_before_action :authenticate_user!, only: :home
   skip_after_action :verify_authorized, only: :home
   skip_after_action :verify_authorized, only: :dashboard
 
 
   def home
-    find_user
   end
 
   def dashboard
