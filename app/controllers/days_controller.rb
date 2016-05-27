@@ -1,28 +1,23 @@
 class DaysController < ApplicationController
 
 
-  def index
-    @days = Day.all
-  end
-
-  def new
-    @day = Day.new
-    authorize @day
-  end
-
   def create
     @day = Day.new(day_params)
+    @day.expedition = @expedition.id
+    @day.save
     authorize @day
   end
 
-  def show
-    @days = Day.all
-  end
-
-  def edit
+  def update
   end
 
   def destroy
+  end
+
+  private
+
+  def day_params
+    params.require(:day).permit(:title, :position, :date)
   end
 
 end

@@ -19,8 +19,10 @@
           <div class="lex-days">
 
             <%= render 'expeditions/organizer_exp_day_box' %>
-
+            <%= link_to "#new-day-modal-#{@expedition.id}", class: "modal-trigger" do %>
             <p class="custom-btn">+ New Day</p>
+            <% end %>
+            <%= render 'days/new' %>
           </div>
         </div>
         <div class="col-xs-8">
