@@ -1,1 +1,5 @@
-<%= render 'shared/participant_view' %>
+<% if user.organiser %>
+  <%= render 'shared/organizer_view' %>
+<% else %>
+  <%= render 'shared/participant_view' %>
+<% end %>
