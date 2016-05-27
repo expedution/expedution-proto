@@ -1,5 +1,5 @@
-<%# if current_user.organiser %>
+<% if current_user.organiser %>
   <%= render 'shared/organizer_view' %>
-<%# else %>
-  <%#= render 'shared/participant_view' %>
-<%# end %>
+<% else %>
+  <%= render 'shared/participant_view' %>
+<% end %>
