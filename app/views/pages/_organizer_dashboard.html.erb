@@ -3,9 +3,9 @@
 <% @expeditions.each do |expedition| %>
   <div class="row">
     <div class="col s12">
-    <a class="modal-trigger" href="#modal2">
-      <div class="card white darken-1 hoverable z-depth-0">
-        <div class="card-content grey-text">
+    <%= link_to expedition_path(expedition), style: "text-decoration: none; color:black"  do %>
+      <div class="card white darken-1 hoverable z-depth-1">
+        <div class="card-content black-text">
           <span class="card-title"><%= expedition.title %></span>
           <div class="row">
             <div class="col s4">
@@ -20,19 +20,19 @@
             <div class="col s7">
               <p><%= expedition.description %></p>
               <div style="position: relative; height: 70px;">
-                <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: 20px; top:20px;">
+                <div class="fixed-action-btn horizontal click-to-toggle" style="position: absolute; right: -85px; top:40px;">
                   <a class="btn-floating btn-large red">
-                    <i class="material-icons">menu</i>
+                    <i class="large material-icons">mode_edit</i>
                   </a>
                   <ul>
                     <li>
-                      <%= link_to "#edit-exp-modal-#{expedition.id}", class: "modal-trigger btn-floating red" do %>
-                      <i class="material-icons">insert_chart</i>
+                      <%= link_to "#edit-exp-modal-#{expedition.id}", class: "modal-trigger btn-floating green" do %>
+                      <i class="material-icons">edit</i>
                       <% end %>
                     </li>
                     <li>
-                      <%= link_to expedition_path(expedition), class: "btn-floating yellow darken1", method: :delete do %>
-                      <i class="material-icons">format_quote</i>
+                      <%= link_to expedition_path(expedition), class: "btn-floating red darken1", method: :delete do %>
+                      <i class="material-icons">delete</i>
                       <% end %>
                     </li>
                   </ul>
@@ -40,13 +40,13 @@
                 </div>
               </div>
             </div>
-            <div class="col s1" style="margin-top: 15px">
+            <!-- <div class="col s1" style="margin-top: 40px">
               <i class="fa fa-chevron-right" aria-hidden="true"></i>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>
-    </a>
+      <% end %>
     </div>
   </div>
   <hr>

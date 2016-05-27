@@ -7,27 +7,12 @@
       <p class="brand-logo center">Dashboard</p>
       <ul class="right hide-on-med-and-down">
         <% if policy(Expedition.new).create? %>
-        <li><%= link_to "Create Expedition", new_expedition_path, class: "waves-effect waves-light btn" %></li>
+        <li><%= link_to "Create Expedition", new_expedition_path, class: "btn waves-effect waves-light" %></li>
         <% end %>
       </ul>
     </div>
   </nav>
 </div>
-
-
-<!--   <div class="top-right-corner-btn">
-    <div class="btn-floating">
-      <= link_to edit_user_path(current_user) do %>
-        <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-      < end %>
-    </div>
-    <div class="btn-floating">
-      <= link_to destroy_user_session_path, method: :delete do %>
-        <i class="fa fa-sign-out"></i>
-      < end %>
-    </div>
-  </div> -->
-
 
 
 <% if current_user.organiser %>
