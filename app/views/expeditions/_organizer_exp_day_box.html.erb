@@ -1,7 +1,7 @@
-<% @expedition.days.each do |day| %>
+<% @expedition.days.each_with_index do |day, index| %>
   <div data-day_id="<%= day.id %>" class="day-box">
     <div class="day-box-text">
-      <p class="day-number">Day #</p>
+      <p class="day-number"><%= index + 1 %></p>
       <p class="day-title"><%= day.title %> </p>
     </div>
     <div class="day-box-chevron">
