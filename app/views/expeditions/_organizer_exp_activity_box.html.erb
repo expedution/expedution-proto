@@ -1,6 +1,6 @@
 
 <% @expedition.days.each do |day| %>
-  <div id="activities_day_id_<%= day.id %>" data-day_id="<%= day.id %>" class="hidden">
+  <div id="activities_day_id_<%= day.id %>" data-day_id="<%= day.id %>" class="day-activities hidden">
     <% day.activities.each do |activity| %>
       <div class="activity-box hoverable">
         <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>

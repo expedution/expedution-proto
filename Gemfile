@@ -24,6 +24,7 @@ gem "pundit"
 gem 'carrierwave'
 gem 'materialize-sass'
 gem "letter_opener", group: :development
+gem 'bootstrap-timepicker-rails-addon', '~> 0.5.1'
 
 group :development, :test do
   gem 'binding_of_caller'

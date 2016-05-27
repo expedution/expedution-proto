@@ -20,25 +20,11 @@ $('a').click(function(){
 /////////////////   PIN BEHAVIOR   /////////////////////////////
 
 $(document).ready(function(){
+  if ($(".tabs-wrapper").length > 0) {
     $('.tabs-wrapper .row').pushpin({ top: $('.tabs-wrapper').offset().top });
-  });
+  }
+});
 
 
 /////////////////   GMAP   /////////////////////////////
 
-var myLatlng = new google.maps.LatLng(37.773972, -122.431297);
-
-var myOptions = {
-  zoom: 9,
-  center: myLatlng,
-  scrollwheel: false,
-  mapTypeId: google.maps.MapTypeId.ROADMAP,
-  styles: [] // TODO: replace [] by array from https://snazzymaps.com/
-};
-
-var map = new google.maps.Map(document.getElementById('map'), myOptions);
-var marker = new google.maps.Marker({
-  position: myLatlng,
-  map: map,
-  title: "You are here!"
-});
