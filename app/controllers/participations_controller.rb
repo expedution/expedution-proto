@@ -23,6 +23,13 @@ class ParticipationsController < ApplicationController
     authorize @participation
   end
 
+  def destroy
+    find_participation
+    @participation.destroy
+      redirect_to expedition_path(@expedition)
+    authorize @participation
+  end
+
   private
 
   def find_participation

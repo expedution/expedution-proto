@@ -10,6 +10,10 @@ class ParticipationPolicy < ApplicationPolicy
     user_is_organiser?
   end
 
+  def destroy?
+    user_is_organiser?
+  end
+
   private
 
   def user_is_organiser?
