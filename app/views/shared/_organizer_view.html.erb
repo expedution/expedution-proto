@@ -58,15 +58,25 @@
       </div>
     </div>
     <div class="right-sidebar-content">
-
-      <%= render 'expeditions/organizer_exp_participant_box' %>
-
+      <!-- COLLAPSIBLE MENU -->
       <div class="row">
-        <p class="add-participant">+ New Participant</p>
-        <%= link_to "New Participant", new_user_path %>
-        <%= render 'participations/new' %>
-
-
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header active"><i class="material-icons">view_list</i>View All</div>
+            <div class="collapsible-body">
+              <%= render 'participations/show' %>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">perm_identity</i>New Participant</div>
+            <div class="collapsible-body" style="padding: 5px;">
+              <%= render 'participations/new' %>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">done</i>Send All Invites</div>
+            <div class="collapsible-body"><p>You are going to send an invit to all the expedition participant. <%= link_to "Send", dashboard_path %></p></div>
+          </li>
       </div>
     </div>
   </div>

@@ -1,0 +1,22 @@
+<% @expedition.participants.each do |participant| %>
+  <div class="participant-card">
+    <div class="participant-photo">
+      <% if participant.photo.url.nil? %>
+        <img src="http://placehold.it/100" class="avatar-large">
+      <% else %>
+        <%= image_tag @user.photo.url, class: "avatar-large" %>
+      <% end %>
+    </div>
+    <div class="participant-content">
+      <p><%= participant.first_name %> <%= participant.last_name %></p>
+      <p><%= participant.job %></p>
+    </div>
+    <div class="link-top-r">
+      <%= image_tag 'edit-icon.png', class: "small-logo" %>
+      <%= image_tag 'delete-icon.png', class: "small-logo"%>
+    </div>
+    <div class="link-bottom-r">
+      <%= link_to "Send Invitation", dashboard_path, class: "participant-link" %>
+    </div>
+  </div>
+<% end %>

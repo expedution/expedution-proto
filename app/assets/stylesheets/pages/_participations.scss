@@ -1,0 +1,45 @@
+.participant-card {
+  position: relative;
+  height: 65px;
+  margin: 5px 0px;
+  padding: 2px;
+  border-bottom: 1px solid #D3D3D3;
+}
+
+.participant-photo {
+  position: absolute;
+  left: 10px;
+  min-width: 60px;
+  height: 61px;
+}
+
+.participant-content {
+  position: absolute;
+  top: 0px;
+  left: 70px;
+  min-width: 90px;
+
+  p {
+    padding: 0px;
+  }
+}
+
+.participant-link {
+  color: #1AAFD0;
+}
+
+.link-bottom-r {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+}
+
+.link-top-r {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+}
+
+.small-logo {
+  width: 20px;
+}
