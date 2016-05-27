@@ -8,11 +8,15 @@
       <% end %>
     </div>
     <div class="participation-content">
-      <p><%= participation.user.first_name %> <%= participation.user.last_name %></p>
+      <%= link_to user_path(participation.user) do %>
+        <p><%= participation.user.first_name %> <%= participation.user.last_name %></p>
+      <% end %>
       <p><%= participation.user.job %></p>
     </div>
     <div class="link-top-r">
-      <%= image_tag 'edit-icon.png', class: "small-logo" %>
+      <%= link_to "#modal#{participation.user.id}", class: "modal-trigger waves-effect waves-light" do %>
+        <%= image_tag 'edit-icon.png', class: "small-logo" %>
+      <% end %>
       <%= link_to expedition_participation_path(@expedition.id, participation.id), method: :delete do %>
         <%= image_tag 'delete-icon.png', class: "small-logo"%>
       <% end %>
@@ -22,3 +26,5 @@
     </div>
   </div>
 <% end %>
+
+

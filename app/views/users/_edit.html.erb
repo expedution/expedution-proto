@@ -1,7 +1,7 @@
 <div class="container">
   <div class="card-form">
-    <div id="modal1" class="modal modal-fixed-footer">
-      <%= simple_form_for(current_user) do |f| %>
+    <div id="#modal<%= user.id %>" class="modal modal-fixed-footer">
+      <%= simple_form_for(user) do |f| %>
         <div class="modal-content">
           <h4>Edit your profil</h4>
             <%= f.input :first_name, class: "form-control", placeholder: "First Name" %>
