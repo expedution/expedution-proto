@@ -96,7 +96,9 @@
 
       var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
       var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
-      $(".lex-activities .day-name").html(day_title);
+      var day_label = "day"
+      var day_concat = day_label.concat(day_title)
+      $(".lex-activities .day-name").html(day_concat);
       $(".lex-activities .activity-day-header .day-index").html(day_index);
     })
   </script>
