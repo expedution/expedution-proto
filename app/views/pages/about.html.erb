@@ -1,0 +1,151 @@
+<video autoplay  poster="http://i.imgur.com/Fhv7N23.png" id="bgvid" loop>
+  WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
+</video>
+
+ <!-- Navbar
+    ================================================== -->
+
+<%= render "shared/navbar" %>
+
+<div class="container">
+  <div class="row">
+    <div class="col s4 m4 l4 navigation-about">
+      <ul class="list-unstyled" style="padding-top:20px">
+      <li><span class="about"><a>about us</a></span></li>
+      <li><span class="founders"><a>founders</a></span></li>
+      </ul>
+    </div>
+    <div class="">
+      <div class="col s8 m8 l8">
+        <div class="about-box">
+          <h4>About us</h4>
+          <p>Founded in June of 2016 and based in Paris, France, Expedution is a management tool for educational business trips organisers who want to spend more time with their participants and less time organising their trips</p>
+          <p>Whether an innovation tour for your university, a learning expeditins for executives in the Silicon Valley, or a small trip for your startup, Expedution helps you to get rid of your spreadsheets, your shared document, calendars, emails, and to efficiently organise your trip by adding activities, flights, hotels, educational resources, and much more, but also to easily share beautifully crafted itineraries with your clients.</p>
+          <div class="row">
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m12">
+                  <div class="card white darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Card Title</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m12">
+                  <div class="card white darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Card Title</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m12">
+                  <div class="card white darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Card Title</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l6">
+              <div class="row">
+                <div class="col s12 m12">
+                  <div class="card white darken-1">
+                    <div class="card-content white-text">
+                      <span class="card-title">Card Title</span>
+                      <p>I am a very simple card. I am good at containing small bits of information.
+                      I am convenient because I require little markup to use effectively.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="founders-box hidden">
+          <h4>Founders</h4>
+          <p>Founded in June of 2016 and based in Paris, France, Expedution is a management tool for educational business trips organisers who want to spend more time with their participants and less time organising their trips</p>
+          <p>Whether an innovation tour for your university, a learning expeditins for executives in the Silicon Valley, or a small trip for your startup, Expedution helps you to get rid of your spreadsheets, your shared document, calendars, emails, and to efficiently organise your trip by adding activities, flights, hotels, educational resources, and much more, but also to easily share beautifully crafted itineraries with your clients.</p>
+          <div class="col s12 m12 l12">
+            <div class="row">
+              <div class="col s12 m12">
+                <div class="card white darken-1">
+                  <div class="card-content white-text">
+                    <span class="card-title">Card Title</span>
+                    <p>I am a very simple card. I am good at containing small bits of information.
+                    I am convenient because I require little markup to use effectively.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+ <!-- Footer
+    ================================================== -->
+
+<%= render "shared/footer" %>
+
+<%= content_for :after_js do %>
+  <script>
+
+
+    $('.about').click(function(){
+      // event.preventDefault();
+      // console.log($(this).data('day_id'));
+      // var day_id = $(this).data('day_id');
+      // var activities_day_id = "#activities_day_id_" + day_id;
+      // var $day = $(activities_day_id);
+
+      $(".founders-box").addClass("hidden");
+      $(".about-box").removeClass("hidden", "active");
+
+      // var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
+      // var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
+      // var day_label = "day"
+      // var day_concat = day_label.concat(day_title)
+      // $(".lex-activities .day-name").html(day_concat);
+      // $(".lex-activities .activity-day-header .day-index").html(day_index);
+
+    })
+
+    $('.founders').click(function(){
+      // event.preventDefault();
+      // console.log($(this).data('day_id'));
+      // var day_id = $(this).data('day_id');
+      // var activities_day_id = "#activities_day_id_" + day_id;
+      // var $day = $(activities_day_id);
+
+      $(".about-box").addClass("hidden");
+      $(".founders-box").removeClass("hidden");
+
+      // var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
+      // var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
+      // var day_label = "day"
+      // var day_concat = day_label.concat(day_title)
+      // $(".lex-activities .day-name").html(day_concat);
+      // $(".lex-activities .activity-day-header .day-index").html(day_index);
+
+    })
+  </script>
+  <% end %>
+

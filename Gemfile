@@ -25,6 +25,8 @@ gem 'carrierwave'
 gem 'materialize-sass'
 gem "letter_opener", group: :development
 gem 'bootstrap-timepicker-rails-addon', '~> 0.5.1'
+gem 'metainspector', '~> 5.2', '>= 5.2.1'
+gem 'httparty', '~> 0.13.7'
 
 group :development, :test do
   gem 'binding_of_caller'
