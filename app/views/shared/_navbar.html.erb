@@ -6,7 +6,7 @@
 
   <!-- Right Navigation -->
     <!-- Different navigation if login or not -->
-  <div class="navbar-wagon-item">
+  <div class="navbar-wagon-item" style="padding-top:10px">
     <% if user_signed_in? %>
       <!-- Profile picture and dropdown -->
         <ul class="list-inline list-unstyled hidden-xs hidden-sm">
@@ -14,7 +14,10 @@
         </ul>
     <% else %>
       <!-- Login text link -->
-      <%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <ul class="list-inline list-unstyled hidden-xs hidden-sm">
+          <li><%= link_to "About", about_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+          <li><%= link_to "Login", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
+      </ul>
     <% end %>
 
     <!-- Button (call-to-action) -->
