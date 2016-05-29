@@ -10,7 +10,7 @@ class UserPolicy < ApplicationPolicy
   end
 
   def update?
-    is_record_current_user? || does_record_participate_to_an_expe_organized_by_user
+    is_record_current_user? || does_record_participate_to_an_expe_organized_by_user?
   end
 
   private

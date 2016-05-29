@@ -13,8 +13,11 @@
                   <%= f.input :password, required: false %>
                 </div>
 
-                <div class="form-actions text-center" style="padding: 40px">
+                <div class="form-actions text-center" style="padding: 20px">
                   <%= f.button :submit, "Log in" %>
+                </div>
+                <div class="form-actions text-center" style="padding-top: -40px;">
+                  <%= link_to "sign up", new_user_registration_path %>
                 </div>
               <% end %>
             </div>
