@@ -1,0 +1,20 @@
+// Here you will write *javascript* that would be executed by the browser
+console.log("coucou 1")
+<% if @feedback.errors.any? %>
+console.log("coucou 2")
+  // Render new feedback form with errors
+  $('#feedback-form').html("<%= j render 'feedbacks/feedback_new', activity: @activity, feedback: @feedback %>");
+
+<% else %>
+  console.log("coucou 3")
+  // Create a paragraph for the new feedback. But hide it.
+  var new_feedback = $("<%= j render 'feedbacks/feedback_show', activity: @activity, feedback: @feedback %>").hide();
+  // Add it to the DOM, at the end of the existing feedbacks. It's still hidden.
+  $('#feedbacks').prepend(new_feedback);
+  // Show the new feedback with an animation!
+  new_feedback.slideDown();
+  // Remove the text from the content textarea.
+  $('#feedback_content').val('');
+  $('#feedback_rating').val('');
+
+<% end %>

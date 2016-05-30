@@ -1,9 +1,4 @@
 Rails.application.routes.draw do
-
-  get 'feedback/index'
-
-  get 'feedback/show'
-
   devise_for :users, :controllers => { :invitations => 'devise/invitations' }
   root to: 'pages#home'
 

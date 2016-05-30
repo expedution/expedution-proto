@@ -1,4 +1,4 @@
-<div class="collapsible-body padded-extra-small font-style1">
+<div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
   <% activity.feedbacks.reverse_each do |feedback| %>
     <p>"<%= feedback.content %> <%= feedback.rating %> / 5 "</p>
     <% if feedback.user == current_user %>

@@ -8,8 +8,17 @@ class FeedbacksController < ApplicationController
     @feedback.user = current_user
 
     authorize @feedback
-    @feedback.save
-    redirect_to expedition_path(@expedition)
+    if @feedback.save
+      respond_to do |format|
+        format.html { redirect_to expedition_path(@expedition) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { render 'expedition/show' }
+        format.js  # <-- idem
+      end
+    end
   end
 
   private
