@@ -25,10 +25,10 @@ class ExpeditionsController < ApplicationController
     end
   end
 
-
   def show
     find_expedition
     authorize @expedition
+    @invitation = Invitation.new
     @days = Day.all
     @expeditions = Expedition.all
     @days_expedition = Day.find_by(expedition_id: @expedition.id)

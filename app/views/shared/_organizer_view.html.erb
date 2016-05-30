@@ -80,12 +80,12 @@
           <li>
             <div class="collapsible-header"><i class="material-icons">perm_identity</i>New Participant</div>
             <div class="collapsible-body" style="padding: 5px;">
-              <%= render 'participations/new' %>
+              <%= render 'invitations/new_invitation_form' %>
             </div>
           </li>
           <li>
             <div class="collapsible-header"><i class="material-icons">done</i>Send All Invites</div>
-            <div class="collapsible-body"><p>You are going to send an invit to all the expedition participant. <%= link_to "Send", dashboard_path %></p></div>
+            <div class="collapsible-body"><p>You are going to send an invite to all the expedition participant. <%= link_to "Send", dashboard_path %></p></div>
           </li>
       </div>
     </div>
@@ -117,7 +117,7 @@
       var day_concat = day_label.concat(day_title)
       $(".lex-activities .day-name").html(day_concat);
       $(".lex-activities .activity-day-header .day-index").html(day_index);
-      debugger;
+      //debugger;
     })
   </script>
 <% end %>
