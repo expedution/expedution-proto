@@ -11,21 +11,25 @@ class ExpeditionPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    user_is_owner? || user.participant_expeditions.include?(record)
   end
 
   def update?
-    user_is_organiser?
+    user_is_owner?
   end
 
   def destroy?
-    user_is_organiser?
+    user_is_owner?
   end
 
   private
 
   def user_is_organiser?
     user.organiser
+  end
+
+  def user_is_owner?
+    user == record.user
   end
 
 end

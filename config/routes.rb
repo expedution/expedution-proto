@@ -14,6 +14,10 @@ Rails.application.routes.draw do
     resources :activities, only: [:create, :update, :destroy]
     resources :days, only: [:create, :update, :destroy]
   end
+
+  resources :activities, only: [] do
+    resources :feedbacks, only: [:new, :create]
+  end
   resources :days
 
 

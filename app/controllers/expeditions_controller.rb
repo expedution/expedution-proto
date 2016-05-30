@@ -33,6 +33,8 @@ class ExpeditionsController < ApplicationController
     @expeditions = Expedition.all
     @days_expedition = @expedition.days
     @activities = @expedition.activities
+    @feedback = Feedback.new
+    @feedbacks = Feedback.all
   end
 
   def edit
