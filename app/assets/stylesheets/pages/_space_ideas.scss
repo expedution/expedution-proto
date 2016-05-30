@@ -5,18 +5,32 @@
   padding-top: 30px;
 }
 
-.banner {
-  min-height: 60vh;
+
+
+.small-banner {
+  min-height: 30vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#space {
-  background-image: url("http://spaceflightnow.com/wp-content/uploads/2015/03/B_EGEjPVIAA1AMC.jpg-large.jpeg");
-  background-size: cover;
+#spacex {
+  background-image: url("https://hellolifeadventures.files.wordpress.com/2014/03/spacex_logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .title {
   margin: 20px;
 }
+
+.card {
+  position: relative;
+}
+
+.card-title {
+  position: absolute;
+  top: 0px;
+  left: 19px;
+}
+
