@@ -1,0 +1,43 @@
+<% activities.each do |activity| %>
+  <span class="time-info"><%= activity.starts_on %> <%= activity.category %></span><br>
+  <span class="card-title">
+    <% if activity.category == "Flight" %>
+      <div class="yellow-text">
+        <i class="fa fa-plane" aria-hidden="true"></i>
+        <%= activity.title %>
+      </div>
+    <% elsif activity.category == "Hotel" %>
+      <i class="fa fa-bed" aria-hidden="true"></i>
+    <% elsif activity.category == "Meeting" %>
+      <i class="fa fa-street-view" aria-hidden="true"></i>
+    <% elsif activity.category == "Restaurant" %>
+      <i class="fa fa-cutlery" aria-hidden="true"></i>
+    <% else %>
+      <i class="fa fa-bus" aria-hidden="true"></i>
+      <%= activity.title %>
+    <% end %>
+  </span>
+  <hr>
+  <div class="row">
+    <div class="col s12">
+      <h5><strong>Description</strong></h5>
+      <% if activity.description == nil %>
+        <p>No description yet</p>
+      <% else %>
+        <p><%= activity.description %></p>
+      <% end %>
+      <hr>
+      <ul class="list-unstyled">
+      <ul class="collapsible" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">chat_bubble_outline</i>Leave a feedback</div>
+          <%= render 'feedback/feedback_new', activity: activity %>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">chat_bubble</i>Feedbacks</div>
+          <%= render 'feedback/feedback_show', activity: activity %>
+        </li>
+      </ul>
+    </div>
+  </div>
+<% end %>

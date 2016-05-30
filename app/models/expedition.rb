@@ -1,7 +1,9 @@
 class Expedition < ActiveRecord::Base
   belongs_to :user
   has_many :days
+  has_many :activities, :through => :days
   has_many :participations
+  has_many :invitations
   has_many :participants, :class_name => "User", :through => :participations, source: :user
 
   validates :title, presence: true

@@ -3,6 +3,7 @@ class ParticipationsController < ApplicationController
   before_action :find_expedition
 
   def create
+
     @participation = @expedition.participations.new
     # Check if user exist if not create it
     @user = User.where(email: params[:participation][:email]).first_or_initialize do |user|

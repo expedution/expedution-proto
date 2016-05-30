@@ -1,0 +1,8 @@
+<div class="collapsible-body padded-extra-small font-style1">
+  <% activity.feedbacks.reverse_each do |feedback| %>
+    <p>"<%= feedback.content %> <%= feedback.rating %> / 5 "</p>
+    <% if feedback.user == current_user %>
+      <%#= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %>
+    <% end %>
+  <% end %>
+</div>
