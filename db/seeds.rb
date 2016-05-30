@@ -24,6 +24,19 @@ b = User.create({
     organiser: true
   })
 
+b1 = User.create({
+    email: "yo@yoann.co",
+    password: "lewagon",
+    first_name: "Yoann",
+    last_name: "Lopez",
+    job: "Participant",
+    company: "Le Wagon",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
 a = Expedition.new({
   title: "L'Oreal",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",

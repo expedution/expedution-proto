@@ -3,9 +3,16 @@
     <div class="day-box-text">
       <p class="day-number"><%= index + 1 %></p>
       <p class="day-title"><%= day.title %> </p>
+        <%= link_to expedition_day_path(@expedition.id, day.id), method: :delete do %>
+                <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
     </div>
     <div class="day-box-chevron">
       <i class="fa fa-angle-right" aria-hidden="true"></i>
     </div>
   </div>
 <% end %>
+
+
+
+

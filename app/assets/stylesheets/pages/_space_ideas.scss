@@ -1,0 +1,22 @@
+.page-container {
+  margin-left: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 30px;
+}
+
+.banner {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#space {
+  background-image: url("http://spaceflightnow.com/wp-content/uploads/2015/03/B_EGEjPVIAA1AMC.jpg-large.jpeg");
+  background-size: cover;
+}
+
+.title {
+  margin: 20px;
+}
