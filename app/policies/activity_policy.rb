@@ -1,4 +1,3 @@
-
 class ActivityPolicy < ApplicationPolicy
   class Scope < Scope
     def resolve

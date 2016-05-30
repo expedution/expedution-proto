@@ -26,6 +26,10 @@ class ActivitiesController < ApplicationController
 
   private
 
+  def find_activity
+    @activity = Activity.find(params[:activity_id])
+  end
+
   def activity_params
     params.require(:activity).permit(:title, :day_id, :description, :category, :address, :starts_on, :ends_on, :photo, :photo_cache)
   end
