@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     resources :participations, only: [:create, :update, :destroy]
     resources :activities, only: [:create, :update, :destroy]
     resources :days, only: [:create, :update, :destroy]
+    resources :ressources, only: [:create, :update, :destroy]
   end
   resources :days
 
