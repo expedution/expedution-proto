@@ -8,7 +8,7 @@
 
 
 .small-banner {
-  min-height: 30vh;
+  min-height: 25vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,6 +19,15 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+#nasa {
+  background-image: url("http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/cb/f0/cbf0a3f2408b4cddb49d8a26240004ab.png?itok=zRQ6tcAK");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+}
+
+
 
 .title {
   margin: 20px;

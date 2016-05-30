@@ -2,6 +2,14 @@
   margin-left: 60px;
 }
 
+.page-container h4 {
+  font-weight: 500;
+}
+
+.page-container p {
+  font-weight: lighter;
+}
+
 .card {
   min-height: 250px;
   display: flex;
@@ -11,6 +19,10 @@
 
 .card-content {
 
+}
+
+.theme-title {
+  font-size: 25px;
 }
 
 #fintech {
