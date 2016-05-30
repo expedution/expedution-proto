@@ -31,7 +31,10 @@ class ExpeditionsController < ApplicationController
     @invitation = Invitation.new
     @days = Day.all
     @expeditions = Expedition.all
-    @days_expedition = Day.find_by(expedition_id: @expedition.id)
+    @days_expedition = @expedition.days
+    @activities = @expedition.activities
+    @feedback = Feedback.new
+    @feedbacks = Feedback.all
   end
 
   def edit

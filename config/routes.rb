@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'feedback/index'
+
+  get 'feedback/show'
+
   devise_for :users, :controllers => { :invitations => 'devise/invitations' }
   root to: 'pages#home'
 
@@ -14,6 +18,10 @@ Rails.application.routes.draw do
     resources :participations, only: [:create, :update, :destroy]
     resources :activities, only: [:create, :update, :destroy]
     resources :days, only: [:create, :update, :destroy]
+  end
+
+  resources :activities, only: [] do
+    resources :feedbacks, only: [:new, :create]
   end
   resources :days
 

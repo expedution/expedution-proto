@@ -1,0 +1,10 @@
+<div class="collapsible-body padded-extra-small">
+  <div class="container">
+    <%= simple_form_for [activity, @feedback] do |f| %>
+      <%= f.input :content, placeholder: "Your thoughts" %>
+      <%= f.input :rating, placeholder: "Your note" %>
+      <%= f.submit "Post", class: "btn btn-success" %>
+    <% end %>
+  </div>
+</div>
+
