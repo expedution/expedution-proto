@@ -2,9 +2,7 @@
     WCAG general accessibility recommendation is that media such as background video play through only once. Loop turned on for the purposes of illustration; if removed, the end of the video will fade in the same way created by pressing the "Pause" button
   </video>
 
-    <!-- Expeditions details
-    ================================================== -->
-
+    <!-- Expeditions details ============ -->
     <div class="container padded">
       <div class="row">
 
@@ -19,7 +17,7 @@
           </div>
         </div>
 
-    <!-- Activities =============================== -->
+    <!-- Activities ======================== -->
       <!-- Description ===================== -->
         <div class="activities">
           <div class="col s12 m8 l8 white z-depth-1" style="border-radius: 5px;">
@@ -39,6 +37,7 @@
             <!-- Map ======================== -->
             <div id="map" style="width: auto; height: 200px; margin-right: -11px; margin-left: -11px; "></div>
 
+            <!-- Days ========= -->
             <% @days_expedition.each do |day| %>
               <!-- Activity ========= -->
               <div class="row padded-extra-small">
@@ -116,7 +115,7 @@
           </div>
         </div>
 
-    <!-- Participants ====================== -->
+        <!-- Participants ====================== -->
         <div class="participants">
           <div class="col s12 m3 l3 white push-l1 z-depth-1" style="border-radius: 5px;">
             <ul class="collection with-header pinned" style="margin-right: -12px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
