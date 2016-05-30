@@ -6,6 +6,11 @@ Rails.application.routes.draw do
 
   resources :users
   resources :expeditions do
+    resources :invitations, only: [:new, :create, :update, :destroy] do
+      member do
+        post 'invite' => 'invitations#invite'
+      end
+    end
     resources :participations, only: [:create, :update, :destroy]
     resources :activities, only: [:create, :update, :destroy]
     resources :days, only: [:create, :update, :destroy]

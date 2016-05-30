@@ -1,0 +1,6 @@
+<%= simple_form_for ([@expedition, @invitation]) do |f| %>
+  <%= f.input :email, label: "Email", placeholder: "Email" %>
+  <%= f.input :first_name, label: "First Name", placeholder: "First Name" %>
+  <%= f.input :last_name, label: "Last Name", placeholder: "Last Name" %>
+  <%= f.submit "Add participant", class: "btn green" %>
+<% end %>
