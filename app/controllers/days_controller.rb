@@ -22,4 +22,8 @@ class DaysController < ApplicationController
     params.require(:day).permit(:title, :position, :date)
   end
 
+  def find_day
+    @day = Day.find(params[:day_id])
+  end
+
 end

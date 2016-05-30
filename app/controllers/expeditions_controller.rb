@@ -31,7 +31,8 @@ class ExpeditionsController < ApplicationController
     authorize @expedition
     @days = Day.all
     @expeditions = Expedition.all
-    @days_expedition = Day.find_by(expedition_id: @expedition.id)
+    @days_expedition = @expedition.days
+    @activities = @expedition.activities
   end
 
   def edit
