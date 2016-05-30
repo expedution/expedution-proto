@@ -70,7 +70,7 @@
     <div class="right-sidebar-content">
       <!-- COLLAPSIBLE MENU -->
       <div class="row">
-        <ul class="collapsible" data-collapsible="accordion">
+        <ul class="collapsible z-depth-0 pp-no-margin" data-collapsible="accordion">
           <li>
             <div class="collapsible-header active"><i class="material-icons">view_list</i>View All</div>
             <div class="collapsible-body">
@@ -113,9 +113,7 @@
 
       var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
       var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
-      var day_label = "day"
-      var day_concat = day_label.concat(day_title)
-      $(".lex-activities .day-name").html(day_concat);
+      $(".lex-activities .day-name").html(day_title);
       $(".lex-activities .activity-day-header .day-index").html(day_index);
       //debugger;
     })

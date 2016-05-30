@@ -26,7 +26,7 @@
   margin-bottom: 0px;
   padding: 6px;
   color: white;
-  font-size: 24px;
+  font-size: 28px;
   border-radius: 5px;
   background-color: rgba(215,215,215,0.3);
 }
@@ -41,10 +41,15 @@
 }
 
 .lex-days {
-  border-left: 1px solid #D3D3D3;
   border-right: 1px solid #D3D3D3;
   min-height: 1000px;
+  margin-left: -15px;
 }
+
+
+
+
+
 
 // LEX DAYS SUB SECTION
 
@@ -52,7 +57,17 @@
   position: relative;
   border-bottom: 1px solid #D3D3D3;
   padding-left: 10px;
-  margin-bottom: 5px;
+}
+
+.day-delete-logo {
+  position: absolute;
+  top: 4px;
+  left: 50px;
+  background-size: cover !important;
+  width: 15px;
+  height: 15px;
+  color: blue;
+  opacity: 0;
 }
 
 .day-box:hover {
@@ -61,6 +76,9 @@
   .day-box-chevron {
   color: #1AAFD0;
   transition: color 0.3s ease;}
+  .day-delete-logo {
+  opacity: 1;
+  transition: opacity 0.3s ease;}
 }
 
 .day-box-chevron {
@@ -96,13 +114,14 @@
 }
 
 
+
+
 // LEX ACTIVITIES SUB-SECTION
 
 .lex-activities {
 }
 
 .activity-box-section {
-  border-bottom: 1px solid #D3D3D3;
 }
 
 .activity-box {
@@ -110,6 +129,7 @@
   padding-left: 20px;
   padding-right: 5px;
   padding-bottom: 5px;
+  margin-bottom: 15px;
 }
 
 .activity-box:hover {
@@ -511,6 +531,7 @@
   text-align: center;
   width: 110px;
   margin-left: 10px;
+  margin-top: 10px;
 }
 
 .custom-btn:hover {
