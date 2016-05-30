@@ -12,12 +12,12 @@
       <div class="banner-content">
         <h1>Expedution, move work forward</h1>
         <p>Expedution is the easiest way to craft your learning expeditions, innovation tours...</p>
-        <a class="waves-effect waves-light waves-purple btn-large green grey-text white-text" style="text-decoration: none"><strong>CRAFT YOUR ADVENTURE</strong></a>
+        <%= link_to "CRAFT YOUR ADVENTURE", new_user_session_path, class: "waves-effect waves-light waves-purple btn-large green grey-text white-text", style: "text-decoration: none; font-weight: 600;" %>
       </div>
     </div>
 
 
-    <video autoplay  poster="http://susanreep.com/blog/wp-content/uploads/2010/07/Sky-from-plane.jpg" id="bgvid" loop>
+    <video autoplay  poster="" id="bgvid" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.8) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.8) 80%, rgba(62, 151, 232,0.6) 100%), url(''); height: 75vh;" loop>
     </video>
 
     <!-- Intro
@@ -60,7 +60,7 @@
                   <span class="icon-thunderbolt display-1"></span>
                   <h2>See how it works</h2>
                   <p class="card-text">Start to organise your own Learning Expeditions and save countless hours</p>
-                  <a class="waves-effect waves-light btn green white-text"><i class="material-icons left"></i>TRY IT TODAY!</a>
+                  <%= link_to "TRY IT TODAY", new_user_session_path, class: "waves-effect waves-light waves-purple btn-large green grey-text white-text", style: "text-decoration: none; font-weight: 600;" %>
                 </div>
               </div>
             </div>
@@ -81,7 +81,7 @@
           <div class="col s12 m4 l4">
             <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="http://dummyimage.com/500x300/000/fff">
+                <img class="activator" src="https://static.pexels.com/photos/2769/hands-way-guide-tourist.jpg">
                 <span class="card-title activator">Source</span>
               </div>
               <div class="card-content">
@@ -96,11 +96,11 @@
           <div class="col s12 m4 l4">
             <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="http://dummyimage.com/500x300/000/fff">
+                <img class="activator" src="https://static.pexels.com/photos/3855/wood-architect-table-work.jpeg">
                 <span class="card-title activator">Craft</span>
               </div>
               <div class="card-content">
-                <p>User our software to craft your next learning expedition. No more spreadsheets!</p>
+                <p>Use our software to craft your next learning expedition. No more spreadsheets!</p>
               </div>
               <div class="card-reveal">
                     <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -111,7 +111,7 @@
           <div class="col s12 m4 l4">
             <div class="card hoverable">
               <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="http://dummyimage.com/500x300/000/fff">
+                <img class="activator" src="https://static.pexels.com/photos/70292/pexels-photo-70292.jpeg">
                 <span class="card-title activator">Communicate</span>
               </div>
               <div class="card-content">
@@ -129,7 +129,7 @@
 
     <!-- Testimonials
     ================================================== -->
-    <section class="section-testimonials">
+    <!-- <section class="section-testimonials">
      <div class="testimonials-container section-container text-center">
       <div class="container">
       <h3 class="text-center">What they say about us</h3>
@@ -140,12 +140,12 @@
           </div>
           <div class="row">
               <div class="col-sm-10 col-sm-offset-1 testimonial-list wow fadeInUp">
-                  <div role="tabpanel">
+                  <div role="tabpanel"> -->
                     <!-- Tab panes -->
-                    <div class="tab-content">
+                <!--     <div class="tab-content">
                       <div role="tabpanel" class="tab-pane fade in active" id="tab1">
                         <div class="testimonial-image">
-                          <%= image_tag("face1.jpg", :alt => "face1") %>
+                          <%#= image_tag("face1.jpg", :alt => "face1") %>
                         </div>
                         <div class="testimonial-text">
                                   <p>
@@ -158,7 +158,7 @@
                       </div>
                       <div role="tabpanel" class="tab-pane fade" id="tab2">
                         <div class="testimonial-image">
-                          <%= image_tag("face2.jpg", :alt => "face2") %>
+                          <%#= image_tag("face2.jpg", :alt => "face2") %>
                         </div>
                         <div class="testimonial-text">
                                   <p>
@@ -184,7 +184,7 @@
                       </div>
                       <div role="tabpanel" class="tab-pane fade" id="tab4">
                         <div class="testimonial-image">
-                          <%= image_tag("face3.jpg", :alt => "face3") %>
+                          <%#= image_tag("face3.jpg", :alt => "face3") %>
                         </div>
                         <div class="testimonial-text">
                                   <p>
@@ -195,9 +195,9 @@
                                   </p>
                                 </div>
                       </div>
-                    </div>
+                    </div> -->
                     <!-- Nav tabs -->
-                    <ul class="nav nav-tabs" role="tablist">
+                    <!-- <ul class="nav nav-tabs" role="tablist">
                       <li role="presentation" class="active">
                         <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
                       </li>
@@ -216,7 +216,7 @@
             </div>
         </div>
      </div>
-    </section>
+    </section> -->
 
     <!-- Text Content
     ================================================== -->

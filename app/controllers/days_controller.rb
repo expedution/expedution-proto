@@ -1,5 +1,5 @@
 class DaysController < ApplicationController
-
+skip_after_action :verify_authorized, only: :home
 
   def create
     @day = Day.new(day_params)
@@ -14,6 +14,11 @@ class DaysController < ApplicationController
   end
 
   def destroy
+    find_expedition
+    find_day
+    authorize @day
+    @day.destroy
+    redirect_to expedition_path(@expedition)
   end
 
   private
@@ -23,7 +28,11 @@ class DaysController < ApplicationController
   end
 
   def find_day
-    @day = Day.find(params[:day_id])
+    @day = Day.find(params[:id])
+  end
+
+  def find_expedition
+    @expedition = Expedition.find(params[:expedition_id])
   end
 
 end

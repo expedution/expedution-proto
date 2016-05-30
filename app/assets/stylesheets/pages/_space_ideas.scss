@@ -1,0 +1,36 @@
+.page-container {
+  margin-left: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-top: 30px;
+}
+
+
+
+.small-banner {
+  min-height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#spacex {
+  background-image: url("https://hellolifeadventures.files.wordpress.com/2014/03/spacex_logo.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.title {
+  margin: 20px;
+}
+
+.card {
+  position: relative;
+}
+
+.card-title {
+  position: absolute;
+  top: 0px;
+  left: 19px;
+}
+

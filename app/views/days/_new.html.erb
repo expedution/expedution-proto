@@ -1,4 +1,5 @@
-  <div id="new-day-modal-<%=@expedition.id %>" class="modal">
+  <div class="container">
+    <div id="new-day-modal-<%=@expedition.id %>" class="modal-mat">
       <div class="modal-content">
         <h4>Add new day</h4>
         <%= simple_form_for [@expedition, Day.new] do |f| %>
@@ -6,12 +7,14 @@
           <div class="col-xs-12 col-sm-6">
             <%= f.input :title, label: "Day title", placeholder: "Title", input_html: {maxlength: 30} %>
             <%= f.input :date, label: "Date", id: "datepicker" %>
+          </div>
         </div>
-      </div>
       <div class="modal-footer">
         <%= f.submit "Add day", class: "btn btn-success" %>
         <%= link_to "Cancel", expedition_path, class: "btn btn-danger" %>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+</div>
 
