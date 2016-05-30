@@ -7,7 +7,21 @@ class ActivitiesController < ApplicationController
     redirect_to expedition_path(@expedition)
   end
 
+  def update
+    @expedition = Expedition.find(params[:expedition_id])
+    @activity = Activity.find(params[:id])
+    authorize @activity
+    @activity.update(activity_params)
+    redirect_to expedition_path(@expedition)
+  end
+
+
   def destroy
+    @expedition = Expedition.find(params[:expedition_id])
+    @activity = Activity.find(params[:id])
+    authorize @activity
+    @activity.destroy
+    redirect_to expedition_path(@expedition)
   end
 
   private

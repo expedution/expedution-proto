@@ -3,9 +3,20 @@
   <div id="activities_day_id_<%= day.id %>" data-day_id="<%= day.id %>" class="day-activities hidden">
     <% day.activities.each do |activity| %>
       <div class="activity-box hoverable">
-        <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
-        <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
-        <p class="add-resource">+ New Resource</p>
+
+        <%= link_to "#edit-activity-modal-#{activity.id}", class: "modal-trigger" do %>
+          <div class="edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+        <% end %>
+        <%= render 'activities/edit', activity: activity %>
+
+        <%= link_to expedition_activity_path(@expedition, activity), method: :delete, data: { confirm: 'Are you sure?' } do %>
+          <div class="delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+        <% end %>
+
+        <%= link_to "#new-ressource-modal-#{activity.id}", class: "modal-trigger" do %>
+           <p class="add-resource">+ New Resource</p>
+        <% end %>
+        <%= render 'ressources/new', activity: activity, ressource: Ressource.new(activity: activity) %>
 
         <% if activity.category == "Flight" %>
           <div class="activity-icon activity-icon-flight" style="background: url(<%= asset_path 'activity-icon-flight.png' %>)"></div>
@@ -54,19 +65,27 @@
         <% activity.ressources.each do |ressource| %>
           <div class="row">
             <div class="col-xs-12 col-md-8" style="margin-left: -14px">
-                <div class="resource-box">
+              <div class="resource-box">
+
+                <%= link_to "#edit-ressource-modal-#{ressource.id}", class: "modal-trigger" do %>
                   <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+                <% end %>
+                <%= render 'ressources/edit', ressource: ressource %>
+
+                <%= link_to expedition_ressources_path(@expedition, ressource), method: :delete, data: { confirm: 'Are you sure?' } do %>
                   <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
-                  <div class="resource-photo" style='background: url(
-                    <%# if activity.photo == nil %>
-                      <%= "https://unsplash.it/50/50" %>
-                    <%# else %>
-                      <%#= image_tag activity.photo %>
-                    <%# end %>
-                  )'></div>
-                  <p class="resource-title"><%= ressource.name %></p>
-                  <p class="resource-url"><%= ressource.url %></p>
-                </div>
+                <% end %>
+
+                <div class="resource-photo" style='background: url(
+                  <%# if activity.photo == nil %>
+                    <%= "https://unsplash.it/50/50" %>
+                  <%# else %>
+                    <%#= image_tag activity.photo %>
+                  <%# end %>
+                )'></div>
+                <p class="resource-title"><%= ressource.name %></p>
+                <p class="resource-url"><%= ressource.url %></p>
+              </div>
             </div>
           </div>
         <% end %>
