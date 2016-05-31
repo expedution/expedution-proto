@@ -10,6 +10,8 @@ User.delete_all
 
 t1 = Time.new(2017, 01, 03, 9, 30, 00)
 t2 = Time.new(2017, 01, 03, 11, 00, 00)
+t3 = Time.new(2017, 01, 03, 11, 00, 00)
+t4 = Time.new(2017, 01, 03, 12, 00, 00)
 
 b = User.create({
     email: "boris@lewagon.org",
@@ -84,8 +86,8 @@ h = Activity.new({
   title: "Let's go",
   category: "Flight",
   description: "AF N° ...",
-  starts_on: t1,
-  ends_on: t2,
+  starts_on: t3,
+  ends_on: t4,
   address: "Airport CDG"
   })
 h.day = d

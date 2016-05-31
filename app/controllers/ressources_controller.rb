@@ -4,7 +4,7 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.create(ressource_params)
     authorize @ressource
     @expedition = Expedition.find(params[:expedition_id])
-    redirect_to expedition_path(@expedition)
+    redirect_to expedition_path(@expedition, day: @ressource.activity.day.id)
   end
 
   def update
@@ -12,15 +12,15 @@ class RessourcesController < ApplicationController
     @ressource = Ressource.find(params[:id])
     authorize @ressource
     @ressource.update(ressource_params)
-    redirect_to expedition_path(@expedition)
+    redirect_to expedition_path(@expedition, day: @ressource.activity.day.id)
   end
 
   def destroy
     @expedition = Expedition.find(params[:expedition_id])
     @ressource = Ressource.find(params[:id])
     authorize @ressource
-    @ressource.update(ressource_params)
-    redirect_to expedition_path(@expedition)
+#    @ressource.destroy
+    redirect_to expedition_path(@expedition, day: @ressource.activity.day.id)
   end
 
   private

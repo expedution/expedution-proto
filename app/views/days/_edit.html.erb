@@ -1,0 +1,20 @@
+  <div class="container">
+    <div id="edit-day-modal-<%=day.id %>" class="modal-mat">
+      <div class="modal-content">
+        <h4>Edit day</h4>
+        <%= simple_form_for [@expedition, day] do |f| %>
+        <div class="row">
+          <div class="col-xs-12 col-sm-6">
+            <%= f.input :title, label: "Day title", input_html: {maxlength: 30} %>
+            <%= f.input :date, label: "Date", id: "datepicker" %>
+          </div>
+        </div>
+      <div class="modal-footer">
+        <%= f.submit "Submit", class: "btn btn-success" %>
+        <%= link_to "Cancel", expedition_path, class: "btn btn-danger" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+

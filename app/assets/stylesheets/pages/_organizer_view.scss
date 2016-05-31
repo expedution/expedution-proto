@@ -62,6 +62,17 @@
 .day-delete-logo {
   position: absolute;
   top: 4px;
+  left: 70px;
+  background-size: cover !important;
+  width: 15px;
+  height: 15px;
+  color: blue;
+  opacity: 0;
+}
+
+.day-edit-logo {
+  position: absolute;
+  top: 4px;
   left: 50px;
   background-size: cover !important;
   width: 15px;
@@ -76,6 +87,10 @@
   .day-box-chevron {
   color: #1AAFD0;
   transition: color 0.3s ease;}
+  .day-edit-logo {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  }
   .day-delete-logo {
   opacity: 1;
   transition: opacity 0.3s ease;}

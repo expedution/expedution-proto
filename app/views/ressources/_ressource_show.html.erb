@@ -8,7 +8,7 @@
         <% end %>
         <%= render 'ressources/edit', ressource: ressource %>
 
-        <%= link_to expedition_ressources_path(@expedition, ressource), method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <%= link_to expedition_ressource_path(@expedition, ressource), method: :delete, data: { confirm: 'Are you sure?' } do %>
           <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
         <% end %>
 
