@@ -40,3 +40,19 @@
   font-style: italic;
   font-size: 20px;
 }
+
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#flex-column1 {
+  // width: 100px;
+}
+#flex-column2 {
+  width: 560px;
+}
+#flex-column3 {
+  width: 250px;
+}

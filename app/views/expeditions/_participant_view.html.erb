@@ -5,10 +5,9 @@
     <!-- Expeditions details ============ -->
     <div class="container padded">
       <div class="row">
-
-    <!-- Days ============= -->
+        <!-- Days ============= -->
         <div class="day">
-          <div class="col s12 m1 l1 pull-l1 white z-depth-1" style="border-radius: 5px;">
+          <div class="col s12 m1 white z-depth-1" style="border-radius: 5px;">
             <div class="collection pinned">
               <% @days.each_with_index do |day, index| %>
                 <%= link_to "Day #{index + 1}", "#day#{day.id}", class: "collection-item" %>
@@ -17,11 +16,17 @@
           </div>
         </div>
 
-    <!-- Activities ======================== -->
-      <!-- Description ===================== -->
-        <div class="activities">
-          <div class="col s12 m8 offset-m2 l8 white z-depth-1" style="border-radius: 5px;">
-            <div class="banner-small image-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg'); padding: off">
+        <!-- Activities ======================== -->
+        <div class="activities" style="margin-left: 60px;">
+          <div class="col s12 offset-m1 m8 white z-depth-1" style="border-radius: 5px;">
+            <!-- Checking expedition photo + placeholder -->
+            <% if @expedition.photo.url == nil %>
+              <% background_exp = "https://unsplash.it/900/201" %>
+            <% else %>
+              <% background_exp = @expedition.photo.url %>
+            <% end %>
+            <!-- Putting result of background_exp in background-image -->
+            <div class="banner-small image-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url(<% background_exp %>); padding: off">
               <div class="banner-content">
                 <h2>Disvover The Valley</h2>
               </div>
@@ -30,10 +35,11 @@
             <!-- Description =================== -->
             <div class="expedition-description">
               <h5><%= @expedition.title %></h5>
-              <p class="padded-extra-small">
-              <%= @expedition.description %>
-              </p>
+              <div class="padded-extra-small">
+                <p><%= @expedition.description %></p>
+              </div>
             </div>
+
             <!-- Map ======================== -->
             <div id="map" style="width: auto; height: 200px; margin-right: -11px; margin-left: -11px; "></div>
 
@@ -56,8 +62,8 @@
 
         <!-- Participants ====================== -->
         <div class="participants">
-          <div class="col s12 m3 l3 white push-l1 z-depth-1" style="border-radius: 5px;">
-            <ul class="collection with-header pinned" style="margin-right: -12px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
+          <div class="col s12 m2 white z-depth-1" style="border-radius: 5px;">
+            <ul class="collection with-header pinned">
               <li class="collection-header"><h4>Participants</h4></li>
               <!-- Itère dans les participations de l'expedition et ensuite sur le User -->
               <% @expedition.participations.each do |participant| %>
@@ -71,6 +77,7 @@
             </ul>
           </div>
         </div>
+
       </div>
     </div>
 
@@ -110,7 +117,7 @@
 
     <!-- Scripts call google map ================= -->
 
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
   var myLatlng = new google.maps.LatLng(37.773972, -122.431297);
 
@@ -129,7 +136,7 @@
     title: "You are here!"
   });
 
-</script>
+</script> -->
 
 
 
