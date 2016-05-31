@@ -1,0 +1,6 @@
+<%= simple_form_for (@invitation) do |f| %>
+  <%= f.input :email, label: "Email"%>
+  <%= f.input :first_name, label: "First Name"%>
+  <%= f.input :last_name, label: "Last Name"%>
+  <%= f.submit "Update Participant", class: "btn green" %>
+<% end %>

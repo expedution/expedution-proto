@@ -7,7 +7,7 @@ class InvitationPolicy < ApplicationPolicy
   end
 
   def create?
-    user_is_organiser?
+    is_user_expedition_organiser?
   end
 
   def show?
@@ -15,21 +15,21 @@ class InvitationPolicy < ApplicationPolicy
   end
 
   def invite?
-    user_is_organiser?
+    is_user_expedition_organiser?
   end
 
   def update?
-    user_is_organiser?
+    is_user_expedition_organiser?
   end
 
   def destroy?
-    user_is_organiser?
+    is_user_expedition_organiser?
   end
 
   private
 
-  def user_is_organiser?
-    user.organiser
+  def is_user_expedition_organiser?
+    record.expedition.user == user
   end
 
 end
