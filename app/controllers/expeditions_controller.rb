@@ -49,11 +49,11 @@ class ExpeditionsController < ApplicationController
     authorize @expedition
   end
 
-  # def destroy
-  #   find_expedition
-  #   @expedition.destroy
-  #   redirect_to home_path
-  # end
+  def destroy
+    find_expedition
+    @expedition.destroy
+    redirect_to home_path
+  end
 
   private
 
