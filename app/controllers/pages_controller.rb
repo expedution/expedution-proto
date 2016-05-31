@@ -39,4 +39,5 @@ class PagesController < ApplicationController
   def user_params
     params.require(:user).permit(:first_name, :last_name, :photo, :photo_cache)
   end
+
 end

@@ -10,7 +10,7 @@ gem 'devise'
 gem 'devise_invitable'
 gem 'redis'
 gem 'nokogiri'
-
+gem 'traceroute'
 gem 'redis'
 gem 'sass-rails'
 gem 'jquery-rails'
