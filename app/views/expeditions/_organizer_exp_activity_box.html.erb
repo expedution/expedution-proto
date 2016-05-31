@@ -49,13 +49,15 @@
         <div class="row">
           <div class="col-xs-12 col-md-8" style="margin-left: -14px">
             <div class="resource-box">
-              <div class="resource-photo" style='background: url(
+              <div id="map" class="resource-map"></div>
+
+<!--               <div class="resource-photo" style='background: url(
                 <%# if activity.photo == nil %>
-                  <%= "https://unsplash.it/50/50" %>
+                  <%#= "https://unsplash.it/50/50" %>
                 <%# else %>
                   <%#= image_tag activity.photo %>
                 <%# end %>)
-              '></div>
+              '></div> -->
               <p class="activity-address"></p>
               <p class="activity-address"><%= activity.address %></p>
             </div>
@@ -67,4 +69,25 @@
     <% end %>
   </div>
 <% end %>
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).on('ready', function() {
+      handler = Gmaps.build('Google');
+      handler.buildMap({ internal: { id: 'map' } }, function(){
+        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        handler.bounds.extendWith(markers);
+        handler.fitMapToBounds();
+      });
+    })
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
 

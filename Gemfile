@@ -28,6 +28,12 @@ gem 'bootstrap-timepicker-rails-addon', '~> 0.5.1'
 gem 'metainspector', '~> 5.2', '>= 5.2.1'
 gem 'httparty', '~> 0.13.7'
 gem "geocoder"
+gem "coffee-rails"
+gem "gmaps4rails"
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
 
 group :development, :test do
   gem 'binding_of_caller'
