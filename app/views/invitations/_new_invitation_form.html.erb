@@ -2,7 +2,9 @@
   <%= f.input :email, label: "Email", placeholder: "Email" %>
   <%= f.input :first_name, label: "First Name", placeholder: "First Name" %>
   <%= f.input :last_name, label: "Last Name", placeholder: "Last Name" %>
-  <%= f.submit "Add participant", class: "btn green" %>
+  <div class="add-participant-flexbox">
+    <%= f.submit "Add participant", class: "new-participant-btn" %>
+  </div>
 <% end %>
 
 

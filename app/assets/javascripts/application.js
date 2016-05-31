@@ -6,3 +6,5 @@
 //= require expeditions
 //= require users
 //= require activities
+//= require underscore
+//= require gmaps/google

@@ -55,7 +55,7 @@ Participation.create(user: b, expedition: a)
 d = Day.new({
   position: 1,
   date: Date.new(2017,01,03),
-  title: "En route pour L.A."
+  title: "En route pour SF"
   })
 d.expedition = a
 d.save
@@ -88,7 +88,7 @@ h = Activity.new({
   description: "AF N° ...",
   starts_on: t3,
   ends_on: t4,
-  address: "Airport CDG"
+  address: "CDG airport, Paris"
   })
 h.day = d
 h.save
@@ -100,7 +100,7 @@ i = Activity.new({
   description: "jkhkjhkjhjk",
   starts_on: t1,
   ends_on: t2,
-  address: "Silicon Valley"
+  address: "Empire State Building, NYC"
   })
 i.day = g
 i.save

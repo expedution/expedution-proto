@@ -47,16 +47,13 @@
 }
 
 
-
-
-
-
 // LEX DAYS SUB SECTION
 
 .day-box {
   position: relative;
   border-bottom: 1px solid #D3D3D3;
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .day-delete-logo {
@@ -383,6 +380,13 @@
   height: 70px;
 }
 
+.resource-map {
+  position: absolute;
+  left: 0px;
+  width: 70px;
+  height: 70px;
+}
+
 .resource-title {
   font-size: 14px;
   font-weight: bold;
@@ -520,6 +524,31 @@
   transition: background-color 0.3s ease;
 }
 
+.new-participant-btn {
+  flex: 0, 0, 20%;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  text-align: center;
+  background-color: white;
+  width: 130px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.new-participant-btn:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+
+.add-participant-flexbox {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .add-participant {
   border-radius: 5px;
   border: solid 1px #1AAFD0;
@@ -536,6 +565,8 @@
 }
 
 
+
+
 // BUTTON
 
 .custom-btn {
@@ -548,6 +579,8 @@
   margin-left: 10px;
   margin-top: 10px;
 }
+
+
 
 .custom-btn:hover {
   background-color: #eafbff;

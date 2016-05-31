@@ -33,6 +33,10 @@ class ExpeditionsController < ApplicationController
     @expeditions = Expedition.all
     @days_expedition = @expedition.days
     @activities = @expedition.activities
+    @markers = Gmaps4rails.build_markers(@activities) do |activity, marker|
+      marker.lat activity.latitude
+      marker.lng activity.longitude
+    end
     @feedback = Feedback.new
     @feedbacks = Feedback.all
 
