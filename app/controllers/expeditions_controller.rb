@@ -39,6 +39,12 @@ class ExpeditionsController < ApplicationController
     end
     @feedback = Feedback.new
     @feedbacks = Feedback.all
+
+    @cleaned_invitations = @expedition.invitations.select do |invitation|
+      emails = @expedition.participations.map(&:user).map(&:email)
+      !emails.include?(invitation.email)
+    end
+
   end
 
   def edit
@@ -53,11 +59,11 @@ class ExpeditionsController < ApplicationController
     authorize @expedition
   end
 
-  # def destroy
-  #   find_expedition
-  #   @expedition.destroy
-  #   redirect_to home_path
-  # end
+  def destroy
+    find_expedition
+    @expedition.destroy
+    redirect_to home_path
+  end
 
   private
 

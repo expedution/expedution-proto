@@ -1,5 +1,5 @@
 class InvitationsController < ApplicationController
-  #before_action :invitation_params
+  before_action :find_invitation, only: [:edit, :update, :destroy]
 
   def new
     @invitation = Invitation.new
@@ -30,6 +30,7 @@ class InvitationsController < ApplicationController
         # Send an email to share about a new LEX
         #Particaion of the user
         UserMailer.newexpedition(@invitation).deliver_now
+        @invitation.update(status: "pending")
         redirect_to expedition_path(@expedition)
       else
         User.invite!(:email => @invitation.email, :first_name => @invitation.first_name)
@@ -39,7 +40,32 @@ class InvitationsController < ApplicationController
       end
   end
 
+  def edit
+  end
+
+
+  def update
+    @expedition = @invitation.expedition
+    if @invitation.update(invitation_params)
+      redirect_to expedition_path(@expedition)
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @expedition = @invitation.expedition
+    @invitation.destroy
+    redirect_to expedition_path(@expedition)
+    authorize @invitation
+  end
+
   private
+
+  def find_invitation
+    @invitation = Invitation.find(params[:id])
+    authorize @invitation
+  end
 
   def invitation_params
     params.require(:invitation).permit(:first_name, :last_name, :email)
