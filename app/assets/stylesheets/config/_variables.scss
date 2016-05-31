@@ -2,20 +2,20 @@
  * Fonts
  * ------------------------------------- */
 // Google fonts
-@import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,300,700,300italic,400italic,700italic");
-$base-font: "Roboto", "Helvetica", "sans-serif";
-$header-font: "Roboto", "Helvetica", "sans-serif";
+// @import url("https://fonts.googleapis.com/css?family=Montserrat:400,700|Roboto:400,300,700,300italic,400italic,700italic");
+// $base-font: "Roboto", "Helvetica", "sans-serif";
+// $header-font: "Roboto", "Helvetica", "sans-serif";
 
-// Local fonts (uncomment following lines)
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
-
+ // Local fonts (uncomment following lines)
+ @font-face {
+   font-family: "Roboto";
+   src: font-url('Roboto.eot');
+   src: font-url('Roboto.eot?#iefix') format('embedded-opentype'),
+        font-url('Roboto.woff') format('woff'),
+        font-url('Roboto.ttf') format('truetype')
+ }
+ $base-font: "Roboto";
+ $header-font: "Roboto";
 
 
 // Font-size and line-height
