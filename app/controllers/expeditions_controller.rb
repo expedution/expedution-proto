@@ -35,7 +35,6 @@ class ExpeditionsController < ApplicationController
     @activities = @expedition.activities
     @feedback = Feedback.new
     @feedbacks = Feedback.all
-
     @cleaned_invitations = @expedition.invitations.select do |invitation|
       emails = @expedition.participations.map(&:user).map(&:email)
       !emails.include?(invitation.email)
