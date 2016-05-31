@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { :invitations => 'devise/invitations' }
+
   root to: 'pages#home'
+
+
 
 
   resources :users
