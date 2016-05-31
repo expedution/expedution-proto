@@ -11,11 +11,13 @@ class User < ActiveRecord::Base
 
   mount_uploader :photo, PhotoUploader
 
-  after_create :send_welcome_email
-
-
+  after_create :send_welcome_email, if: :is_user_an_invitee?
 
   def send_welcome_email
     UserMailer.welcome(self).deliver_now
+  end
+
+  def is_user_an_invitee?
+    Invitation.find_by(email: email).nil?
   end
 end
