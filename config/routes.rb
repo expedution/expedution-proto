@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   resources :users
   resources :expeditions do
-    resources :invitations, only: [:new, :create, :update, :destroy] do
+    resources :invitations, only: [:new, :create] do
       member do
         post 'invite' => 'invitations#invite'
       end
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     resources :days, only: [:create, :update, :destroy]
     resources :ressources, only: [:create, :update, :destroy]
   end
+
+  resources :invitations, only: [:edit, :update, :destroy]
 
   resources :activities, only: [] do
     resources :feedbacks, only: [:new, :create]

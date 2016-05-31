@@ -3,7 +3,7 @@ skip_after_action :verify_authorized, only: :home
 
   def create
     @day = Day.new(day_params)
-    @expedition = Expedition.find(params[:expedition_id])
+    find_expedition
     @day.expedition = @expedition
     @day.save
     authorize @day
@@ -11,6 +11,11 @@ skip_after_action :verify_authorized, only: :home
   end
 
   def update
+    find_expedition
+    find_day
+    authorize @day
+    @day.update(day_params)
+    redirect_to expedition_path(@expedition)
   end
 
   def destroy

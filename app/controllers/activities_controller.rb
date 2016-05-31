@@ -4,7 +4,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.create(activity_params)
     authorize @activity
     @expedition = Expedition.find(params[:expedition_id])
-    redirect_to expedition_path(@expedition)
+    redirect_to expedition_path(@expedition, day: @activity.day.id)
   end
 
   def update
@@ -12,7 +12,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     authorize @activity
     @activity.update(activity_params)
-    redirect_to expedition_path(@expedition)
+    redirect_to expedition_path(@expedition, day: @activity.day.id)
   end
 
 
@@ -21,7 +21,7 @@ class ActivitiesController < ApplicationController
     @activity = Activity.find(params[:id])
     authorize @activity
     @activity.destroy
-    redirect_to expedition_path(@expedition)
+    redirect_to expedition_path(@expedition, day: @activity.day.id)
   end
 
   private
