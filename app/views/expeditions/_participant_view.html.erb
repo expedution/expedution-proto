@@ -3,29 +3,28 @@
   </video>
 
     <!-- Expeditions details ============ -->
-    <div class="container padded">
-      <div class="row">
-        <!-- Days ============= -->
-        <div class="day">
-          <div class="col s12 m1 white z-depth-1" style="border-radius: 5px;">
-            <div class="collection pinned">
-              <% @days.each_with_index do |day, index| %>
+    <div class=" padded">
+      <div class="flexbox">
+        <!-- DAYS COLUMN -->
+        <div id="flex-column1">
+          <ul class="collection white">
+            <% @days.each_with_index do |day, index| %>
+              <li>
                 <%= link_to "Day #{index + 1}", "#day#{day.id}", class: "collection-item" %>
-              <% end %>
-            </div>
-          </div>
-        </div>
-
-        <!-- Activities ======================== -->
-        <div class="activities" style="margin-left: 60px;">
-          <div class="col s12 offset-m1 m8 white z-depth-1" style="border-radius: 5px;">
-            <!-- Checking expedition photo + placeholder -->
-            <% if @expedition.photo.url == nil %>
-              <% background_exp = "https://unsplash.it/900/201" %>
-            <% else %>
-              <% background_exp = @expedition.photo.url %>
+              </li>
             <% end %>
-            <!-- Putting result of background_exp in background-image -->
+          </ul>
+        </div>
+        <!-- ACTIVITIES COLUMN -->
+        <div id="flex-column2" class="collection white">
+          <!-- Checking expedition photo + placeholder -->
+          <% if @expedition.photo.url == nil %>
+            <% background_exp = "https://unsplash.it/900/201" %>
+          <% else %>
+            <% background_exp = @expedition.photo.url %>
+          <% end %>
+          <!-- Putting result of background_exp in background-image -->
+          <div>
             <div class="banner-small image-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url(<% background_exp %>); padding: off">
               <div class="banner-content">
                 <h2>Disvover The Valley</h2>
@@ -41,13 +40,13 @@
             </div>
 
             <!-- Map ======================== -->
-            <div id="map" style="width: auto; height: 200px; margin-right: -11px; margin-left: -11px; "></div>
+            <div id="map" style="width: auto; height: 200px;"></div>
 
             <!-- Days ========= -->
             <% @days_expedition.each do |day| %>
               <!-- Activity ========= -->
               <div class="row padded-extra-small">
-                <div class="col s12 m12">
+                <div class="col s12">
                   <div class="card white" id="day<%= day.id %>">
                     <div class="card-content grey-text">
                       <%= render 'activities/activity_show', activities: day.activities %>
@@ -56,28 +55,25 @@
               </div>
               <!-- End Activity ======================= -->
             </div>
-          <% end %>
+            <% end %>
           </div>
         </div>
 
-        <!-- Participants ====================== -->
-        <div class="participants">
-          <div class="col s12 m2 white z-depth-1" style="border-radius: 5px;">
-            <ul class="collection with-header pinned">
-              <li class="collection-header"><h4>Participants</h4></li>
-              <!-- Itère dans les participations de l'expedition et ensuite sur le User -->
-              <% @expedition.participations.each do |participant| %>
-                <li class="collection-item">
-                  <div>
-                    <%= participant.user.first_name %><%= participant.user.last_name %>
-                    <a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">question_answer</i></a>
-                  </div>
-                </li>
-              <% end %>
-            </ul>
-          </div>
+        <!-- PARTICIPANT COLUMN -->
+        <div id="flex-column3">
+          <ul class="collection white">
+            <li class="collection-header"><h4>Participants</h4></li>
+            <!-- Itère dans les participations de l'expedition et ensuite sur le User -->
+            <% @expedition.participations.each do |participant| %>
+              <li class="collection-item">
+                <div>
+                  <%= participant.user.first_name %><%= participant.user.last_name %>
+                  <a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">question_answer</i></a>
+                </div>
+              </li>
+            <% end %>
+          </ul>
         </div>
-
       </div>
     </div>
 
