@@ -1,27 +1,29 @@
-<% activity.ressources.each do |ressource| %>
-  <div class="row">
-    <div class="col-xs-12 col-md-8" style="margin-left: -14px">
-      <div class="resource-box">
+<div class="collapsible-body padded-extra-small font-style1">
+  <% activity.ressources.each do |ressource| %>
+    <div class="row">
+      <div class="col-xs-12 col-md-8" style="margin-left: -14px">
+        <div class="resource-box">
 
-        <%= link_to "#edit-ressource-modal-#{ressource.id}", class: "modal-trigger" do %>
-          <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
-        <% end %>
-        <%= render 'ressources/edit', ressource: ressource %>
+          <%= link_to "#edit-ressource-modal-#{ressource.id}", class: "modal-trigger" do %>
+            <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+          <% end %>
+          <%= render 'ressources/edit', ressource: ressource %>
 
-        <%= link_to expedition_ressource_path(@expedition, ressource), method: :delete, data: { confirm: 'Are you sure?' } do %>
-          <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
-        <% end %>
+          <%= link_to expedition_ressource_path(@expedition, ressource), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <div class="rb-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
+          <% end %>
 
-        <div class="resource-photo" style='background: url(
-          <%# if activity.photo == nil %>
-            <%= "https://unsplash.it/50/50" %>
-          <%# else %>
-            <%#= image_tag activity.photo %>
-          <%# end %>
-        )'></div>
-        <p class="resource-title"><%= ressource.name %></p>
-        <p class="resource-url"><%= ressource.url %></p>
+          <div class="resource-photo" style='background: url(
+            <%# if activity.photo == nil %>
+              <%= "https://unsplash.it/50/50" %>
+            <%# else %>
+              <%#= image_tag activity.photo %>
+            <%# end %>
+          )'></div>
+          <p class="resource-title"><%= ressource.name %></p>
+          <p class="resource-url"><%= ressource.url %></p>
+        </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
