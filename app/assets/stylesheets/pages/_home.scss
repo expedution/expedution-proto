@@ -43,6 +43,8 @@
   background: $brand-color;
 }
 
+
+
 /////////////////////////////////////////////INTRO//////////////////////////////////////
 
 .section-intro {
@@ -125,14 +127,14 @@
 }
 
 .section-features {
-  background: linear-gradient(158deg, rgba(243,143,56,1) 0%, rgba(242, 126, 80,1) 50%);
+  background: linear-gradient(158deg, rgba(229,112,114,1) 0%, rgba(229, 115, 137,1) 100%);
   height: 70vh;
   color: white;
 }
 
-section-features h2 {
-  font-weight: lighter;
-}
+
+
+
 
 
 
@@ -156,6 +158,7 @@ section-features h2 {
 
 .section-extra-features h3 {
   margin-top: 50px;
+  font-weight: bold;
 }
 
 
@@ -163,10 +166,19 @@ section-features h2 {
 
 .section-text {
   background: linear-gradient(to right, rgba(255,255,255,1) 0%, rgba(245,245,245,1) 18%, rgba(242,242,242,1) 47%, rgba(240,240,240,1) 68%, rgba(237,237,237,1) 93%);
+  background-image: url("http://i.imgur.com/SMYszZS.png");
+  height: 80vh;
 }
 
 .section-text h3 {
   margin-top: 50px;
+  font-weight: bold;
+  color: white;
+}
+
+.section-text h4 {
+  font-weight: bold;
+  color: #9BF0E1;
 }
 
 //////////////////////////////////////// BACKGROUND //////////////////////////////////

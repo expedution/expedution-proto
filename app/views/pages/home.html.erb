@@ -8,9 +8,9 @@
     <!-- Hero Section
     ================================================== -->
 
-    <div class="banner img-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('https://static.pexels.com/photos/527/man-person-people-train.jpg'); height: 75vh;">
+    <div class="banner img-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('https://static.pexels.com/photos/527/man-person-people-train.jpg'); height: 100vh;">
       <div class="banner-content">
-        <h1>Expedution, move work forward</h1>
+        <h1 class="css-typing">Expedution, move work forward</h1>
         <p>Expedution is the easiest way to craft your learning expeditions, innovation tours...</p>
         <%= link_to "CRAFT YOUR ADVENTURE", new_user_session_path, class: "waves-effect waves-light waves-purple btn-large green grey-text white-text", style: "text-decoration: none; font-weight: 600;" %>
       </div>
@@ -28,7 +28,7 @@
         <h2>powerful management tool for impressing your clients</h2>
         <div class="row">
           <div class="col-md-12">
-            <div class="container text-center materialboxed">
+            <div class="container text-center">
               <div class="col-md-12">
                 <img src="http://i.imgur.com/9ZwlxtW.png" alt="iPad mock" class="img-responsive">
               </div>
@@ -58,7 +58,9 @@
               <div class="card-feature">
                 <div class="card-block">
                   <span class="icon-thunderbolt display-1"></span>
-                  <h2>See how it works</h2>
+                  <div class="title-feature">
+                    <h2 style="font-weight: bold;">See how it works.</h2>
+                  </div>
                   <p class="card-text">Start to organise your own Learning Expeditions and save countless hours</p>
                   <%= link_to "TRY IT TODAY", new_user_session_path, class: "waves-effect waves-light waves-purple btn-large green grey-text white-text", style: "text-decoration: none; font-weight: 600;" %>
                 </div>
@@ -76,7 +78,7 @@
 
     <section class="section-extra-features valign-wrapper">
       <div class="container">
-        <h3 class="text-center white-text">One tool to rule them all</h1>
+        <h3 class="text-right white-text">One tool to rule them all.</h1>
         <div class="row padded">
           <div class="col s12 m4 l4">
             <div class="card hoverable">
@@ -223,14 +225,13 @@
 
     <section class="section-text">
       <div class="container">
-        <h3 class="text-center">Make your mark on the product industry</h3>
+      <h3 class="text-left">So Simple.</h3>
         <div class="row padded valign-wrapper">
-          <div class="col-md-5">
-            <p class="wp wp-7">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
-          </div>
-          <div class="col-md-5 col-md-offset-2 separator-x">
-            <p class="wp wp-8">A posuere donec senectus suspendisse bibendum magna ridiculus a justo orci parturient suspendisse ad rhoncus cursus ut parturient viverra elit aliquam ultrices est sem. Tellus nam ad fermentum ac enim est duis facilisis congue a lacus adipiscing consequat risus consectetur scelerisque integer suspendisse a mus integer elit massa ut.</p>
-          </div>
+          <div class="col-md-4">
+            <h4>Create</h4>
+            <h4>Organise</h4>
+            <h4>Discover</h4>
+            <h4>Communicate</h4>
         </div>
       </div>
     </section>
@@ -238,5 +239,9 @@
     <!-- Footer
     ================================================== -->
 
+
 <%= render "shared/footer" %>
+
+
+
 

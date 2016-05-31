@@ -44,6 +44,14 @@
       <% else %>
         <%= button_to "Invite", invite_expedition_invitation_path(@expedition, invitation), class: "participant-link link-bottom-r" %>
       <% end %>
+      <div class="link-top-r">
+        <%= link_to edit_invitation_path(invitation), class: "modal-trigger waves-effect waves-light" do %>
+          <%= image_tag 'edit-icon.png', class: "small-logo" %>
+        <% end %>
+        <%= link_to invitation_path(invitation), method: :delete do %>
+          <%= image_tag 'delete-icon.png', class: "small-logo"%>
+        <% end %>
+      </div>
     </div>
 <% end %>
 
