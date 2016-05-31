@@ -1,7 +1,7 @@
 
 <% @expedition.days.each do |day| %>
   <div id="activities_day_id_<%= day.id %>" data-day_id="<%= day.id %>" class="day-activities hidden">
-    <% day.activities.each do |activity| %>
+    <% day.activities.order(:starts_on).each do |activity| %>
       <div class="activity-box hoverable">
 
         <%= link_to "#edit-activity-modal-#{activity.id}", class: "modal-trigger" do %>
@@ -32,15 +32,15 @@
         <% end %>
 
         <% if activity.category == "Flight" %>
-          <p class="label-activity label-flight"><%= activity.starts_on %> DEPARTURE (local time)  |  <%= activity.ends_on %> ARRIVAL (local time)</p>
+          <p class="label-activity label-flight"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (local time)  |  <%= activity.ends_on.strftime("%I:%M%p") %> ARRIVAL (local time)</p>
         <% elsif activity.category == "Hotel" %>
-          <p class="label-activity label-hotel"><%= activity.starts_on %> CHECK-IN</p>
+          <p class="label-activity label-hotel"><%= activity.starts_on.strftime("%I:%M%p") %> CHECK-IN</p>
         <% elsif activity.category == "Transportation" %>
-          <p class="label-activity label-transportation"><%= activity.starts_on %> DEPARTURE (length : <%= activity.ends_on - activity.starts_on %> min)</p>
+          <p class="label-activity label-transportation"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (length : <%= activity.ends_on - activity.starts_on %> min)</p>
         <% elsif activity.category == "Restaurant" %>
-          <p class="label-activity label-restaurant"><%= activity.starts_on %></p>
+          <p class="label-activity label-restaurant"><%= activity.starts_on.strftime("%I:%M%p") %></p>
         <% elsif activity.category == "Meeting" %>
-          <p class="label-activity label-meeting"> <%= activity.starts_on %> | <%= activity.ends_on %></p>
+          <p class="label-activity label-meeting"> <%= activity.starts_on.strftime("%I:%M%p") %> | <%= activity.ends_on.strftime("%I:%M%p") %></p>
         <% else %>
         <% end %>
 

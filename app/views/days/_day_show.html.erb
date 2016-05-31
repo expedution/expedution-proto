@@ -1,4 +1,4 @@
-<% @expedition.days.each_with_index do |day, index| %>
+<% @expedition.days.order(:date).each_with_index do |day, index| %>
   <div data-day_id="<%= day.id %>" class="day-box">
     <div class="day-box-text">
       <p class="day-number">Day <%= index + 1 %></p>
@@ -6,6 +6,10 @@
       <%= link_to expedition_day_path(@expedition.id, day.id), method: :delete do %>
         <div class="day-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>
       <% end %>
+      <%= link_to "#edit-day-modal-#{day.id}", class: "modal-trigger" do %>
+        <div class="day-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+      <% end %>
+      <%= render 'days/edit', day: day %>
     </div>
     <div class="day-box-chevron">
       <i class="fa fa-angle-right" aria-hidden="true"></i>
