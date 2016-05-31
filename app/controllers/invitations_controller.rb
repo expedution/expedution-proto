@@ -30,6 +30,7 @@ class InvitationsController < ApplicationController
         # Send an email to share about a new LEX
         #Particaion of the user
         UserMailer.newexpedition(@invitation).deliver_now
+        @invitation.update(status: "pending")
         redirect_to expedition_path(@expedition)
       else
         User.invite!(:email => @invitation.email, :first_name => @invitation.first_name)
