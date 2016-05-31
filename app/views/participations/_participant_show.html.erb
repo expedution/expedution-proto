@@ -27,33 +27,32 @@
   </div>
 <% end %>
 
-<% @expedition.invitations.each do |invitation| %>
-  <div class="participant-card">
-    <div class="participant-photo">
-      <img src="http://placehold.it/100" class="avatar-large">
-    </div>
-    <div class="participation-content">
-      <p><%= invitation.first_name %> <%= invitation.last_name %></p>
-    </div>
-    <div class="link-top-r">
-    </div>
-    <% if invitation.status == "pending"%>
-      <a href="#" class="label label-warning link-bottom-r">Pending invite</a>
-    <% else %>
-      <%= button_to "Invite", invite_expedition_invitation_path(@expedition, invitation), class: "participant-link link-bottom-r" %>
-
-   <!-- Add buttons to edit -->
-    <div class="link-top-r">
-      <%= link_to edit_invitation_path(invitation), class: "modal-trigger waves-effect waves-light" do %>
-        <%= image_tag 'edit-icon.png', class: "small-logo" %>
+<% @cleaned_invitations.each do |invitation| %>
+    <div class="participant-card">
+      <div class="participant-photo">
+        <img src="http://placehold.it/100" class="avatar-large">
+      </div>
+      <div class="participation-content">
+        <p><%= invitation.first_name %> <%= invitation.last_name %></p>
+      </div>
+      <div class="link-top-r">
+      </div>
+      <!-- Label: la personne a reçu une invitation -->
+      <% if invitation.status == "pending"%>
+        <a href="#" class="label label-warning link-bottom-r">Pending invite</a>
+      <!-- La personne a été crée et on peut lui envoyer une invitation-->
+      <% else %>
+        <%= button_to "Invite", invite_expedition_invitation_path(@expedition, invitation), class: "participant-link link-bottom-r" %>
       <% end %>
-      <%= link_to invitation_path(invitation), method: :delete do %>
-        <%= image_tag 'delete-icon.png', class: "small-logo"%>
-      <% end %>
+      <div class="link-top-r">
+        <%= link_to edit_invitation_path(invitation), class: "modal-trigger waves-effect waves-light" do %>
+          <%= image_tag 'edit-icon.png', class: "small-logo" %>
+        <% end %>
+        <%= link_to invitation_path(invitation), method: :delete do %>
+          <%= image_tag 'delete-icon.png', class: "small-logo"%>
+        <% end %>
+      </div>
     </div>
-
-    <% end %>
-  </div>
 <% end %>
 
 
