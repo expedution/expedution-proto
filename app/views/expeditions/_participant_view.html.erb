@@ -9,10 +9,10 @@
     <!-- Days ============= -->
         <div class="day">
           <div class="col s12 m1 l1 pull-l1 white z-depth-1" style="border-radius: 5px;">
-            <div class="collection" style="margin-right: -11px; margin-left: -12px; margin-top: 0px; margin-bottom: 0px;">
-              <a href="#day1" class="collection-item">Day 1</a>
-              <a href="#day2" class="collection-item">Day 2</a>
-              <a href="#day3" class="collection-item">Day 3</a>
+            <div class="collection pinned">
+              <% @days.each_with_index do |day, index| %>
+                <%= link_to "Day #{index + 1}", "#day#{day.id}", class: "collection-item" %>
+              <% end %>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
     <!-- Activities ======================== -->
       <!-- Description ===================== -->
         <div class="activities">
-          <div class="col s12 m8 l8 white z-depth-1" style="border-radius: 5px;">
+          <div class="col s12 m8 offset-m2 l8 white z-depth-1" style="border-radius: 5px;">
             <div class="banner-small image-responsive" style="background-image: linear-gradient(to right, rgba(224, 93, 73,0.6) 0%, rgba(153, 107, 130,0.6) 40%, rgba(87, 135, 198,0.6) 80%, rgba(62, 151, 232,0.6) 100%), url('http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg'); padding: off">
               <div class="banner-content">
                 <h2>Disvover The Valley</h2>
@@ -42,70 +42,9 @@
               <!-- Activity ========= -->
               <div class="row padded-extra-small">
                 <div class="col s12 m12">
-                  <div class="card white">
+                  <div class="card white" id="day<%= day.id %>">
                     <div class="card-content grey-text">
-
                       <%= render 'activities/activity_show', activities: day.activities %>
-
-                      <!-- Ressources ========== -->
-                      <hr>
-                      <h5>Ressources</h5>
-                      <div class="row">
-                        <div class="col s12">
-                        <a class="modal-trigger" href="#modal2">
-                          <div class="card white darken-1 z-depth-0 hoverable">
-                            <div class="card-content grey-text">
-                              <span class="card-title">Card Title</span>
-                              <div class="row">
-                                <div class="col s4">
-                                  <div class="card-image materialboxed">
-                                    <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
-                                  </div>
-                                </div>
-                                <div class="col s7">
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit</p>
-                                </div>
-                                <div class="col s1" style="margin-top: 15px">
-                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s12">
-                        <a class="modal-trigger" href="#modal2">
-                          <div class="card white darken-1 hoverable z-depth-0">
-                            <div class="card-content grey-text">
-                              <span class="card-title">Card Title</span>
-                              <div class="row">
-                                <div class="col s4">
-                                  <div class="card-image">
-                                    <img src="http://www.jetblue.com/img/vacations/destination/San-Francisco-960-x-420.jpg">
-                                  </div>
-                                </div>
-                                <div class="col s7">
-                                  <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-                                </div>
-                                <div class="col s1" style="margin-top: 15px">
-                                  <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </a>
-                        </div>
-                      </div>
-                      <!-- End Ressources =================== -->
-                    <div class="card-action">
-                      <a class="activator">Check all ressources</a>
-                    </div>
-                    <div class="card-reveal">
-                          <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                          <p>Here is some more information about this product that is only revealed once clicked on.</p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -122,7 +61,12 @@
               <li class="collection-header"><h4>Participants</h4></li>
               <!-- Itère dans les participations de l'expedition et ensuite sur le User -->
               <% @expedition.participations.each do |participant| %>
-                <li class="collection-item"><div><%= participant.user.first_name %><%= participant.user.last_name %><a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">email</i></a></div></li>
+                <li class="collection-item">
+                  <div>
+                    <%= participant.user.first_name %><%= participant.user.last_name %>
+                    <a class="secondary-content modal-trigger" href="#modal1" ><i class="material-icons">question_answer</i></a>
+                  </div>
+                </li>
               <% end %>
             </ul>
           </div>
@@ -164,22 +108,9 @@
         </div>
       </div>
 
-      <!-- Modal Ressources -->
+    <!-- Scripts call google map ================= -->
 
-      <div id="modal2" class="modal-mat">
-        <div class="modal-content">
-          <h4>Ressource title</h4>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
-        </div>
-        <div class="modal-footer">
-          <a href="" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-        </div>
-      </div>
-
-    <!-- Scripts call google map
-    ================================================== -->
-
-<!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
   var myLatlng = new google.maps.LatLng(37.773972, -122.431297);
 
@@ -198,7 +129,7 @@
     title: "You are here!"
   });
 
-</script> -->
+</script>
 
 
 
