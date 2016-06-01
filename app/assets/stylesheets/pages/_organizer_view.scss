@@ -31,6 +31,19 @@
   background-color: rgba(215,215,215,0.3);
 }
 
+.preview {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  color: white;
+  font-size: 32px;
+}
+
+.preview:hover {
+  color: $custom-blue;
+  transition: opacity 0.3s ease;
+}
+
 .expedition-participant-number {
   position: absolute;
   left: 22px;
@@ -355,6 +368,7 @@
   font-size: 14px;
   text-align: justify;
   padding-right: 5px;
+  margin-bottom: 2px;
 }
 
 .activity-address {
@@ -580,8 +594,6 @@
   margin-top: 10px;
 }
 
-
-
 .custom-btn:hover {
   background-color: #eafbff;
   transition: background-color 0.3s ease;
@@ -593,4 +605,8 @@
 .modal-title {
   font-size: 36px;
 }
+
+
+
+
 

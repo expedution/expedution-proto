@@ -10,7 +10,7 @@ $(document).ready(function(){
 
 /////////////////   AUTOSCROLL   /////////////////////////////
 
-$('a').click(function(){
+$('.day-scroll').click(function(){
     $('html, body').animate({
         scrollTop: $( $(this).attr('href') ).offset().top
     }, 1000);

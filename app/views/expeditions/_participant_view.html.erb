@@ -10,7 +10,7 @@
           <ul class="collection white">
             <% @days.each_with_index do |day, index| %>
               <li>
-                <%= link_to "Day #{index + 1}", "#day#{day.id}", class: "collection-item" %>
+                <%= link_to "Day #{index + 1}", "#day#{day.id}", class: "collection-item day-scroll" %>
               </li>
             <% end %>
           </ul>

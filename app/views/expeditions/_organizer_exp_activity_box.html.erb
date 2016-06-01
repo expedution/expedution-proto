@@ -46,23 +46,15 @@
 
         <h2 class="activity-title"><%= activity.title %></h2>
         <p class="activity-description"><%= activity.description %></p>
-        <div class="row">
-          <div class="col-xs-12 col-md-8" style="margin-left: -14px">
-            <div class="resource-box">
-              <div id="map" class="resource-map"></div>
 
-<!--               <div class="resource-photo" style='background: url(
-                <%# if activity.photo == nil %>
-                  <%#= "https://unsplash.it/50/50" %>
-                <%# else %>
-                  <%#= image_tag activity.photo %>
-                <%# end %>)
-              '></div> -->
-              <p class="activity-address"></p>
-              <p class="activity-address"><%= activity.address %></p>
-            </div>
-          </div>
+        <%= link_to "#map-activity", class: "modal-trigger" do %>
+          <p class="activity-address"><%= activity.address %></p>
+        <% end %>
+
+        <div id="map-activity" class="modal-mat" >
+          <div id="map" style="width: 1000px; height: 500px;"></div>
         </div>
+
       <%= render 'ressources/ressource_show', activity: activity %>
 
       </div>
@@ -70,24 +62,15 @@
   </div>
 <% end %>
 
-
 <% content_for(:after_js) do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
+  <%# javascript_tag do %>
+    <!-- $(document).on('ready', function() {
       handler = Gmaps.build('Google');
       handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
+        markers = handler.addMarkers(<%# raw @markers.to_json %>);
         handler.bounds.extendWith(markers);
         handler.fitMapToBounds();
       });
-    })
-  <% end %>
+    }) -->
+  <%# end %>
 <% end %>
-
-
-
-
-
-
-
-
