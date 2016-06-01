@@ -4,16 +4,12 @@ require 'open-uri'
 Ressource.delete_all
 Activity.delete_all
 Day.delete_all
+Invitation.delete_all
 Participation.delete_all
 Expedition.delete_all
 User.delete_all
 
-t1 = Time.new(2017, 01, 03, 9, 30, 00)
-t2 = Time.new(2017, 01, 03, 11, 00, 00)
-t3 = Time.new(2017, 01, 03, 11, 00, 00)
-t4 = Time.new(2017, 01, 03, 12, 00, 00)
-
-b = User.create({
+organiser = User.create!({
     email: "boris@lewagon.org",
     password: "lewagon",
     first_name: "Boris",
@@ -26,7 +22,258 @@ b = User.create({
     organiser: true
   })
 
-b1 = User.create({
+lex = Expedition.create!({
+  title: "The future of Medicine",
+  description: "Take this tour of medicine's future with some of the trailblazing doctors charting its course. Once you've seen a transplantable human kidney created from a 3D printer, almost anything is imaginable ...",
+  theme: "medtech",
+  user_id: organiser.id,
+  starts_on: Date.new(2017,01,03),
+  ends_on: Date.new(2017,02,07),
+  location: "San Francisco"
+})
+
+d1 = Day.new({
+  position: 1,
+  date: Date.new(2016,07,02),
+  title: "Let's go to SF!"
+  })
+d1.expedition = lex
+d1.save
+
+t0 = Time.new(2016, 07, 02, 19, 30, 00)
+t00 = Time.new(2016, 07, 02, 23, 00, 00)
+
+  activity0 = Activity.create({
+    title: "Flight to SF",
+    category: "Flight",
+    description: "Let's meet at the airport and get to SF together.",
+    starts_on: t0,
+    ends_on: t00,
+    day_id: d1.id,
+    address: "888 Post Stree, San Francisco, USA"
+    })
+
+
+# DAY 2
+#
+d2 = Day.new({
+  position: 2,
+  date: Date.new(2016,07,03),
+  title: "Discovery"
+  })
+d2.expedition = lex
+d2.save
+
+t1 = Time.new(2016, 07, 04, 8, 30, 00)
+t2 = Time.new(2016, 07, 04, 10, 00, 00)
+t3 = Time.new(2016, 07, 04, 10, 30, 00)
+t4 = Time.new(2016, 07, 04, 12, 00, 00)
+t5 = Time.new(2016, 07, 04, 12, 30, 00)
+t6 = Time.new(2016, 07, 04, 13, 45, 00)
+t7 = Time.new(2016, 07, 04, 18, 00, 00)
+t8 = Time.new(2016, 07, 04, 20, 00, 00)
+t9 = Time.new(2016, 07, 04, 23, 00, 00)
+
+  activity1 = Activity.create({
+    title: "Welcome reakfast",
+    category: "Meeting",
+    description: "Let's share food and perspective on this week",
+    starts_on: t1,
+    ends_on: t2,
+    day_id: d2.id,
+    address: "888 Post Stree, San Francisco, USA"
+    })
+
+  activity2 = Activity.create({
+    title: "Keynote - Health in 2025",
+    category: "Meeting",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+    starts_on: t3,
+    ends_on: t4,
+    day_id: d2.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+    ressource1 = Ressource.create({
+      name: "23andMe",
+      category: "Website",
+      description: "One of the key players those days",
+      url: "www.23andme.com",
+      activity_id: activity2.id
+      })
+
+
+  activity3 = Activity.create({
+    title: "Transport to lunch",
+    category: "Transportation",
+    description: "We'll be walking to the restaurant.",
+    starts_on: t4,
+    ends_on: t5,
+    day_id: d2.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+  activity4 = Activity.create({
+    title: "Reflexion lunch",
+    category: "Restaurant",
+    description: "What did we learn this morning?",
+    starts_on: t5,
+    ends_on: t6,
+    day_id: d2.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+  activity5 = Activity.create({
+    title: "Getting inspired - Demo Day",
+    category: "Meeting",
+    description: "The Medtech+ accelerator will be sharing its companies.",
+    starts_on: t6,
+    ends_on: t7,
+    day_id: d2.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+
+  activity6 = Activity.create({
+    title: "Dinner & drinks",
+    category: "Restaurant",
+    description: "Relaxing time after this 1st intense day",
+    starts_on: t8,
+    ends_on: t9,
+    day_id: d2.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+# DAY 3
+
+d3 = Day.new({
+  position: 3,
+  date: Date.new(2016,07,04),
+  title: "Exploration"
+  })
+d3.expedition = lex
+d3.save
+
+d2t1 = Time.new(2016, 07, 04, 8, 30, 00)
+d2t2 = Time.new(2016, 07, 04, 10, 00, 00)
+d2t3 = Time.new(2016, 07, 04, 10, 30, 00)
+d2t4 = Time.new(2016, 07, 04, 12, 00, 00)
+d2t5 = Time.new(2016, 07, 04, 12, 30, 00)
+d2t6 = Time.new(2016, 07, 04, 13, 45, 00)
+d2t7 = Time.new(2016, 07, 04, 18, 00, 00)
+d2t8 = Time.new(2016, 07, 04, 20, 00, 00)
+d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
+
+  activity1 = Activity.create({
+    title: "Breakfast",
+    category: "Meeting",
+    description: "Let's share food and perspective on the meetings of the day",
+    starts_on: d2t1,
+    ends_on: d2t2,
+    day_id: d3.id,
+    address: "888 Post Stree, San Francisco, USA"
+    })
+
+  activity2 = Activity.create({
+    title: "Keynote - Health in 2025",
+    category: "Meeting",
+    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+    starts_on: d2t3,
+    ends_on: d2t4,
+    day_id: d3.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+    ressource1 = Ressource.create({
+      name: "23andMe",
+      category: "Website",
+      description: "One of the key players those days",
+      url: "www.23andme.com",
+      activity_id: activity2.id
+      })
+
+
+  activity3 = Activity.create({
+    title: "Transport to lunch",
+    category: "Transportation",
+    description: "We'll be walking to the restaurant.",
+    starts_on: t4,
+    ends_on: d2t5,
+    day_id: d3.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+  activity4 = Activity.create({
+    title: "Reflexion lunch",
+    category: "Restaurant",
+    description: "What did we learn this morning?",
+    starts_on: d2t5,
+    ends_on: d2t6,
+    day_id: d3.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+  activity5 = Activity.create({
+    title: "Getting inspired - Demo Day",
+    category: "Meeting",
+    description: "The Medtech+ accelerator will be sharing its companies.",
+    starts_on: d2t6,
+    ends_on: d2t7,
+    day_id: d3.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+
+  activity6 = Activity.create({
+    title: "Dinner & drinks",
+    category: "Restaurant",
+    description: "Relaxing time after this 2nd intense day",
+    starts_on: d2t8,
+    ends_on: d2t9,
+    day_id: d3.id,
+    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    })
+
+# Other empty days #
+
+d4 = Day.create({
+  position: 4,
+  date: Date.new(2016,07,05),
+  title: "Future of public Health"
+  })
+d4.expedition = lex
+d4.save
+
+d5 = Day.create({
+  position: 5,
+  date: Date.new(2016,07,06),
+  title: "IOT and predictive health"
+  })
+d5.expedition = lex
+d5.save
+
+
+# --- #
+
+Jeanne = Invitation.create({
+    email: "yo1@yoann.co",
+    first_name: "Jeanne",
+    last_name: "Armand",
+    status: "pending"
+  })
+lex.invitations << Jeanne
+lex.save
+
+Pierre = Invitation.create({
+    email: "yo2@yoann.co",
+    first_name: "Pierre",
+    last_name: "Armand",
+    status: nil
+  })
+lex.invitations << Pierre
+lex.save
+
+Yoann = User.create({
     email: "yo@yoann.co",
     password: "lewagon",
     first_name: "Yoann",
@@ -39,83 +286,35 @@ b1 = User.create({
     organiser: false
   })
 
-a = Expedition.new({
-  title: "L'Oreal",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-  theme: "Tech innovations",
-  starts_on: Date.new(2017,01,03),
-  ends_on: Date.new(2017,02,07),
-  location: "New York City"
+Michel = User.create({
+    email: "yo2@yoann.co",
+    password: "lewagon",
+    first_name: "Michel",
+    last_name: "Paillette",
+    job: "Participant",
+    company: "Le Wagon",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
   })
-a.user = b
-a.save
 
-Participation.create(user: b, expedition: a)
-
-d = Day.new({
-  position: 1,
-  date: Date.new(2017,01,03),
-  title: "En route pour SF"
+Patricia = User.create({
+    email: "yo2+3@yoann.co",
+    password: "lewagon",
+    first_name: "Patricia",
+    last_name: "Toubin",
+    job: "Médecin",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
   })
-d.expedition = a
-d.save
 
-g = Day.new({
-  position: 2,
-  date: Date.new(2017,01,04),
-  title: "En route pour NYC"
-  })
-g.expedition = a
-g.save
-
-
-
-e = Activity.new({
-  title: "Space X meeting with innovation team",
-  category: "Meeting",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
-  starts_on: t1,
-  ends_on: t2,
-  address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
-  })
-e.day = d
-e.save
-
-
-h = Activity.new({
-  title: "Let's go",
-  category: "Flight",
-  description: "AF N° ...",
-  starts_on: t3,
-  ends_on: t4,
-  address: "CDG airport, Paris"
-  })
-h.day = d
-h.save
-
-
-i = Activity.new({
-  title: "Go to next meeting",
-  category: "Transportation",
-  description: "jkhkjhkjhjk",
-  starts_on: t1,
-  ends_on: t2,
-  address: "Empire State Building, NYC"
-  })
-i.day = g
-i.save
-
-
-
-c = Ressource.new({
-  name: "Visited company background",
-  category: "Website",
-  description: "At vero eos et accusamus et iusto odio dignissimos ducimus",
-  url: "www.spacex.com",
-  })
-c.activity = e
-c.save
-
+Participation.create(user: Michel, expedition: lex)
+Participation.create(user: Yoann, expedition: lex)
+Participation.create(user: Patricia, expedition: lex)
 
 
 
@@ -123,7 +322,7 @@ c.save
 # response = open("https://angel.co/companies")
 # doc = Nokogiri::HTML(response, nil, 'utf-8')
 # doc.css('.itemName').each do |element|
-#   name = element.search('a').inner_text
+#   name = element.search('lex').inner_text
 #   resource = Resource.create!(name: name)
 # end
 
