@@ -1,7 +1,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
-//= require materialize
+//= require materialize-sprockets
 //= require bootstrap-timepicker
 //= require expeditions
 //= require users

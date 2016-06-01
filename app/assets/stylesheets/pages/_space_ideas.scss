@@ -6,7 +6,6 @@
 }
 
 
-
 .small-banner {
   min-height: 25vh;
   display: flex;
@@ -24,7 +23,7 @@
   background-image: url("http://cdn2-b.examiner.com/sites/default/files/styles/image_content_width/hash/cb/f0/cbf0a3f2408b4cddb49d8a26240004ab.png?itok=zRQ6tcAK");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 200px;
+  background-size: 130px;
 }
 
 
@@ -43,10 +42,31 @@
   left: 19px;
 }
 
-.add {
+.activity-banner a {
   position: absolute;
-  bottom: -7px;
-  right: 19px;
+  top: 5px;
+  right: 5px;
+}
+
+.location h5 {
+  padding-left: 50px;
+}
+
+.location p {
+  padding-left: 40px;
+}
+
+
+.description h5 {
+  padding-left: 50px;
+}
+
+.description p {
+  padding-left: 40px;
+}
+
+.resources h5 {
+  padding-left: 50px;
 }
 
 .custom-btn-space {
