@@ -11,11 +11,11 @@
       </div>
       <!-- Label: la personne a reçu une invitation -->
       <% if invitation.status == "pending"%>
-        <a href="#" class="label label-warning link-bottom-r">Pending invite</a>
+        <a href="#" class="custom-btn link-bottom-r" style="font-size: 10px; background-color: orange; color: white; border: transparent">Pending invite</a>
       <!-- La personne a été crée et on peut lui envoyer une invitation-->
       <% else %>
 
-        <%= button_to "Invite", invite_expedition_invitation_path(@expedition, invitation), class: "participant-link link-bottom-r", :method => :post, remote: :true  %>
+        <%= link_to "Invite", invite_expedition_invitation_path(@expedition, invitation), class: "participant-link link-bottom-r custom-btn", :method => :post, remote: :true  %>
 
       <% end %>
       <div class="link-top-r">
