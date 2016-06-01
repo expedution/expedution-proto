@@ -30,15 +30,23 @@
       <ul class="list-unstyled">
       <ul class="collapsible" data-collapsible="accordion">
         <li>
-          <div class="collapsible-header"><i class="material-icons">chat_bubble</i>Leave a feedback</div>
+          <div class="collapsible-header" id="new-feedback"><i class="material-icons">chat_bubble</i>Leave a feedback</div>
           <%= render 'feedbacks/feedback_new', activity: activity %>
         </li>
         <li>
-          <div class="collapsible-header"><i class="material-icons">comment</i>Feedbacks</div>
-          <%= render 'feedbacks/feedback_show', activity: activity %>
+          <div class="collapsible-header" id="show-feedback"><i class="material-icons">comment</i>Feedbacks</div>
+          <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
+            <% if activity.feedbacks.present? %>
+              <% activity.feedbacks.reverse_each do |feedback| %>
+                <%= render 'feedbacks/feedback_show', feedback: feedback %>
+              <% end %>
+            <% else %>
+                <p>No Feedbacks Yet</p>
+            <% end %>
+          </div>
         </li>
         <li>
-          <div class="collapsible-header"><i class="material-icons">subtitles</i>Ressources</div>
+          <div class="collapsible-header" id="show-ressources"><i class="material-icons">subtitles</i>Ressources</div>
           <%= render 'ressources/ressource_show', activity: activity %>
         </li>
       </ul>
