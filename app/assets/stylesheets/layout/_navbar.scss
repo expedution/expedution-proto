@@ -40,21 +40,21 @@
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: $green;
+  color: $custom-green;
   font-size: 14px;
 
   a {
-    color: $green;
+    color: $custom-green;
 
     &:hover {
-      color: $green;
+      color: $custom-green;
       text-decoration: none;
     }
   }
 }
 
 .navbar-wagon-link:hover {
-  color: $green;
+  color: $custom-green;
   text-decoration: none;
 }
 

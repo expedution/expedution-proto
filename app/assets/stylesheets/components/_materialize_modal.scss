@@ -1,0 +1,60 @@
+.modal-mat {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 70%;
+  width: 55%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity;
+}
+​
+.modal-mat h1, .modal h2, .modal h3, .modal h4 {
+  margin-top: 0;
+}
+​
+.modal-mat .modal-content {
+  padding: 24px;
+}
+​
+.modal-mat .modal-close {
+  cursor: pointer;
+}
+​
+.modal-mat .modal-footer .btn, .modal-mat .modal-footer .btn-large, .modal-mat .modal-footer .btn-flat {
+  float: right;
+  margin: 6px 0;
+}
+​
+.modal-mat.modal-fixed-footer {
+  padding: 0;
+  height: 70%;
+}
+​
+.modal-mat.modal-fixed-footer .modal-content {
+  position: absolute;
+  height: calc(100% - 56px);
+  max-height: 100%;
+  width: 100%;
+  overflow-y: auto;
+}
+​
+.modal-mat.modal-fixed-footer .modal-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  position: absolute;
+  bottom: 0;
+}
+​
+.modal-mat.bottom-sheet {
+  top: auto;
+  bottom: -100%;
+  margin: 0;
+  width: 100%;
+  max-height: 45%;
+  border-radius: 0;
+  will-change: bottom, opacity;
+}
