@@ -17,7 +17,7 @@ class PagesController < ApplicationController
   end
 
   def space_ideas
-    @activity = Activity.find(params[:id])
+    # @activity = Activity.find(params[:id])
   end
 
   def upvote
