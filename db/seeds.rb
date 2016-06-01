@@ -9,6 +9,7 @@ Participation.delete_all
 Expedition.delete_all
 User.delete_all
 
+
 organiser = User.create!({
     email: "boris@lewagon.org",
     password: "lewagon",
@@ -22,6 +23,11 @@ organiser = User.create!({
     organiser: true
   })
 
+t1 = Time.new(2017, 01, 03, 9, 30, 00)
+t2 = Time.new(2017, 01, 03, 11, 00, 00)
+t3 = Time.new(2017, 01, 03, 11, 00, 00)
+t4 = Time.new(2017, 01, 03, 12, 00, 00)
+
 lex = Expedition.create!({
   title: "The future of Medicine",
   description: "Take this tour of medicine's future with some of the trailblazing doctors charting its course. Once you've seen a transplantable human kidney created from a 3D printer, almost anything is imaginable ...",
@@ -30,7 +36,7 @@ lex = Expedition.create!({
   starts_on: Date.new(2017,01,03),
   ends_on: Date.new(2017,02,07),
   location: "San Francisco"
-})
+  })
 
 d1 = Day.new({
   position: 1,

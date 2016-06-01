@@ -3,8 +3,10 @@
 //= require bootstrap-sprockets
 //= require materialize-sprockets
 //= require bootstrap-timepicker
+//= require bootstrap-datepicker
 //= require expeditions
 //= require users
 //= require activities
+//= require datepicker
 //= require underscore
 //= require gmaps/google

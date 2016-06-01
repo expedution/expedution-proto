@@ -6,6 +6,7 @@ class Day < ActiveRecord::Base
   validates :date, presence: true
 
   def formatted_date
-    date.strftime("%d/%m/%Y")
+    date.strftime("%d/%m/%Y") if date
   end
 end
+
