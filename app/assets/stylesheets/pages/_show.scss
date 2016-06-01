@@ -41,6 +41,8 @@
   font-size: 20px;
 }
 
+/* PARTICIPANT VIEW OF AN EXPEDITION */
+
 .flexbox {
   display: flex;
   flex-wrap: wrap;
@@ -60,4 +62,14 @@
 
 .expedition-description {
   padding: 0 20px;
+}
+
+/* TABS IN ORGANIZER VIEW OF AN EXPEDITION */
+
+.tabs .tab a {
+  color: $custom-blue;
+  font-style: bold;
+  &:hover {
+    color: $custom-blue;
+  }
 }
