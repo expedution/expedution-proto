@@ -5,7 +5,7 @@
         <div class="resource-box">
 
           <%= link_to "#edit-ressource-modal-#{ressource.id}", class: "modal-trigger" do %>
-            <div class="rb-edit-logo" style="background: url(<%= asset_path 'activity-icon-hotel.png' %>")></div>
+            <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
           <% end %>
           <%= render 'ressources/edit', ressource: ressource %>
 
@@ -25,5 +25,6 @@
         </div>
       </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
+

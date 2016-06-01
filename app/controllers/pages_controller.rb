@@ -20,12 +20,12 @@ class PagesController < ApplicationController
     # @activity = Activity.find(params[:id])
   end
 
-  def upvote
+  def like
     @activity = Activity.find(params[:id])
-    if current_user.voted_for? @activity
-      current_user.unvote_for @activity
+    if current_user.liked? @activity
+      @activity.unliked_by current_user
     else
-      current_user.up_votes @activity
+      @activity.liked_by current_user
     end
   end
 
@@ -49,3 +49,5 @@ class PagesController < ApplicationController
   end
 
 end
+
+
