@@ -3,6 +3,7 @@ class Day < ActiveRecord::Base
   has_many :activities, dependent: :destroy
 
   def formatted_date
-    date.strftime("%d/%m/%Y")
+    date.strftime("%d/%m/%Y") if date
   end
 end
+
