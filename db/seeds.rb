@@ -13,7 +13,7 @@ t2 = Time.new(2017, 01, 03, 11, 00, 00)
 t3 = Time.new(2017, 01, 03, 11, 00, 00)
 t4 = Time.new(2017, 01, 03, 12, 00, 00)
 
-b = User.create({
+Organiser = User.create({
     email: "boris@lewagon.org",
     password: "lewagon",
     first_name: "Boris",
@@ -39,18 +39,31 @@ b1 = User.create({
     organiser: false
   })
 
+d = User.create({
+    email: "boris@lewagon.org",
+    password: "lewagon",
+    first_name: "Boris",
+    last_name: "Paillard",
+    job: "Team Leader",
+    company: "Le Wagon",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: true
+  })
+
 a = Expedition.new({
-  title: "L'Oreal",
+  title: "The future of Medicine",
   description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.",
-  theme: "Tech innovations",
+  theme: "medtech",
   starts_on: Date.new(2017,01,03),
   ends_on: Date.new(2017,02,07),
-  location: "New York City"
+  location: "San Francisco"
   })
-a.user = b
+a.user = Organiser
 a.save
 
-Participation.create(user: b, expedition: a)
+Participation.create(user: Organiser, expedition: a)
 
 d = Day.new({
   position: 1,
