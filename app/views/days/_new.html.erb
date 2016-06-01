@@ -1,14 +1,12 @@
 <div class="container">
   <div id="new-day-modal-<%=@expedition.id %>" class="modal-mat new-day-modal">
-    <div class="modal-content">
+    <div class="modal-content" style="padding-left: 20px; padding-right: 20px;">
       <h4>Add new day</h4>
       <%= simple_form_for [@expedition, Day.new] do |f| %>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <ul style="display: inline;">
-            <li><%= f.input :title, label: "Day title", placeholder: "Title", input_html: {maxlength: 30} %> </li>
-            <li> <%= f.input :date, label: "Date", id: "datepicker" %></li>
-          </ul>
+          <%= f.input_field :title, label: "Day title", placeholder: "Title", input_html: {maxlength: 30} %>
+          <%= f.input :date, as: :string, label: "Date", input_html: {id: "datepicker", class: "datepicker"} %>
         </div>
       </div>
       <div class="modal-footer">

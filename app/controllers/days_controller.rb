@@ -2,7 +2,7 @@ class DaysController < ApplicationController
 skip_after_action :verify_authorized, only: :home
 
   def create
-    @day = Day.new(day_params)
+    @day = Day.new(day_params.merge({date: Date.strptime(params["day"]["date"], "%m/%d/%Y")}))
     find_expedition
     @day.expedition = @expedition
     @day.save
@@ -29,7 +29,7 @@ skip_after_action :verify_authorized, only: :home
   private
 
   def day_params
-    params.require(:day).permit(:title, :position, :date)
+    params.require(:day).permit(:title, :position)
   end
 
   def find_day
