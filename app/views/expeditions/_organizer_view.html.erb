@@ -12,8 +12,8 @@
           <% end %>
         )'>
         <h1 class="expedition-title"><%= @expedition.title %></h1>
-        <%= link_to '' do %>
-          <div class="preview"><i class="fa fa-eye" aria-hidden="true"></i></div>
+        <%= link_to params.merge(preview: true) do %>
+          <div class="preview">Preview</div>
         <% end %>
       </div>
       </div>
@@ -103,14 +103,8 @@
 <%= content_for :after_js do %>
   <script>
     $(function() {
-      // Either we click on the day in the url
-      var dayId = location.search.match(/\d+/);
-      if (dayId) {
-      $("[data-day_id=" + dayId[0]+ "]").first().click();
-      } else {
-        // Or the first day
-        $(".day-box").first().click();
-      }
+      $('ul.tabs').tabs();
+
       $('.day-box').click(function(){
         var day_id = $(this).data('day_id');
         var activities_day_id = "#activities_day_id_" + day_id;
@@ -131,7 +125,16 @@
         }
         //debugger;
       })
-      $('ul.tabs').tabs();
+
+      // Either we click on the day in the url
+      var dayId = location.search.match(/\d+/);
+      if (dayId) {
+        $(".day-box[data-day_id=" + dayId[0]+ "]").first().click();
+      } else {
+        // Or the first day
+        $(".day-box").first().click();
+      }
+
     });
   </script>
 <% end %>

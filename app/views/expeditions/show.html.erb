@@ -1,4 +1,4 @@
-<% if current_user.organiser %>
+<% if current_user.organiser && !@is_preview %>
   <%= render 'expeditions/organizer_view' %>
 <% else %>
   <%= render 'expeditions/participant_view' %>

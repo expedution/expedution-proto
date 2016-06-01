@@ -1,7 +1,7 @@
 <% @expedition.days.order(:date).each_with_index do |day, index| %>
   <div data-day_id="<%= day.id %>" class="day-box">
     <div class="day-box-text">
-      <p class="day-number">Day <%= index + 1 %></p>
+      <p class="day-number">Day <%= index + 1 %> (<%= day.date.strftime("%d %b %Y") %>)</p>
       <p class="day-title"><%= day.title %> </p>
       <%= link_to expedition_day_path(@expedition.id, day.id), method: :delete do %>
         <div class="day-delete-logo" style="background: url(<%= asset_path 'delete-icon.png' %>")></div>

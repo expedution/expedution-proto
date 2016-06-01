@@ -28,6 +28,7 @@ class ExpeditionsController < ApplicationController
   def show
     find_expedition
     authorize @expedition
+    @is_preview = params[:preview]
     @invitation = Invitation.new
     @days = Day.all
     @expeditions = Expedition.all
