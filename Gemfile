@@ -30,6 +30,7 @@ gem 'httparty', '~> 0.13.7'
 gem "geocoder"
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'acts_as_votable'
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"

@@ -7,7 +7,6 @@ class PagesController < ApplicationController
   skip_after_action :verify_authorized, only: :sourcing
   skip_after_action :verify_authorized, only: :space_ideas
 
-
   def home
   end
 
@@ -18,6 +17,16 @@ class PagesController < ApplicationController
   end
 
   def space_ideas
+    @activity = Activity.find(params[:id])
+  end
+
+  def upvote
+    @activity = Activity.find(params[:id])
+    if current_user.voted_for? @activity
+      current_user.unvote_for @activity
+    else
+      current_user.up_votes @activity
+    end
   end
 
   def dashboard
@@ -28,7 +37,6 @@ class PagesController < ApplicationController
       @expeditions = current_user.participant_expeditions
     end
   end
-
 
   private
 

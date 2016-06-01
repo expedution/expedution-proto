@@ -20,4 +20,7 @@ class User < ActiveRecord::Base
   def is_user_an_invitee?
     Invitation.find_by(email: email).nil?
   end
+
+  acts_as_voter
+
 end
