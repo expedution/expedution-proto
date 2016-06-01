@@ -21,6 +21,6 @@ class User < ActiveRecord::Base
     Invitation.find_by(email: email).nil?
   end
 
-  acts_as_voter
+  # acts_as_voter
 
 end
