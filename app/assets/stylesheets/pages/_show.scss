@@ -36,9 +36,16 @@
   margin: 20px 0px;
 }
 
+/* REVIEWS STYLE  */
+
 .font-style1 {
   font-style: italic;
   font-size: 20px;
+}
+
+.signature {
+  font-size: 10px;
+  font-style: italic;
 }
 
 /* PARTICIPANT VIEW OF AN EXPEDITION */
@@ -72,4 +79,8 @@
   &:hover {
     color: $custom-blue;
   }
+}
+
+.tabs .indicator {
+  background-color: $custom-blue;
 }
