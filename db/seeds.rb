@@ -65,21 +65,21 @@ a.save
 
 Participation.create(user: Organiser, expedition: a)
 
-d = Day.new({
-  position: 1,
-  date: Date.new(2017,01,03),
-  title: "En route pour SF"
-  })
-d.expedition = a
-d.save
+# d = Day.new({
+#   position: 1,
+#   date: Date.new(2017,01,03),
+#   title: "En route pour SF"
+#   })
+# d.expedition = a
+# d.save
 
-g = Day.new({
-  position: 2,
-  date: Date.new(2017,01,04),
-  title: "En route pour NYC"
-  })
-g.expedition = a
-g.save
+# g = Day.new({
+#   position: 2,
+#   date: Date.new(2017,01,04),
+#   title: "En route pour NYC"
+#   })
+# g.expedition = a
+# g.save
 
 
 
