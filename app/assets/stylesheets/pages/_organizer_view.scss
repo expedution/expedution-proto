@@ -65,6 +65,36 @@
 }
 
 
+.btn-library {
+  position: absolute;
+  top: 5px;
+  right: 140px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 120px;
+  margin-left: 10px;
+}
+
+.btn-library:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
+
+
+.library {
+  height: 300px;
+}
+
+.modal-activity-card {
+  height: 280px;
+  background-size: cover !important;
+}
+
+
 // LEX DAYS SUB SECTION
 
 .day-box {

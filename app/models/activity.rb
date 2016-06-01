@@ -4,6 +4,8 @@ class Activity < ActiveRecord::Base
   has_many :feedbacks, dependent: :destroy
 
   ACTIVITY_CATEGORY = ["Flight", "Hotel", "Transportation", "Restaurant", "Meeting"]
+  ACTIVITY_THEME = ["#FINTECH", "#MEDTECK", "#LEGAL", "#SOCIAL", "#SPACE", "#GIG_ECONOMY", "#MANUFACTURING", "#AI", "#TRANSPORTATION", "#COMPUTER SCIENCE"]
+
 
   validates :title, presence: true
   validates :category, presence: true, inclusion: {in: ACTIVITY_CATEGORY, allow_nil: false}

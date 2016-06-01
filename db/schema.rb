@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160601092605) do
+ActiveRecord::Schema.define(version: 20160601155815) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20160601092605) do
     t.datetime "updated_at",  null: false
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "theme"
   end
 
   add_index "activities", ["day_id"], name: "index_activities_on_day_id", using: :btree

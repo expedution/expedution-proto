@@ -37,6 +37,7 @@
                 <p class="day-index">1</p>
               </div>
               <p class="day-name">Day name</p>
+              <a class="btn-library modal-trigger" href="#modal1">Library</a>
               <%= link_to "#new-activity-modal-#{@expedition.id}", class: "modal-trigger" do %>
                 <p class="add-activity">+ New Activity</p>
               <% end %>
@@ -107,6 +108,45 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal Structure
+ -->
+
+<div id="modal1" class="modal bottom-sheet">
+  <div class="library">
+    <div class="col s12">
+      <ul class="tabs" >
+        <li class="tab col s2"><a class="active" href="#finteck-1">#FINTECH</a></li>
+        <li class="tab col s2"><a href="#medteck-1">#MEDTECK</a></li>
+        <li class="tab col s2"><a href="#legal-1">#LEGAL</a></li>
+        <li class="tab col s2"><a href="#space-1">#SPACE</a></li>
+        <li class="tab col s2"><a href="#social-1">#SOCIAL</a></li>
+        <li class="tab col s2"><a href="#manufacturing-1">#MANUFACTURING</a></li>
+      </ul>
+    </div>
+    <div id="finteck-1" class="col s12">
+      <div class="row">
+        <div class="col s4 modal-activity-card" style="background-image: url("https://news.artnet.com/wp-content/news-upload/2014/12/arturo-di-modica-charging-bull-1024x682.jpg")">
+        xxxx
+        </div>
+        <div class="col s4 activity-card">
+        yyy
+        </div>
+        <div class="col s4 activity-card">
+
+        </div>
+      </div>
+    </div>
+    <div id="medteck-1" class="col s12">Test 2</div>
+    <div id="legal-1" class="col s12">Test 3</div>
+    <div id="space-1" class="col s12">Test 4</div>
+    <div id="social-1" class="col s12">Test 4</div>
+    <div id="manufacturing-1" class="col s12">Test 4</div>
+  </div>
+
+
+
 
 
 <%= content_for :after_js do %>
