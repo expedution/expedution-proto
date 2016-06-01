@@ -1,8 +1,8 @@
  <%= render 'shared/lateral_navbar' %>
 
   <div class="central-content">
-    <div class="">
-      <div class="">
+    <div>
+      <div>
         <div class="lex-banner" style='background: url(
           <% if @expedition.photo.url == nil %>
             <%= "https://unsplash.it/900/201" %>
@@ -11,9 +11,12 @@
           <% end %>
         )'>
         <h1 class="expedition-title"><%= @expedition.title %></h1>
+        <%= link_to '' do %>
+          <div class="preview"><i class="fa fa-eye" aria-hidden="true"></i></div>
+        <% end %>
       </div>
       </div>
-      <div class="">
+      <div>
         <div class="col-xs-4">
           <div class="lex-days">
 
@@ -135,17 +138,6 @@
       //debugger;
     })
   </script>
-
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-  <% end %>
 
 <% end %>
 

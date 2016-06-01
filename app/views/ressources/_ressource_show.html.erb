@@ -5,7 +5,7 @@
         <div class="resource-box">
 
           <%= link_to "#edit-ressource-modal-#{ressource.id}", class: "modal-trigger" do %>
-            <div class="rb-edit-logo" style="background: url(<%= asset_path 'edit-icon.png' %>")></div>
+            <div class="rb-edit-logo" style="background: url(<%= asset_path 'activity-icon-hotel.png' %>")></div>
           <% end %>
           <%= render 'ressources/edit', ressource: ressource %>
 
@@ -27,19 +27,3 @@
     </div>
   </div>
 <% end %>
-
-
-
-<%= content_for :after_js do %>
-  <%= javascript_tag do %>
-    $(document).on('ready', function() {
-      handler = Gmaps.build('Google');
-      handler.buildMap({ internal: { id: 'map' } }, function(){
-        markers = handler.addMarkers(<%= raw @markers.to_json %>);
-        handler.bounds.extendWith(markers);
-        handler.fitMapToBounds();
-      });
-    })
-  <% end %>
-<% end %>
-
