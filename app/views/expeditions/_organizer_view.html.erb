@@ -55,7 +55,7 @@
 
   <div class="right-sidebar">
     <div class="right-sidebar-tabs">
-      <ul class="tabs">
+      <ul class="tabs unstyled-tabs">
         <li class="tab col s3"><a class="active" href="#participations">Participations</a></li>
         <li class="tab col s3"><a href="#feedbacks">Feedbacks</a></li>
       </ul>
@@ -90,8 +90,17 @@
 
       <!-- ALL FEEDBACKS LIST -->
       <div id="feedbacks" class="">
-        <ul class="list-unstyled">
-          coucou
+        <ul class="collapsible" data-collapsible="accordion">
+          <!-- SHOW ALL ACTIVITIES FOR GIVEN EXPEDITION IN COLLAPSIBLE -->
+          <% @activities.each do |activity| %>
+            <li>
+              <div class="collapsible-header">
+                <i class="material-icons">label_outline</i><%= activity.title.first(20) %>...
+              </div>
+              <!-- RENDER FEEDBACK FOR EACH ACTIVITY -->
+              <%= render 'feedbacks/feedback_show', activity: activity %>
+            </li>
+          <% end %>
         </ul>
       </div>
       <!-- END OF FEEDBACK LIST -->

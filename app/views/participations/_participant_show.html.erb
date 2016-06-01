@@ -1,4 +1,3 @@
-
 <% @expedition.participations.each do |participation| %>
   <div class="participant-card">
     <div class="participant-photo">
@@ -12,7 +11,7 @@
       <%= link_to user_path(participation.user) do %>
         <p><%= participation.user.first_name %> <%= participation.user.last_name %></p>
       <% end %>
-      <p><%= participation.user.job %></p>
+      <p><%= participation.user.job.first(20) %></p>
     </div>
     <div class="link-top-r">
       <%= link_to "#modal#{participation.user.id}", class: "modal-trigger waves-effect waves-light" do %>

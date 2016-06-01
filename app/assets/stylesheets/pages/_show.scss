@@ -36,10 +36,19 @@
   margin: 20px 0px;
 }
 
+/* REVIEWS STYLE  */
+
 .font-style1 {
   font-style: italic;
   font-size: 20px;
 }
+
+.signature {
+  font-size: 10px;
+  font-style: italic;
+}
+
+/* PARTICIPANT VIEW OF AN EXPEDITION */
 
 .flexbox {
   display: flex;
@@ -60,4 +69,18 @@
 
 .expedition-description {
   padding: 0 20px;
+}
+
+/* TABS IN ORGANIZER VIEW OF AN EXPEDITION */
+
+.tabs .tab a {
+  color: $custom-blue;
+  font-style: bold;
+  &:hover {
+    color: $custom-blue;
+  }
+}
+
+.tabs .indicator {
+  background-color: $custom-blue;
 }
