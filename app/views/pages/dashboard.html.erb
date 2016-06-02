@@ -1,19 +1,17 @@
 <%= render 'shared/lateral_navbar' %>
 
 
-<div class="navbar-fixed" style="margin-left: 60px;">
-  <nav>
-    <div class="nav-wrapper" style="margin-right: 60px; background-color: #00405D">
-      <p class="brand-logo center">Dashboard</p>
-      <ul class="right hide-on-med-and-down">
+<div class="nav-dashboard" style="margin-left: 60px;">
+    <div class="nav-dashboard-content">
+      <p class="dashbord-title">Your expeditions</p>
+      <ul class="">
         <% if policy(Expedition.new).create? %>
-        <li><%= link_to "Create Expedition", new_expedition_path, class: "btn waves-effect waves-light" %></li>
+        <li><%= link_to "+ New Expedition", new_expedition_path, class: "btn-dashboard" %></li>
         <% end %>
       </ul>
     </div>
-  </nav>
 </div>
-
+<p style="color: white">.</p>
 
 <% if current_user.organiser %>
   <%= render 'pages/organizer_dashboard' %>

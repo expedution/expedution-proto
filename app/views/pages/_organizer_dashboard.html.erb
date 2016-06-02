@@ -19,6 +19,8 @@
                 </div>
               </div>
               <div class="col s7">
+                <p style=""><%= expedition.starts_on.strftime("%d %b %Y") %> - <%= expedition.ends_on.strftime("%d %b %Y") %></p>
+                <p style="font-size: 12px; margin-bottom: 10px;">Confirmed participants : <%= expedition.participations.size %></p>
                 <p><%= expedition.description %></p>
               </div>
               <div class="button-dashboard">
