@@ -715,6 +715,81 @@
 }
 
 
+// PARTICIPANT VIEW //
 
+.p-activity-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-size: cover !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.p-label-activity {
+  position: absolute;
+  top: 13px;
+  left: 50px;
+  font-size: 14px;
+  margin-bottom: 2px;
+  width: 500px;
+}
+
+.date-name {
+  padding-left: 10px;
+  padding-top: 10px;
+  margin-bottom: 0px;
+  color: #808080;
+}
+
+.card-title {
+  position: relative;
+}
+
+
+// DASHBOARD BANNER
+
+.btn-dashboard {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  border-radius: 5px;
+  background-color: #1AAFD0;
+  color: white;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 170px;
+  padding: 0px;
+}
+
+.btn-dashboard:hover {
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  background-color: white;
+  transition: background-color 0.5s ease;
+  transition: color 0.3s ease;
+  transition: border 0.3s ease;
+}
+
+.nav-dashboard {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 50px;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.nav-dashboard-content {
+  position: relative;
+  margin-right: 60px;
+}
+
+.dashbord-title {
+  font-size: 32px;
+  text-align: center;
+  color: #1AAFD0;
+}
 
 
