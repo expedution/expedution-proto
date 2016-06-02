@@ -1,9 +1,8 @@
 class FeedbacksController < ApplicationController
-  before_action :set_feedbacks, only: [:create]
 
   def create
     @expedition = find_activity.day.expedition
-    @feedback = Feedback.new(set_feedbacks)
+    @feedback = Feedback.new(feedbacks_params)
     @feedback.activity = @activity
     @feedback.user = current_user
 
@@ -21,13 +20,22 @@ class FeedbacksController < ApplicationController
     end
   end
 
+  def destroy
+    find_activity
+    @feedback = Feedback.find(params[:id])
+    # methode authorize avant le destroy pour empecher la destruction si user not authorized
+    authorize @feedback
+    @feedback.destroy
+    redirect_to expedition_path(@activity.day.expedition)
+  end
+
   private
 
   def find_activity
     @activity = Activity.find(params[:activity_id])
   end
 
-  def set_feedbacks
+  def feedbacks_params
     params.require(:feedback).permit(:content, :rating)
   end
 end

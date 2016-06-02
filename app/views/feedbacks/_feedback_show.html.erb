@@ -1,11 +1,11 @@
 <div id="feedback">
   <div class="font-style1">
-    <p>"<%= feedback.content %> <%= feedback.rating %> / 5 "</p>
+    <p>"<%= feedback.content.capitalize %> (<%= feedback.rating %> / 5) " by <%= feedback.user.first_name %> <%= feedback.user.last_name %></p>
+    <% if feedback.user == current_user %>
+      <%= link_to activity_feedback_path(feedback.activity, feedback), method: :delete do %>
+       <%= image_tag 'delete-icon.png', class: 'delete-button'%>
+      <% end %>
+    <% end %>
+    <hr />
   </div>
-  <div class="signature">
-    <p>By <%= feedback.user.first_name %> <%= feedback.user.last_name %></p>
-  </div>
-  <% if feedback.user == current_user %>
-    <%#= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %>
-  <% end %>
 </div>

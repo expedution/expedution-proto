@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :invitations, only: [:edit, :update, :destroy]
 
   resources :activities, only: [] do
-    resources :feedbacks, only: [:new, :create]
+    resources :feedbacks, only: [:new, :create, :destroy]
   end
   resources :days
 
