@@ -50,39 +50,3 @@
   }
 }
 
-/* PARTICIPANT VIEW OF AN EXPEDITION */
-
-.flexbox {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-#flex-column1 {
-  // width: 100px;
-}
-#flex-column2 {
-  width: 560px;
-  margin: 0px 20px;
-}
-#flex-column3 {
-  width: 250px;
-}
-
-.expedition-description {
-  padding: 0 20px;
-}
-
-/* TABS IN ORGANIZER VIEW OF AN EXPEDITION */
-
-.tabs .tab a {
-  color: $custom-blue;
-  font-style: bold;
-  &:hover {
-    color: $custom-blue;
-  }
-}
-
-.tabs .indicator {
-  background-color: $custom-blue;
-}

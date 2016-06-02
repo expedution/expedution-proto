@@ -70,11 +70,11 @@
                 <% end %>
 
                 <div class="resource-photo" style='background: url(
-                  <%# if activity.photo == nil %>
+                  <% if ressource.photo == nil %>
                     <%= "https://unsplash.it/50/50" %>
-                  <%# else %>
-                    <%#= image_tag activity.photo %>
-                  <%# end %>
+                  <% else %>
+                    <%= image_tag ressource.photo.url, class: "responsive-img" %>
+                  <% end %>
                 )'></div>
                 <p class="resource-title"><%= ressource.name %></p>
                 <p class="resource-url"><%= ressource.url %></p>
