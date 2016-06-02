@@ -6,6 +6,7 @@ class PagesController < ApplicationController
   skip_after_action :verify_authorized, only: :dashboard
   skip_after_action :verify_authorized, only: :sourcing
   skip_after_action :verify_authorized, only: :space_ideas
+  skip_after_action :verify_authorized, only: :medtech_ideas
 
   def home
   end

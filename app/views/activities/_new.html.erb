@@ -1,4 +1,4 @@
-<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat" style="background-color: white" >
+<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat modal-activity" style="background-color: white" >
   <div class="container" style="font-weight: lighter; padding-top:10px">
     <h3 class="modal-title text-center">Create your activity</h3>
     <div class="row">
@@ -16,8 +16,6 @@
           <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
           <p class="file-return"></p>
         </div>
-          <!-- <p class="file-return"></p> -->
-          <%#= f.input :photo_cache, as: :hidden %>
       </div>
     </div>
     <div class="modal-footer center">
@@ -28,31 +26,4 @@
   </div>
 </div>
 
-<script>
-  // ajout de la classe JS à HTML
-  document.querySelector("html").classList.add('js');
 
-  // initialisation des variables
-  var fileInput  = document.querySelector( ".input-file" ),
-      button     = document.querySelector( ".input-file-trigger" ),
-      the_return = document.querySelector(".file-return");
-
-  // action lorsque la "barre d'espace" ou "Entrée" est pressée
-  button.addEventListener( "keydown", function( event ) {
-      if ( event.keyCode == 13 || event.keyCode == 32 ) {
-          fileInput.focus();
-      }
-  });
-
-  // action lorsque le label est cliqué
-  button.addEventListener( "click", function( event ) {
-     fileInput.focus();
-     return false;
-  });
-
-  // affiche un retour visuel dès que input:file change
-  fileInput.addEventListener( "change", function( event ) {
-      the_return.innerHTML = this.value;
-  });
-
-</script>

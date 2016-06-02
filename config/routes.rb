@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'sourcing' => 'pages#sourcing'
   get 'space' => 'pages#space_ideas'
+  get 'medtech' => 'pages#medtech_ideas'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
