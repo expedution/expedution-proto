@@ -40,3 +40,11 @@
 .card-link:hover{
   opacity: 0.1;
 }
+
+.card-grey {
+  background-color: $gray-lighter;
+  border-radius: 10px;
+  width: 100%;
+  color: $custom-blue;
+  box-shadow: 2px 2px $gray-light;
+}
