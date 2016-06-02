@@ -1,55 +1,64 @@
 <% activities.each do |activity| %>
-  <span class="time-info"><%= activity.starts_on %> <%= activity.category %></span><br>
-  <span class="card-title">
-    <% if activity.category == "Flight" %>
-      <div class="yellow-text">
-        <i class="fa fa-plane" aria-hidden="true"></i>
-        <%= activity.title %>
-      </div>
-    <% elsif activity.category == "Hotel" %>
-      <i class="fa fa-bed" aria-hidden="true"></i>
-    <% elsif activity.category == "Meeting" %>
-      <i class="fa fa-street-view" aria-hidden="true"></i>
-    <% elsif activity.category == "Restaurant" %>
-      <i class="fa fa-cutlery" aria-hidden="true"></i>
-    <% else %>
-      <i class="fa fa-bus" aria-hidden="true"></i>
-      <%= activity.title %>
-    <% end %>
-  </span>
-  <hr>
+<div class="card white grey-text">
+
   <div class="row">
-    <div class="col s12">
-      <h5><strong>Description</strong></h5>
-      <% if activity.description.present? %>
-        <p><%= activity.description %></p>
+    <span class="card-title">
+      <% if activity.category == "Flight" %>
+        <div class="p-activity-icon activity-icon-flight" style="background: url(<%= asset_path 'activity-icon-flight.png' %>)"></div>
+      <% elsif activity.category == "Hotel" %>
+        <div class="p-activity-icon activity-icon-hotel" style="background: url(<%= asset_path 'activity-icon-hotel.png' %>)"></div>
+      <% elsif activity.category == "Transportation" %>
+        <div class="p-activity-icon activity-icon-transportation" style="background: url(<%= asset_path 'activity-icon-transportation.png' %>)"></div>
+      <% elsif activity.category == "Restaurant" %>
+        <div class="p-activity-icon activity-icon-restaurant" style="background: url(<%= asset_path 'activity-icon-restaurant.png' %>)"></div>
+      <% elsif activity.category == "Meeting" %>
+        <div class="p-activity-icon activity-icon-meeting" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
       <% else %>
-        <p>No description yet</p>
       <% end %>
-      <hr>
-      <ul class="list-unstyled">
-      <ul class="collapsible" data-collapsible="accordion">
-        <li>
-          <div class="collapsible-header" id="new-feedback"><i class="material-icons">chat_bubble</i>Leave a feedback</div>
-          <%= render 'feedbacks/feedback_new', activity: activity %>
-        </li>
-        <li>
-          <div class="collapsible-header" id="show-feedback"><i class="material-icons">comment</i>Feedbacks</div>
-          <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
-            <% if activity.feedbacks.present? %>
-              <% activity.feedbacks.reverse_each do |feedback| %>
-                <%= render 'feedbacks/feedback_show', feedback: feedback %>
+
+      <% if activity.category == "Flight" %>
+        <p class="p-label-activity label-flight"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (local time)  |  <%= activity.ends_on.strftime("%I:%M%p") %> ARRIVAL (local time)</p>
+      <% elsif activity.category == "Hotel" %>
+        <p class="p-label-activity label-hotel"><%= activity.starts_on.strftime("%I:%M%p") %> CHECK-IN</p>
+      <% elsif activity.category == "Transportation" %>
+        <p class="p-label-activity label-transportation"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (length : <%= activity.ends_on - activity.starts_on %> min)</p>
+      <% elsif activity.category == "Restaurant" %>
+        <p class="p-label-activity label-restaurant"><%= activity.starts_on.strftime("%I:%M%p") %></p>
+      <% elsif activity.category == "Meeting" %>
+        <p class="p-label-activity label-meeting"> <%= activity.starts_on.strftime("%I:%M%p") %> | <%= activity.ends_on.strftime("%I:%M%p") %></p>
+      <% else %>
+      <% end %>
+    </span>
+    <p style="color: white">.</p>
+    <hr>
+    <div class="row">
+      <div class="col s12">
+        <p><%= activity.description %></p>
+        <hr>
+        <ul class="collapsible" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header" id="new-feedback"><i class="material-icons">chat_bubble</i>Leave a feedback</div>
+            <%= render 'feedbacks/feedback_new', activity: activity %>
+          </li>
+          <li>
+            <div class="collapsible-header" id="show-feedback"><i class="material-icons">comment</i>Feedbacks</div>
+            <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
+              <% if activity.feedbacks.present? %>
+                <% activity.feedbacks.reverse_each do |feedback| %>
+                  <%= render 'feedbacks/feedback_show', feedback: feedback %>
+                <% end %>
+              <% else %>
+                  <p>No Feedbacks Yet</p>
               <% end %>
-            <% else %>
-                <p>No Feedbacks Yet</p>
-            <% end %>
-          </div>
-        </li>
-        <li>
-          <div class="collapsible-header" id="show-ressources"><i class="material-icons">subtitles</i>Ressources</div>
-          <%= render 'ressources/ressource_show', activity: activity %>
-        </li>
-      </ul>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header" id="show-ressources"><i class="material-icons">subtitles</i>Ressources</div>
+            <%= render 'ressources/ressource_show', activity: activity %>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
+</div>
 <% end %>
