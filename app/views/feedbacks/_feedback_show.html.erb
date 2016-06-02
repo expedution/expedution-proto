@@ -4,6 +4,6 @@
     <hr />
   </div>
   <% if feedback.user == current_user %>
-    <%= link_to "Delete review", review_path(review), method: :delete, class: "btn btn-danger" %>
+    <%= link_to "Delete review", activity_feedback_path(activity, feedback), method: :delete, class: "btn btn-danger" %>
   <% end %>
 </div>

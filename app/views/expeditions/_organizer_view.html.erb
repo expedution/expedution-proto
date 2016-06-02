@@ -101,7 +101,7 @@
               <!-- RENDER FEEDBACK FOR EACH ACTIVITY -->
               <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
                 <% if activity.feedbacks.present? %>
-                  <% activity.feedbacks.reverse_each do |feedback| %>                <%= render 'feedbacks/feedback_show', feedback: feedback %>
+                  <% activity.feedbacks.reverse_each do |feedback| %>                <%= render 'feedbacks/feedback_show', feedback: feedback, activity: activity %>
                   <% end %>
                 <% else %>
                     <p>No Feedbacks Yet</p>
