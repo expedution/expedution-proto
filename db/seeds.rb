@@ -313,18 +313,18 @@ Yoann = User.create({
     organiser: false
   })
 
-Patricia = User.create({
-    email: "yo2as3@yoann.co",
-    password: "lewagon",
-    first_name: "Patricia",
-    last_name: "Toubib (Phd)",
-    job: "VP Doctors",
-    company: "Hôpitaux Publics de Paris",
-    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
-    phone: "0687335370",
-    diet: "no allergies",
-    organiser: false
-  })
+# Patricia = User.create({
+#     email: "yo2as3@yoann.co",
+#     password: "lewagon",
+#     first_name: "Patricia",
+#     last_name: "Toubib (Phd)",
+#     job: "VP Doctors",
+#     company: "Hôpitaux Publics de Paris",
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: "0687335370",
+#     diet: "no allergies",
+#     organiser: false
+#   })
 
 William = User.create({
     email: "yo2asd3@yoann.co",
@@ -366,23 +366,23 @@ Timo = User.create({
   })
 
 
-Marie = User.create({
-    email: "yo2sss@yoann.co",
-    password: "lewagon",
-    first_name: "Marie",
-    last_name: "Compta",
-    job: "DAF",
-    company: "Hôpitaux Publics de Paris",
-    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
-    phone: "0687335370",
-    diet: "no allergies",
-    organiser: false
-  })
+# Marie = User.create({
+#     email: "yo2sss@yoann.co",
+#     password: "lewagon",
+#     first_name: "Marie",
+#     last_name: "Compta",
+#     job: "DAF",
+#     company: "Hôpitaux Publics de Paris",
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: "0687335370",
+#     diet: "no allergies",
+#     organiser: false
+#   })
 
 
 Participation.create(user: Yoann, expedition: lex)
-Participation.create(user: Patricia, expedition: lex)
-Participation.create(user: Marie, expedition: lex)
+# Participation.create(user: Patricia, expedition: lex)
+# Participation.create(user: Marie, expedition: lex)
 Participation.create(user: Reza, expedition: lex)
 Participation.create(user: William, expedition: lex)
 Participation.create(user: Timo, expedition: lex)
