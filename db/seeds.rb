@@ -276,7 +276,7 @@ d5.save
 Jeanne = Invitation.create({
     email: "yo1@yoann.co",
     first_name: "Jeanne",
-    last_name: "Meeting",
+    last_name: "Page",
     status: "pending"
   })
 lex.invitations << Jeanne
@@ -314,7 +314,7 @@ Yoann = User.create({
   })
 
 Patricia = User.create({
-    email: "yo2+s3@yoann.co",
+    email: "yo2as3@yoann.co",
     password: "lewagon",
     first_name: "Patricia",
     last_name: "Toubib (Phd)",
@@ -327,7 +327,7 @@ Patricia = User.create({
   })
 
 William = User.create({
-    email: "yo2+sd3@yoann.co",
+    email: "yo2asd3@yoann.co",
     password: "lewagon",
     first_name: "William",
     last_name: "Patient",
@@ -340,7 +340,7 @@ William = User.create({
   })
 
 Reza = User.create({
-    email: "yo2+sz3@yoann.co",
+    email: "yo2ssz3@yoann.co",
     password: "lewagon",
     first_name: "Reza",
     last_name: "Benzema",
@@ -353,7 +353,7 @@ Reza = User.create({
   })
 
 Timo = User.create({
-    email: "yo2+zs3@yoann.,nco",
+    email: "yo2szs3@yoann.co",
     password: "lewagon",
     first_name: "Timo",
     last_name: "Hector",
@@ -367,7 +367,7 @@ Timo = User.create({
 
 
 Marie = User.create({
-    email: "yo2+3ss@yoann.co",
+    email: "yo2sss@yoann.co",
     password: "lewagon",
     first_name: "Marie",
     last_name: "Compta",
