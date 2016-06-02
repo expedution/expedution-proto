@@ -1,32 +1,28 @@
 <div class="lateral-navbar">
-  <ul class="nav-sections">
+  <ul class="nav-sections text-center">
     <li class="nav-li nav-profile-link">
       <%= link_to user_path(current_user), class: "nav-link" do %>
-        <%= image_tag "avatar-icon.png", width: '45' %>
+        <%= image_tag "avatar-icon.png", width: '30' %>
       <% end %>
-<!--       <span>"View/Edit profile"</span>
- --></li>
+    </li>
 
     <li class="nav-li">
       <%= link_to dashboard_path, class: "nav-link" do %>
-        <%= image_tag "lex-icon.png", width: '50' %>
+        <%= image_tag "lex-icon.png", width: '30' %>
       <% end %>
-<!--       <span>"Manage Learning Expeditions"</span>
- --></li>
+    </li>
 
     <li class="nav-li">
       <%= link_to sourcing_path, class: "nav-link" do %>
-        <%= image_tag "sourcing-icon.png", width: '45' %>
+        <%= image_tag "sourcing-icon.png", width: '30' %>
       <% end %>
-<!--       <span>"LEX catalogue"</span>
- --></li>
+    </li>
 
     <li class="nav-li">
       <%= link_to root_path, class: "nav-link" do %>
-        <%= image_tag "rfp-icon.png", width: '45' %>
+        <%= image_tag "rfp-icon.png", width: '30' %>
       <% end %>
-<!--       <span>"LEX logistics platform"</span>
- --></li>
+    </li>
 
     <li class="nav-li bottom-sections text-center">
       <%= link_to destroy_user_session_path, method: :delete do %>
