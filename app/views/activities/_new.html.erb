@@ -1,58 +1,42 @@
-<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat" style="background-color: white" >
-  <div class="container" style="font-weight: lighter;">
+<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat modal-activity" style="background-color: white" >
+  <div class="container" style="font-weight: lighter; padding-top:10px">
     <h3 class="modal-title text-center">Create your activity</h3>
     <div class="row">
       <div class="col-xs-12">
         <%= simple_form_for [@expedition, Activity.new] do |f| %>
-        <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30} %>
+        <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
         <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY, prompt: "Activity type" %>
-        <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
-        <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" }  %>
         <% days = @expedition.days %>
         <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)), prompt: "Activity day" %>
-        <%= f.input :address, label: "Address", input_html: {maxlength: 100}, placeholder: "Location" %>
+        <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" } %>
+        <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" }  %>
+        <%= f.input :address, label: "Address", input_html: {maxlength: 100, style: "border-bottom: 1px solid black;"}, placeholder: "Location" %>
         <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000}, placeholder: "Provide an activity description" %>
         <div class="input-file-container">
-          <label for="my-file" class="input-file-trigger" tabindex="0">Select a file...</label>
-          <%= f.input :photo, input_html: { class: "input-file", id: "my-file" } %>
-        </div>
+          <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
           <p class="file-return"></p>
-          <%= f.input :photo_cache, as: :hidden %>
+        </div>
       </div>
     </div>
     <div class="modal-footer center">
       <%= f.submit "Add activity", class: "btn btn-success" %>
-      <a href="#!" class="modal-action modal-close btn">cancel</a>
+      <a href="#!" class="modal-action modal-close btn red">cancel</a>
     </div>
         <% end %>
   </div>
 </div>
 
-<script>
-  // ajout de la classe JS à HTML
-  document.querySelector("html").classList.add('js');
 
-  // initialisation des variables
-  var fileInput  = document.querySelector( ".input-file" ),
-      button     = document.querySelector( ".input-file-trigger" ),
-      the_return = document.querySelector(".file-return");
+<%= content_for :after_js do %>
+  <script>
+    $( ".import-file-container label").on( "click", function() {
+       $('#activity_photo').focus();
+       return false;
+    });
 
-  // action lorsque la "barre d'espace" ou "Entrée" est pressée
-  button.addEventListener( "keydown", function( event ) {
-      if ( event.keyCode == 13 || event.keyCode == 32 ) {
-          fileInput.focus();
-      }
-  });
+    $('#activity_photo').change(function(e) {
+        $(".file-return").html(this.value);
+    });
+  </script>
 
-  // action lorsque le label est cliqué
-  button.addEventListener( "click", function( event ) {
-     fileInput.focus();
-     return false;
-  });
-
-  // affiche un retour visuel dès que input:file change
-  fileInput.addEventListener( "change", function( event ) {
-      the_return.innerHTML = this.value;
-  });
-
-</script>
+<% end %>

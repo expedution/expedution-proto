@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'faker'
 
 Ressource.delete_all
 Activity.delete_all
@@ -10,11 +11,12 @@ Expedition.delete_all
 User.delete_all
 
 
+
 organiser = User.create!({
-    email: "boris@lewagon.org",
+    email: "Michael.Magic@gmail.com",
     password: "lewagon",
-    first_name: "Boris",
-    last_name: "Paillard",
+    first_name: "Michael",
+    last_name: "Magic",
     job: "Team Leader",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
@@ -37,6 +39,16 @@ lex = Expedition.create!({
   ends_on: Date.new(2017,02,07),
   location: "San Francisco"
   })
+
+lex2 = Expedition.create!({
+  title: "The future of Transportation",
+  description: "Take this tour on the future of transportation, cities and AI.",
+  user_id: organiser.id,
+  starts_on: Date.new(2017,01,03),
+  ends_on: Date.new(2017,02,07),
+  location: "San Francisco"
+  })
+
 
 d1 = Day.new({
   position: 1,
@@ -81,7 +93,7 @@ t8 = Time.new(2016, 07, 04, 20, 00, 00)
 t9 = Time.new(2016, 07, 04, 23, 00, 00)
 
   activity1 = Activity.create({
-    title: "Welcome reakfast",
+    title: "Welcome Breakfast",
     category: "Meeting",
     description: "Let's share food and perspective on this week",
     starts_on: t1,
@@ -91,9 +103,9 @@ t9 = Time.new(2016, 07, 04, 23, 00, 00)
     })
 
   activity2 = Activity.create({
-    title: "Keynote - Health in 2025",
+    title: "Keynote - Predictive medicine.",
     category: "Meeting",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+    description: "Health is occupying an ever-larger proportion of the economy. In the United States, health already accounts for 17% of GDP. Aging populations, increased expectations, more advanced—and expensive—treatments, and entrenched health industry structures mean costs will continue to rise. However, it remains possible to create far more effective and efficient systems. Personal health records, pro-active health measures, expertise networks, and robotic assistance are just some of the issues that will drive the future of health. Ross Dawson can lead your audience on an engaging futurist’s journey through where the health industry may go, and what actions today could drive a healthier society tomorrow.",
     starts_on: t3,
     ends_on: t4,
     day_id: d2.id,
@@ -206,7 +218,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: t4,
     ends_on: d2t5,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "22, Richard Street, San Francisco, CA 90250, USA"
     })
 
   activity4 = Activity.create({
@@ -216,7 +228,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: d2t5,
     ends_on: d2t6,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "23 downtown street, San Francisco, CA 90250, USA"
     })
 
   activity5 = Activity.create({
@@ -237,7 +249,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: d2t8,
     ends_on: d2t9,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "23, Post Street, Sand Francisco, USA"
     })
 
 # Other empty days #
@@ -264,7 +276,7 @@ d5.save
 Jeanne = Invitation.create({
     email: "yo1@yoann.co",
     first_name: "Jeanne",
-    last_name: "Armand",
+    last_name: "Page",
     status: "pending"
   })
 lex.invitations << Jeanne
@@ -279,12 +291,21 @@ Pierre = Invitation.create({
 lex.invitations << Pierre
 lex.save
 
+Peter = Invitation.create({
+    email: "yos2@yddoann.co",
+    first_name: "Peter",
+    last_name: "Jayne",
+    status: nil
+  })
+lex.invitations << Peter
+lex.save
+
 Yoann = User.create({
-    email: "yo@yoann.co",
+    email: "yos@yoann.co",
     password: "lewagon",
-    first_name: "Yoann",
-    last_name: "Lopez",
-    job: "Participant",
+    first_name: "Dr Michel",
+    last_name: "Lemoine",
+    job: "VP R&D",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -292,25 +313,25 @@ Yoann = User.create({
     organiser: false
   })
 
-Michel = User.create({
-    email: "yo2@yoann.co",
-    password: "lewagon",
-    first_name: "Michel",
-    last_name: "Paillette",
-    job: "Participant",
-    company: "Le Wagon",
-    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
-    phone: "0687335370",
-    diet: "no allergies",
-    organiser: false
-  })
+# Patricia = User.create({
+#     email: "yo2as3@yoann.co",
+#     password: "lewagon",
+#     first_name: "Patricia",
+#     last_name: "Toubib (Phd)",
+#     job: "VP Doctors",
+#     company: "Hôpitaux Publics de Paris",
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: "0687335370",
+#     diet: "no allergies",
+#     organiser: false
+#   })
 
-Patricia = User.create({
-    email: "yo2+3@yoann.co",
+William = User.create({
+    email: "yo2asd3@yoann.co",
     password: "lewagon",
-    first_name: "Patricia",
-    last_name: "Toubin",
-    job: "Médecin",
+    first_name: "William",
+    last_name: "Patient",
+    job: "VP Marketing",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -318,11 +339,53 @@ Patricia = User.create({
     organiser: false
   })
 
-Participation.create(user: Michel, expedition: lex)
+Reza = User.create({
+    email: "yo2ssz3@yoann.co",
+    password: "lewagon",
+    first_name: "Reza",
+    last_name: "Benzema",
+    job: "VP New Markets",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+Timo = User.create({
+    email: "yo2szs3@yoann.co",
+    password: "lewagon",
+    first_name: "Timo",
+    last_name: "Hector",
+    job: "VP Partnerships",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+
+# Marie = User.create({
+#     email: "yo2sss@yoann.co",
+#     password: "lewagon",
+#     first_name: "Marie",
+#     last_name: "Compta",
+#     job: "DAF",
+#     company: "Hôpitaux Publics de Paris",
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: "0687335370",
+#     diet: "no allergies",
+#     organiser: false
+#   })
+
+
 Participation.create(user: Yoann, expedition: lex)
-Participation.create(user: Patricia, expedition: lex)
-
-
+# Participation.create(user: Patricia, expedition: lex)
+# Participation.create(user: Marie, expedition: lex)
+Participation.create(user: Reza, expedition: lex)
+Participation.create(user: William, expedition: lex)
+Participation.create(user: Timo, expedition: lex)
 
 
 # response = open("https://angel.co/companies")
@@ -332,5 +395,23 @@ Participation.create(user: Patricia, expedition: lex)
 #   resource = Resource.create!(name: name)
 # end
 
+
+# Ne marche pas car pas de Faker pour First Name et Last Name
+
+# 10.times do
+#   user = User.new({
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password,
+#     first_name: Faker::Name.name.split.first,
+#     last_name: Faker::Name.name.split.last,
+#     job: "Participant",
+#     company: Faker::Company.name,
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: Faker::PhoneNumber.phone_number,
+#     name: Faker::Company.name,
+#     organiser: false
+#   })
+#   user.save
+# end
 
 

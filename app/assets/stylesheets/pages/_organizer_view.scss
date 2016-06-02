@@ -532,7 +532,8 @@
 }
 
 .right-sidebar-content {
-  overflow-y: hidden;
+  height: 600px;
+  overflow-y: scroll;
 }
 
 .right-sidebar-tabs {

@@ -8,9 +8,10 @@ console.log("coucou 2")
 <% else %>
   console.log("coucou 3")
   // Create a paragraph for the new feedback. But hide it.
-  var new_feedback = $("<%= j render 'feedbacks/feedback_show', feedback: @feedback %>").hide();
+  var new_feedback = $("<%= j render 'feedbacks/feedback_show', feedback: @feedback, activity: @feedback.activity %>").hide();
   // Add it to the DOM, at the end of the existing feedbacks. It's still hidden.
-  $('#feedbacks').prepend(new_feedback);
+  var feedbacks_container = '#feedbacks_' + '<%= @feedback.activity.id%>'
+  $(feedbacks_container).prepend(new_feedback);
   // Remove Class Active from form collapsible
   $('#new-feedback').click();
   // Add class Active to show-feedback collapsible to open it

@@ -1,26 +1,40 @@
-<div id="edit-ressource-modal-<%= ressource.id %>" class="modal" >
+<div id="edit-ressource-modal-<%= ressource.id %>" class="modal-mat white" style="padding-top: 10px;" >
   <div class="container">
     <h3 class="modal-title text-center">Edit your ressource</h3>
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 card-form">
+      <div class="col s12">
         <%= simple_form_for ([@expedition, ressource]) do |f| %>
-        <div>
-          <%= f.input :name, label: "Resource name", input_html: {maxlength: 30} %>
+          <%= f.input :name, label: "Resource name", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
           <%= f.input :category, collection: Ressource::RESSOURCES_CATEGORY, prompt: "Resource type" %>
-          <%= f.input :url, label: "Resource URL"%>
+          <%= f.input :url, label: "Resource URL", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"}%>
           <%= f.input :description, label: "Resource description", input_html: {maxlength: 1000} %>
-          <%= f.input :photo %>
+          <div class="input-file-container">
+            <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
+            <p class="file-return"></p>
+          </div>
           <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :activity_id, as: :hidden %>
-          <div class="col-xs-6">
-            <%= link_to "Cancel", expedition_path, class: "btn btn-danger" %>
+          <div class="modal-footer center">
+            <%= f.submit "Submit", class: "btn" %>
+            <a href="#!" class="modal-action modal-close btn red">cancel</a>
           </div>
-          <div class="col-xs-6">
-            <%= f.submit "Submit", class: "btn btn-success" %>
-          </div>
-        </div>
         <% end %>
       </div>
     </div>
   </div>
 </div>
+
+
+<%= content_for :after_js do %>
+  <script>
+    $( ".import-file-container label").on( "click", function() {
+       $('#activity_photo').focus();
+       return false;
+    });
+
+    $('#activity_photo').change(function(e) {
+        $(".file-return").html(this.value);
+    });
+  </script>
+
+<% end %>

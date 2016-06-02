@@ -22,7 +22,7 @@ Rails.application.routes.draw do
   resources :invitations, only: [:edit, :update, :destroy]
 
   resources :activities, only: [] do
-    resources :feedbacks, only: [:new, :create]
+    resources :feedbacks, only: [:new, :create, :destroy]
   end
   resources :days
 
@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'sourcing' => 'pages#sourcing'
   get 'space' => 'pages#space_ideas'
+  get 'medtech' => 'pages#medtech_ideas'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

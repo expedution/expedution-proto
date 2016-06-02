@@ -24,29 +24,26 @@ class InvitationsController < ApplicationController
   def invite
     @expedition = Expedition.find(params[:expedition_id])
     # Ajouté pour l'AJAX
-    @cleaned_invitations = @expedition.invitations.select do |invitation|
-      emails = @expedition.participations.map(&:user).map(&:email)
-      !emails.include?(invitation.email)
-    end
+
     # fin de l'ajout pour l'AJAX
     @invitation = Invitation.find(params[:id])
     authorize @invitation
     # If email already exist in the database, send a new email to tell the user she/he added to a new lex
-      if !User.where(email: @invitation.email).blank? && !Invitation.where(email: @invitation.email).blank?
-        # Send an email to share about a new LEX
-        #Partipation of the user
-        UserMailer.newexpedition(@invitation).deliver_now
-        @invitation.update(status: "pending")
-      else
-        User.invite!(:email => @invitation.email, :first_name => @invitation.first_name)
-        @invitation.update(status: "pending")
-         # Send a token via invitable
-      end
+    if !User.where(email: @invitation.email).blank? && !Invitation.where(email: @invitation.email).blank?
+      # Send an email to share about a new LEX
+      #Partipation of the user
+      UserMailer.newexpedition(@invitation).deliver_now
+      @invitation.update(status: "pending")
+    else
+      User.invite!(:email => @invitation.email, :first_name => @invitation.first_name)
+      @invitation.update(status: "pending")
 
-      respond_to do |format|
-        format.html { redirect_to expedition_path(@expedition) }
-        format.js
-      end
+    end
+    @cleaned_invitations = @expedition.invitations.select do |invitation|
+      emails = @expedition.participations.map(&:user).map(&:email)
+      !emails.include?(invitation.email)
+    end.sort
+
   end
 
   def edit
