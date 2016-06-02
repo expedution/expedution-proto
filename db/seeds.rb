@@ -1,6 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
-require 'faker'
+
 
 Ressource.delete_all
 Activity.delete_all
@@ -34,6 +34,7 @@ lex = Expedition.create!({
   title: "The future of Medicine",
   description: "Take this tour of medicine's future with some of the trailblazing doctors charting its course. Once you've seen a transplantable human kidney created from a 3D printer, almost anything is imaginable ...",
   theme: "medtech",
+  photo: "http://medtech.org/assets/Uploads/images/photobar-microscope-molecule.gif",
   user_id: organiser.id,
   starts_on: Date.new(2017,01,03),
   ends_on: Date.new(2017,02,07),
@@ -396,22 +397,5 @@ Participation.create(user: Timo, expedition: lex)
 # end
 
 
-# Ne marche pas car pas de Faker pour First Name et Last Name
-
-# 10.times do
-#   user = User.new({
-#     email: Faker::Internet.email,
-#     password: Faker::Internet.password,
-#     first_name: Faker::Name.name.split.first,
-#     last_name: Faker::Name.name.split.last,
-#     job: "Participant",
-#     company: Faker::Company.name,
-#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
-#     phone: Faker::PhoneNumber.phone_number,
-#     name: Faker::Company.name,
-#     organiser: false
-#   })
-#   user.save
-# end
 
 

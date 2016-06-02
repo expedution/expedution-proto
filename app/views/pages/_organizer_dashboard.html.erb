@@ -1,3 +1,5 @@
+
+
 <!-- ORGANIZER DASHBOARD -->
 <% if @expeditions.present? %>
   <div class="container top-padded">
@@ -42,8 +44,8 @@
                       <% end %>
                     </li>
                   </ul>
-                  <%= render 'expeditions/edit', expedition: expedition %>
                 </div>
+                <%= render 'expeditions/edit', expedition: expedition %>
               </div>
             </div>
           </div>
@@ -54,6 +56,11 @@
     <hr>
     <% end %>
   </div>
+  <hr>
+</div>
+
+
+
 <% else %>
   <div class="container top-padded">
     <div class="card-grey text-center padded">
@@ -62,6 +69,7 @@
     </div>
   </div>
 <% end %>
+>>>>>>> master
 
 
 <script>
