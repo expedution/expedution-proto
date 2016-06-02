@@ -4,13 +4,13 @@
     <div class="row">
       <div class="col-xs-12">
         <%= simple_form_for [@expedition, Activity.new] do |f| %>
-        <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30} %>
+        <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
         <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY, prompt: "Activity type" %>
         <% days = @expedition.days %>
         <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)), prompt: "Activity day" %>
         <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
         <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" }  %>
-        <%= f.input :address, label: "Address", input_html: {maxlength: 100}, placeholder: "Location" %>
+        <%= f.input :address, label: "Address", input_html: {maxlength: 100, style: "border-bottom: 1px solid black;"}, placeholder: "Location" %>
         <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000}, placeholder: "Provide an activity description" %>
         <div class="input-file-container">
           <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
@@ -27,3 +27,16 @@
 </div>
 
 
+<%= content_for :after_js do %>
+  <script>
+    $( ".import-file-container label").on( "click", function() {
+       $('#activity_photo').focus();
+       return false;
+    });
+
+    $('#activity_photo').change(function(e) {
+        $(".file-return").html(this.value);
+    });
+  </script>
+
+<% end %>

@@ -11,9 +11,9 @@
           <%= f.input :description, label: "Resource description", input_html: {maxlength: 1000}, placeholder: "Provide a resource description" %>
           <div class="input-file-container">
             <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
+            <%= f.input :photo_cache, as: :hidden %>
             <p class="file-return"></p>
           </div>
-          <%= f.input :photo_cache, as: :hidden %>
           <%= f.input :activity_id, as: :hidden %>
             <div class="modal-footer">
               <%= f.submit "Add resource", class: "btn btn-success" %>
@@ -25,3 +25,18 @@
     </div>
   </div>
 </div>
+
+
+<%= content_for :after_js do %>
+  <script>
+    $( ".import-file-container label").on( "click", function() {
+       $('#activity_photo').focus();
+       return false;
+    });
+
+    $('#activity_photo').change(function(e) {
+        $(".file-return").html(this.value);
+    });
+  </script>
+
+<% end %>

@@ -5,7 +5,7 @@
       <%= simple_form_for [@expedition, Day.new] do |f| %>
       <div class="row">
         <div class="col s12">
-          <%= f.input_field :title, label: "Day title", placeholder: "Title", input_html: {maxlength: 30} %>
+          <%= f.input :title, label: "Day title", placeholder: "Title", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
           <%= f.input :date, as: :string, label: "Date", input_html: {id: "datepicker", class: "datepicker"} %>
         </div>
       </div>
