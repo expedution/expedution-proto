@@ -42,22 +42,22 @@
             <!-- Map ======================== -->
             <div id="map" style="width: auto; height: 200px;"></div>
 
-            <!-- Days ========= -->
-            <% @days_expedition.each do |day| %>
-              <!-- Activity ========= -->
-              <div class="row padded-extra-small">
-                <div class="col s12">
-                  <div class="card white" id="day<%= day.id %>">
-                    <div class="card-content grey-text">
+            <div>
+              <!-- Days ========= -->
+              <% @days_expedition.each_with_index do |day, index| %>
+                <p class="date-name">Day <%= index + 1 %> (<%= day.date.strftime("%d %b %Y") %>)</p>
+                <!-- Activity ========= -->
+                <div class="row padded-extra-small">
+                  <div class="col s12" id="day<%= day.id %>">
                       <%= render 'activities/activity_show', activities: day.activities %>
                   </div>
+                <!-- End Activity ======================= -->
                 </div>
-              </div>
-              <!-- End Activity ======================= -->
+              <% end %>
             </div>
-            <% end %>
           </div>
         </div>
+
 
         <!-- PARTICIPANT COLUMN -->
         <div id="flex-column3">
