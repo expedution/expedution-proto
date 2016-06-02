@@ -1,3 +1,5 @@
+
+
 <!-- ORGANIZER DASHBOARD -->
 <div class="container top-padded">
 <% @expeditions.each do |expedition| %>
@@ -38,8 +40,8 @@
                       <% end %>
                     </li>
                   </ul>
-                  <%= render 'expeditions/edit', expedition: expedition %>
                 </div>
+                <%= render 'expeditions/edit', expedition: expedition %>
               </div>
             </div>
           </div>
@@ -51,10 +53,6 @@
   <hr>
   <% end %>
 </div>
-
-
-
-
 
 
 

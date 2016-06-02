@@ -1,27 +1,29 @@
 <!-- Modal Structure -->
-<div id="edit-exp-modal-<%= expedition.id %>" class="modal modal-fixed-footer">
-  <%= simple_form_for expedition do |f| %>
-    <div class="modal-content">
-      <h4>Modal Header</h4>
-      <div class="row">
-        <div class="col-xs-12 col-sm-6">
-          <%= f.input :title, label: "Expedition title", placeholder: "Title", input_html: {maxlength: 30} %>
-          <%= f.input :description, label: "Expedition description", input_html: {maxlength: 400}, placeholder: "400 Char. Max" %>
-          <%= f.input :theme, label: "Expedition theme", input_html: {maxlength: 20}, placeholder: "Theme" %>
-          <%= f.input :location, label: "Location", placeholder: "Where are you going?" %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
+<div class="container">
+  <div id="edit-exp-modal-<%= expedition.id %>" class="modal-mat">
+      <div class="modal-content" style="padding-left: 50px; padding-right: 50px;">
+        <h4 class="center">Edit your expedition</h4>
+        <%= simple_form_for expedition do |f| %>
+        <div class="row">
+          <div class="col s12">
+            <%= f.input :title, label: "Expedition title", placeholder: "Title", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
+            <%= f.input :description, label: "Expedition description", input_html: {maxlength: 400}, placeholder: "400 Char. Max" %>
+            <%= f.input :theme, label: "Expedition theme", input_html: {maxlength: 20, style: "border-bottom: 1px solid black;"}, placeholder: "Theme" %>
+            <%= f.input :location, label: "Location", input_html: {style: "border-bottom: 1px solid black;"}, placeholder: "Where are you going?" %>
+            <%= f.input :photo %>
+            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :capacity, label: "Capacity", input_html: {maxlength: 20, style: "border-bottom: 1px solid black;"}, placeholder: "Select number of people" %>
+            <%= f.input :starts_on, label: "Start date", id: "datepicker" %>
+            <%= f.input :ends_on, label: "End date" %>
+          </div>
         </div>
-        <div class="col-xs-12 col-sm-6">
-          <%= f.input :capacity, label: "Capacity", placeholder: "Select number of people" %>
-          <%= f.input :starts_on, label: "Start date", id: "datepicker" %>
-          <%= f.input :ends_on, label: "End date" %>
-        </div>
+      <div class="modal-footer center">
+        <%= f.submit "Update", class: "modal-action modal-close waves-effect waves-green btn" %>
+        <%= link_to "Cancel", dashboard_path, class: "modal-action modal-close waves-effect waves-green btn red" %>
       </div>
+    <% end %>
     </div>
-    <div class="modal-footer">
-      <%= f.submit "Update", class: "modal-action modal-close waves-effect waves-green btn-flat" %>
-      <%= link_to "Cancel", dashboard_path, class: "modal-action modal-close waves-effect waves-green btn-flat" %>
-    </div>
-  <% end %>
+  </div>
 </div>
+
+
