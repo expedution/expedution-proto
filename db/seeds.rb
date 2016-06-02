@@ -353,7 +353,7 @@ Reza = User.create({
   })
 
 Timo = User.create({
-    email: "yo2szs3@yoann.,nco",
+    email: "yo2szs3@yoann.co",
     password: "lewagon",
     first_name: "Timo",
     last_name: "Hector",
