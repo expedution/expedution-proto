@@ -95,15 +95,6 @@ ActiveRecord::Schema.define(version: 20160601155815) do
   add_index "participations", ["expedition_id"], name: "index_participations_on_expedition_id", using: :btree
   add_index "participations", ["user_id"], name: "index_participations_on_user_id", using: :btree
 
-  create_table "prospects", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "starts_on"
-    t.integer  "capacity"
-    t.string   "location"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "ressources", force: :cascade do |t|
     t.string   "name"
     t.text     "description"

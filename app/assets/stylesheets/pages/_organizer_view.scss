@@ -86,14 +86,84 @@
 
 
 .library {
-  height: 300px;
+  height: 290px;
 }
 
 .modal-activity-card {
-  height: 280px;
-  background-size: cover !important;
+  position: relative;
+  padding: 5px 5px;
+  height: 190px;
+  margin: 10px 10px;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2), 0 0px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
+.modal-activity-icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  background-size: cover !important;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.modal-activity-title {
+  padding-left: 5px;
+  padding-top: 0px;
+  color: #D7263D;
+  font-size: 20px;
+}
+
+.modal-activity-information {
+  position: absolute;
+  top: 50px;
+  left: 120px;
+  padding-right: 10px;
+}
+
+.modal-activity-address {
+  font-size: 12px;
+  text-decoration: underline;
+  color: #808080;
+}
+
+.modal-activity-description {
+  font-size: 14px;
+  text-align: justify;
+}
+
+
+.modal-activity-picture {
+  position: absolute;
+  border: 1px solid #808080;
+  top: 50px;
+  left: 10px;
+  padding: 3px 3px;
+  background-size: contain !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100px;
+  height: 100px;
+}
+
+.btn-add {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border-radius: 5px;
+  border: solid 1px #1AAFD0;
+  color: #1AAFD0;
+  font-size: 16px;
+  font-weight: lighter;
+  text-align: center;
+  width: 80px;
+  margin-left: 10px;
+}
+
+.btn-add:hover {
+  background-color: #eafbff;
+  transition: background-color 0.3s ease;
+}
 
 // LEX DAYS SUB SECTION
 

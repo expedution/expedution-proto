@@ -1,118 +1,111 @@
 <%= render 'shared/lateral_navbar' %>
 
-
-  <div class="central-content">
+<div class="central-content">
+  <div>
     <div>
-      <div>
-        <div class="lex-banner" style='background: url(
-          <% if @expedition.photo.url == nil %>
-            <%= "https://unsplash.it/900/201" %>
-          <% else %>
-            <%= @expedition.photo %>
-          <% end %>
+      <div class="lex-banner" style='background: url(
+        <% if @expedition.photo.url == nil %>
+          <%= "https://unsplash.it/900/201" %>
+        <% else %>
+          <%= @expedition.photo %>
+        <% end %>
         )'>
         <h1 class="expedition-title"><%= @expedition.title %></h1>
         <%= link_to params.merge(preview: true) do %>
           <div class="preview">Preview</div>
         <% end %>
       </div>
-      </div>
-      <div>
-        <div class="col-xs-4">
-          <div class="lex-days">
-
-            <%= render 'days/day_show' %>
-            <%= link_to "#new-day-modal-#{@expedition.id}", class: "modal-trigger" do %>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+        <div class="lex-days">
+          <%= render 'days/day_show' %>
+          <%= link_to "#new-day-modal-#{@expedition.id}", class: "modal-trigger" do %>
             <p class="custom-btn">+ New Day</p>
+          <% end %>
+          <%= render 'days/new' %>
+        </div>
+      </div>
+      <div class="col-xs-8">
+        <div class="lex-activities">
+          <div class="activity-header">
+            <div class="activity-day-header">
+              <p>Day</p>
+              <p class="day-index">1</p>
+            </div>
+            <p class="day-name">Day name</p>
+            <a class="btn-library modal-trigger" href="#modal1">Library</a>
+            <%= link_to "#new-activity-modal-#{@expedition.id}", class: "modal-trigger" do %>
+              <p class="add-activity">+ New Activity</p>
             <% end %>
-            <%= render 'days/new' %>
+            <%= render 'activities/new' %>
           </div>
-        </div>
-        </div>
-        <div class="col-xs-8">
-          <div class="lex-activities">
-            <div class="activity-header">
-              <div class="activity-day-header">
-                <p>Day</p>
-                <p class="day-index">1</p>
-              </div>
-              <p class="day-name">Day name</p>
-              <a class="btn-library modal-trigger" href="#modal1">Library</a>
-              <%= link_to "#new-activity-modal-#{@expedition.id}", class: "modal-trigger" do %>
-                <p class="add-activity">+ New Activity</p>
-              <% end %>
-              <%= render 'activities/new' %>
-
-            </div>
-            <div class="activity-box-section">
-              <%= render 'expeditions/organizer_exp_activity_box', day: @expedition.days.first %>
-              <%#= render 'activities/activity_show', activities: day.activities %>
-            </div>
+          <div class="activity-box-section">
+            <%= render 'expeditions/organizer_exp_activity_box', day: @expedition.days.first %>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="right-sidebar">
-    <div class="right-sidebar-tabs">
-      <ul class="tabs unstyled-tabs">
-        <li class="tab col s3"><a class="active" href="#participations">Participations</a></li>
-        <li class="tab col s3"><a href="#feedbacks">Feedbacks</a></li>
-      </ul>
-    </div>
-    <br />
-    <div class="right-sidebar-content">
-
-      <!-- PARTICIPATIONS COLLAPSIBLE MENU -->
-      <div id="participations" class="">
-        <div class="row">
-          <ul class="collapsible z-depth-0 pp-no-margin" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header active"><i class="material-icons">view_list</i>View All (<%= @expedition.participations.size %>)</div>
-              <div class="collapsible-body">
-                <%= render 'participations/participant_show' %>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">perm_identity</i>New Participant</div>
-              <div class="collapsible-body" style="padding: 5px;">
-                <%= render 'invitations/new_invitation_form' %>
-              </div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">done</i>Send All Invites</div>
-              <div class="collapsible-body"><p>You are going to send an invite to all the expedition participant. <%= link_to "Send", dashboard_path %></p></div>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- END OF PARTICIPATIONS LIST -->
-
-      <!-- ALL FEEDBACKS LIST -->
-      <div id="feedbacks" class="">
-        <ul class="collapsible" data-collapsible="accordion">
-          <!-- SHOW ALL ACTIVITIES FOR GIVEN EXPEDITION IN COLLAPSIBLE -->
-          <% @activities.each do |activity| %>
-            <li>
-              <div class="collapsible-header">
-                <i class="material-icons">label_outline</i><%= activity.title.first(20) %>...
-              </div>
-              <!-- RENDER FEEDBACK FOR EACH ACTIVITY -->
-              <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
-                <% if activity.feedbacks.present? %>
-                  <% activity.feedbacks.reverse_each do |feedback| %>                <%= render 'feedbacks/feedback_show', feedback: feedback, activity: activity %>
-                  <% end %>
-                <% else %>
-                    <p>No Feedbacks Yet</p>
-                <% end %>
-              </div>
-            </li>
-          <% end %>
+<div class="right-sidebar">
+  <div class="right-sidebar-tabs">
+    <ul class="tabs unstyled-tabs">
+      <li class="tab col s3"><a class="active" href="#participations">Participations</a></li>
+      <li class="tab col s3"><a href="#feedbacks">Feedbacks</a></li>
+    </ul>
+  </div>
+  <br />
+  <div class="right-sidebar-content">
+    <!-- PARTICIPATIONS COLLAPSIBLE MENU -->
+    <div id="participations" class="">
+      <div class="row">
+        <ul class="collapsible z-depth-0 pp-no-margin" data-collapsible="accordion">
+          <li>
+            <div class="collapsible-header active"><i class="material-icons">view_list</i>View All (<%= @expedition.participations.size + @cleaned_invitations.size %>)
+            </div>
+            <div class="collapsible-body">
+              <%= render 'participations/participant_show' %>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">perm_identity</i>New Participant</div>
+            <div class="collapsible-body" style="padding: 5px;">
+              <%= render 'invitations/new_invitation_form' %>
+            </div>
+          </li>
+          <li>
+            <div class="collapsible-header"><i class="material-icons">done</i>Send All Invites</div>
+            <div class="collapsible-body"><p>You are going to send an invite to all the expedition participant. <%= link_to "Send", dashboard_path %></p></div>
+          </li>
         </ul>
       </div>
-      <!-- END OF FEEDBACK LIST -->
     </div>
+    <!-- ALL FEEDBACKS LIST -->
+    <div id="feedbacks" class="">
+      <ul class="collapsible" data-collapsible="accordion">
+        <!-- SHOW ALL ACTIVITIES FOR GIVEN EXPEDITION IN COLLAPSIBLE -->
+        <% @activities.each do |activity| %>
+          <li>
+            <div class="collapsible-header">
+              <i class="material-icons">label_outline</i><%= activity.title.first(20) %>...
+            </div>
+            <!-- RENDER FEEDBACK FOR EACH ACTIVITY -->
+            <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
+              <% if activity.feedbacks.present? %>
+                <% activity.feedbacks.reverse_each do |feedback| %>
+                  <%= render 'feedbacks/feedback_show', feedback: feedback, activity: activity %>
+                <% end %>
+              <% else %>
+                  <p>No Feedbacks Yet</p>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <!-- END OF FEEDBACK LIST -->
   </div>
 </div>
 
@@ -124,8 +117,8 @@
   <div class="library">
     <div class="col s12">
       <ul class="tabs" >
-        <li class="tab col s2"><a class="active" href="#finteck-1">#FINTECH</a></li>
-        <li class="tab col s2"><a href="#medteck-1">#MEDTECK</a></li>
+        <li class="tab col s2"><a href="#finteck-1">#FINTECH</a></li>
+        <li class="tab col s2"><a class="active" href="#medteck-1">#MEDTECH</a></li>
         <li class="tab col s2"><a href="#legal-1">#LEGAL</a></li>
         <li class="tab col s2"><a href="#space-1">#SPACE</a></li>
         <li class="tab col s2"><a href="#social-1">#SOCIAL</a></li>
@@ -134,23 +127,228 @@
     </div>
     <div id="finteck-1" class="col s12">
       <div class="row">
-        <div class="col s4 modal-activity-card" style="background-image: url("https://news.artnet.com/wp-content/news-upload/2014/12/arturo-di-modica-charging-bull-1024x682.jpg")">
-        xxxx
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
         </div>
-        <div class="col s4 activity-card">
-        yyy
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
         </div>
-        <div class="col s4 activity-card">
-
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div id="medteck-1" class="col s12">Test 2</div>
-    <div id="legal-1" class="col s12">Test 3</div>
-    <div id="space-1" class="col s12">Test 4</div>
-    <div id="social-1" class="col s12">Test 4</div>
-    <div id="manufacturing-1" class="col s12">Test 4</div>
+    <div id="medteck-1" class="col s12">
+      <div class="row">
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">23andMe</p>
+            <div class="modal-activity-picture" style="background-image: url('http://gfr-cdn.s3.amazonaws.com/wp-content/uploads/2015/01/23andme.png');"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">23andMe is a privately held personal genomics and biotechnology company. The company is named for the 23 pairs of chromosomes in a normal human cell.</p>
+              <p class="modal-activity-address">Mountain View, California, United States</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Google X</p>
+            <div class="modal-activity-picture" style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Google_X_Logo.png/440px-Google_X_Logo.png')"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">X, previously Google X, is a semi-secret research and development facility created by Google and operated as a subsidiary of Alphabet Inc.</p>
+              <p class="modal-activity-address">Mountain View, California</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Jawbone</p>
+            <div class="modal-activity-picture" style="background-image: url('http://rvd-group.com/wp-content/uploads/2015/02/Jawbone-logo.png')"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Jawbone is an American privately held consumer technology and wearable products company headquartered in San Francisco, California.</p>
+              <p class="modal-activity-address">San Francisco, California, United States</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="legal-1" class="col s12">
+      <div class="row">
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="space-1" class="col s12">
+      <div class="row">
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="social-1" class="col s12">
+      <div class="row">
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="manufacturing-1" class="col s12">
+      <div class="row">
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s4">
+          <div class="modal-activity-card">
+            <p class="btn-add">+ Add</p>
+            <p class="modal-activity-title">Activity title</p>
+            <div class="modal-activity-picture" style="background: url(<%= asset_path 'activity-icon-meeting.png' %>)"></div>
+            <div class="modal-activity-information">
+              <p class="modal-activity-description">Activity description Activity description Activity description Activity description Activity description</p>
+              <p class="modal-activity-address">Activity address</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
 
 
 
