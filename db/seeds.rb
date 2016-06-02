@@ -302,9 +302,9 @@ lex.save
 Yoann = User.create({
     email: "yo@yoann.co",
     password: "lewagon",
-    first_name: "Yoann",
-    last_name: "Lopez",
-    job: "Participant",
+    first_name: "Dr Michel",
+    last_name: "Lemoine",
+    job: "VP R&D",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
