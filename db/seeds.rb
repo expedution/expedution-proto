@@ -13,7 +13,7 @@ User.delete_all
 
 
 organiser = User.create!({
-    email: "followtheguide@gmail.com",
+    email: "Michael.Magic@gmail.com",
     password: "lewagon",
     first_name: "Michael",
     last_name: "Magic",
@@ -292,7 +292,7 @@ lex.invitations << Pierre
 lex.save
 
 Peter = Invitation.create({
-    email: "yo2@yddoann.co",
+    email: "yos2@yddoann.co",
     first_name: "Peter",
     last_name: "Jayne",
     status: nil
@@ -301,7 +301,7 @@ lex.invitations << Peter
 lex.save
 
 Yoann = User.create({
-    email: "yo@yoann.co",
+    email: "yos@yoann.co",
     password: "lewagon",
     first_name: "Dr Michel",
     last_name: "Lemoine",
@@ -314,7 +314,7 @@ Yoann = User.create({
   })
 
 Patricia = User.create({
-    email: "yo2+3@yoann.co",
+    email: "yo2+s3@yoann.co",
     password: "lewagon",
     first_name: "Patricia",
     last_name: "Toubib (Phd)",
@@ -327,7 +327,7 @@ Patricia = User.create({
   })
 
 William = User.create({
-    email: "yo2+d3@yoann.co",
+    email: "yo2+sd3@yoann.co",
     password: "lewagon",
     first_name: "William",
     last_name: "Patient",
@@ -340,7 +340,7 @@ William = User.create({
   })
 
 Reza = User.create({
-    email: "yo2+z3@yoann.co",
+    email: "yo2+sz3@yoann.co",
     password: "lewagon",
     first_name: "Reza",
     last_name: "Benzema",
@@ -353,7 +353,7 @@ Reza = User.create({
   })
 
 Timo = User.create({
-    email: "yo2+z3@yoann.,nco",
+    email: "yo2+zs3@yoann.,nco",
     password: "lewagon",
     first_name: "Timo",
     last_name: "Hector",
@@ -367,7 +367,7 @@ Timo = User.create({
 
 
 Marie = User.create({
-    email: "yo2+3s@yoann.co",
+    email: "yo2+3ss@yoann.co",
     password: "lewagon",
     first_name: "Marie",
     last_name: "Compta",
