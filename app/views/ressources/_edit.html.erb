@@ -4,9 +4,9 @@
     <div class="row">
       <div class="col s12">
         <%= simple_form_for ([@expedition, ressource]) do |f| %>
-          <%= f.input :name, label: "Resource name", input_html: {maxlength: 30} %>
+          <%= f.input :name, label: "Resource name", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
           <%= f.input :category, collection: Ressource::RESSOURCES_CATEGORY, prompt: "Resource type" %>
-          <%= f.input :url, label: "Resource URL"%>
+          <%= f.input :url, label: "Resource URL", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"}%>
           <%= f.input :description, label: "Resource description", input_html: {maxlength: 1000} %>
           <div class="input-file-container">
             <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>

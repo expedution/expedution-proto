@@ -6,8 +6,8 @@
         <%= simple_form_for [@expedition, activity] do |f| %>
             <%= f.input :title, label: "Activity name", input_html: {maxlength: 30, style: "border-bottom: 1px solid black;"} %>
             <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY %>
-            <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
-            <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" } %>
+            <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" } %>
+            <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" } %>
             <% days = @expedition.days %>
             <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)) %>
             <%= f.input :address, label: "Address", input_html: {maxlength: 100, style: "border-bottom: 1px solid black;"} %>

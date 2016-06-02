@@ -8,8 +8,8 @@
         <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY, prompt: "Activity type" %>
         <% days = @expedition.days %>
         <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)), prompt: "Activity day" %>
-        <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
-        <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" }  %>
+        <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" } %>
+        <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker", style: "border-bottom: 1px solid black;" }  %>
         <%= f.input :address, label: "Address", input_html: {maxlength: 100, style: "border-bottom: 1px solid black;"}, placeholder: "Location" %>
         <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000}, placeholder: "Provide an activity description" %>
         <div class="input-file-container">
