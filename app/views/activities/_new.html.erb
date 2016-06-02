@@ -1,37 +1,58 @@
-<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat" >
+<div id="new-activity-modal-<%=@expedition.id%>" class="modal-mat" style="background-color: white" >
   <div class="container" style="font-weight: lighter;">
     <h3 class="modal-title text-center">Create your activity</h3>
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 card-form">
+      <div class="col-xs-12">
         <%= simple_form_for [@expedition, Activity.new] do |f| %>
-        <div>
-          <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30} %>
+        <%= f.input :title, label: "Activity name", placeholder: "Activity name", input_html: {maxlength: 30} %>
+        <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY, prompt: "Activity type" %>
+        <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
+        <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" }  %>
+        <% days = @expedition.days %>
+        <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)), prompt: "Activity day" %>
+        <%= f.input :address, label: "Address", input_html: {maxlength: 100}, placeholder: "Location" %>
+        <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000}, placeholder: "Provide an activity description" %>
+        <div class="input-file-container">
+          <label for="my-file" class="input-file-trigger" tabindex="0">Select a file...</label>
+          <%= f.input :photo, input_html: { class: "input-file", id: "my-file" } %>
         </div>
-        <div>
-          <div class="col-xs-12 col-sm-6">
-            <%= f.input :category, collection: Activity::ACTIVITY_CATEGORY, prompt: "Activity type" %>
-            <%= f.input :starts_on, as: :string, label: "Start time", input_html: { class: "timepicker" } %>
-          </div>
-          <div class="col-xs-12 col-sm-6">
-            <% days = @expedition.days %>
-            <%= f.input :day_id, collection: days.map(&:formatted_date).zip(days.map(&:id)), prompt: "Activity day" %>
-            <%= f.input :ends_on, as: :string, label: "End time", input_html: { class: "timepicker" }  %>
-          </div>
-        </div>
-        <div>
-          <%= f.input :address, label: "Address", input_html: {maxlength: 100}, placeholder: "Location" %>
-          <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000}, placeholder: "Provide an activity description" %>
-          <%= f.input :photo %>
+          <p class="file-return"></p>
           <%= f.input :photo_cache, as: :hidden %>
-          <div class="col-xs-6">
-            <%= link_to "Cancel", expedition_path, class: "btn btn-danger" %>
-          </div>
-          <div class="col-xs-6">
-            <%= f.submit "Add activity", class: "btn btn-success" %>
-          </div>
-        </div>
-        <% end %>
       </div>
     </div>
+    <div class="modal-footer center">
+      <%= f.submit "Add activity", class: "btn btn-success" %>
+      <a href="#!" class="modal-action modal-close btn">cancel</a>
+    </div>
+        <% end %>
   </div>
 </div>
+
+<script>
+  // ajout de la classe JS à HTML
+  document.querySelector("html").classList.add('js');
+
+  // initialisation des variables
+  var fileInput  = document.querySelector( ".input-file" ),
+      button     = document.querySelector( ".input-file-trigger" ),
+      the_return = document.querySelector(".file-return");
+
+  // action lorsque la "barre d'espace" ou "Entrée" est pressée
+  button.addEventListener( "keydown", function( event ) {
+      if ( event.keyCode == 13 || event.keyCode == 32 ) {
+          fileInput.focus();
+      }
+  });
+
+  // action lorsque le label est cliqué
+  button.addEventListener( "click", function( event ) {
+     fileInput.focus();
+     return false;
+  });
+
+  // affiche un retour visuel dès que input:file change
+  fileInput.addEventListener( "change", function( event ) {
+      the_return.innerHTML = this.value;
+  });
+
+</script>

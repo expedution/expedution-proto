@@ -223,3 +223,33 @@
   <!-- End Page Container
     ================================================== -->
   </div>
+
+  <%= content_for :after_js do %>
+    <script>
+
+
+      $('.btn').click(function(){
+        event.preventDefault();
+        // console.log($(this).data('day_id'));
+        // var day_id = $(this).data('day_id');
+        // var activities_day_id = "#activities_day_id_" + day_id;
+        // var $day = $(activities_day_id);
+
+        $(".btn").addClass("grey");
+        $(".btn").removeClass("red", "active");
+
+
+        // var day_index = $("[data-day_id=" + day_id + "] .day-number").text();
+        // var day_title = $("[data-day_id=" + day_id + "] .day-title").text();
+        // var day_label = "day"
+        // var day_concat = day_label.concat(day_title)
+        // $(".lex-activities .day-name").html(day_concat);
+        // $(".lex-activities .activity-day-header .day-index").html(day_index);
+
+      })
+
+
+
+
+    </script>
+    <% end %>
