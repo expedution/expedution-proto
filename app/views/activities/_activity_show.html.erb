@@ -35,10 +35,10 @@
         </li>
         <li>
           <div class="collapsible-header" id="show-feedback"><i class="material-icons">comment</i>Feedbacks</div>
-          <div class="collapsible-body padded-extra-small font-style1" id="feedbacks">
+          <div class="collapsible-body padded-extra-small font-style1" id="feedbacks_<%= activity.id %>">
             <% if activity.feedbacks.present? %>
               <% activity.feedbacks.reverse_each do |feedback| %>
-                <%= render 'feedbacks/feedback_show', feedback: feedback %>
+                <%= render 'feedbacks/feedback_show', feedback: feedback, activity: activity %>
               <% end %>
             <% else %>
                 <p>No Feedbacks Yet</p>
