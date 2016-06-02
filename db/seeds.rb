@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'open-uri'
+require 'faker'
 
 Ressource.delete_all
 Activity.delete_all
@@ -11,10 +12,10 @@ User.delete_all
 
 
 organiser = User.create!({
-    email: "boris@lewagon.org",
+    email: "followtheguide@gmail.com",
     password: "lewagon",
-    first_name: "Boris",
-    last_name: "Paillard",
+    first_name: "Michael",
+    last_name: "Magic",
     job: "Team Leader",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
@@ -37,6 +38,16 @@ lex = Expedition.create!({
   ends_on: Date.new(2017,02,07),
   location: "San Francisco"
   })
+
+lex2 = Expedition.create!({
+  title: "The future of Manufacturing",
+  description: "Take this tour of manufacturing and tour factories, maker spaces and IT markets",
+  user_id: organiser.id,
+  starts_on: Date.new(2017,01,03),
+  ends_on: Date.new(2017,02,07),
+  location: "Shenzhen"
+  })
+
 
 d1 = Day.new({
   position: 1,
@@ -81,7 +92,7 @@ t8 = Time.new(2016, 07, 04, 20, 00, 00)
 t9 = Time.new(2016, 07, 04, 23, 00, 00)
 
   activity1 = Activity.create({
-    title: "Welcome reakfast",
+    title: "Welcome Breakfast",
     category: "Meeting",
     description: "Let's share food and perspective on this week",
     starts_on: t1,
@@ -279,6 +290,15 @@ Pierre = Invitation.create({
 lex.invitations << Pierre
 lex.save
 
+Peter = Invitation.create({
+    email: "yo2@yddoann.co",
+    first_name: "Peter",
+    last_name: "Jayne",
+    status: nil
+  })
+lex.invitations << Peter
+lex.save
+
 Yoann = User.create({
     email: "yo@yoann.co",
     password: "lewagon",
@@ -292,24 +312,11 @@ Yoann = User.create({
     organiser: false
   })
 
-Michel = User.create({
-    email: "yo2@yoann.co",
-    password: "lewagon",
-    first_name: "Michel",
-    last_name: "Paillette",
-    job: "Participant",
-    company: "Le Wagon",
-    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
-    phone: "0687335370",
-    diet: "no allergies",
-    organiser: false
-  })
-
 Patricia = User.create({
     email: "yo2+3@yoann.co",
     password: "lewagon",
     first_name: "Patricia",
-    last_name: "Toubin",
+    last_name: "Toubib",
     job: "Médecin",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
@@ -318,10 +325,52 @@ Patricia = User.create({
     organiser: false
   })
 
-Participation.create(user: Michel, expedition: lex)
+William = User.create({
+    email: "yo2+d3@yoann.co",
+    password: "lewagon",
+    first_name: "William",
+    last_name: "Patient",
+    job: "Testeur d'applications",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+Reza = User.create({
+    email: "yo2+z3@yoann.co",
+    password: "lewagon",
+    first_name: "Reza",
+    last_name: "Benzema",
+    job: "Entrepreneur",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+
+Marie = User.create({
+    email: "yo2+3s@yoann.co",
+    password: "lewagon",
+    first_name: "Marie",
+    last_name: "Compta",
+    job: "DAF",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+
 Participation.create(user: Yoann, expedition: lex)
 Participation.create(user: Patricia, expedition: lex)
-
+Participation.create(user: Marie, expedition: lex)
+Participation.create(user: Reza, expedition: lex)
+Participation.create(user: William, expedition: lex)
 
 
 
@@ -332,5 +381,23 @@ Participation.create(user: Patricia, expedition: lex)
 #   resource = Resource.create!(name: name)
 # end
 
+
+# Ne marche pas car pas de Faker pour First Name et Last Name
+
+# 10.times do
+#   user = User.new({
+#     email: Faker::Internet.email,
+#     password: Faker::Internet.password,
+#     first_name: Faker::Name.name.split.first,
+#     last_name: Faker::Name.name.split.last,
+#     job: "Participant",
+#     company: Faker::Company.name,
+#     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+#     phone: Faker::PhoneNumber.phone_number,
+#     name: Faker::Company.name,
+#     organiser: false
+#   })
+#   user.save
+# end
 
 
