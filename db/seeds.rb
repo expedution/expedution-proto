@@ -11,6 +11,7 @@ Expedition.delete_all
 User.delete_all
 
 
+
 organiser = User.create!({
     email: "followtheguide@gmail.com",
     password: "lewagon",
@@ -40,12 +41,12 @@ lex = Expedition.create!({
   })
 
 lex2 = Expedition.create!({
-  title: "The future of Manufacturing",
-  description: "Take this tour of manufacturing and tour factories, maker spaces and IT markets",
+  title: "The future of Transportation",
+  description: "Take this tour on the future of transportation, cities and AI.",
   user_id: organiser.id,
   starts_on: Date.new(2017,01,03),
   ends_on: Date.new(2017,02,07),
-  location: "Shenzhen"
+  location: "San Francisco"
   })
 
 
@@ -102,9 +103,9 @@ t9 = Time.new(2016, 07, 04, 23, 00, 00)
     })
 
   activity2 = Activity.create({
-    title: "Keynote - Health in 2025",
+    title: "Keynote - Predictive medicine.",
     category: "Meeting",
-    description: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium",
+    description: "Health is occupying an ever-larger proportion of the economy. In the United States, health already accounts for 17% of GDP. Aging populations, increased expectations, more advanced—and expensive—treatments, and entrenched health industry structures mean costs will continue to rise. However, it remains possible to create far more effective and efficient systems. Personal health records, pro-active health measures, expertise networks, and robotic assistance are just some of the issues that will drive the future of health. Ross Dawson can lead your audience on an engaging futurist’s journey through where the health industry may go, and what actions today could drive a healthier society tomorrow.",
     starts_on: t3,
     ends_on: t4,
     day_id: d2.id,
@@ -217,7 +218,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: t4,
     ends_on: d2t5,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "22, Richard Street, San Francisco, CA 90250, USA"
     })
 
   activity4 = Activity.create({
@@ -227,7 +228,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: d2t5,
     ends_on: d2t6,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "23 downtown street, San Francisco, CA 90250, USA"
     })
 
   activity5 = Activity.create({
@@ -248,7 +249,7 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
     starts_on: d2t8,
     ends_on: d2t9,
     day_id: d3.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
+    address: "23, Post Street, Sand Francisco, USA"
     })
 
 # Other empty days #
@@ -275,7 +276,7 @@ d5.save
 Jeanne = Invitation.create({
     email: "yo1@yoann.co",
     first_name: "Jeanne",
-    last_name: "Armand",
+    last_name: "Meeting",
     status: "pending"
   })
 lex.invitations << Jeanne
@@ -303,8 +304,8 @@ Yoann = User.create({
     email: "yo@yoann.co",
     password: "lewagon",
     first_name: "Yoann",
-    last_name: "Lopez",
-    job: "Participant",
+    last_name: "Thomas",
+    job: "VP Strategy",
     company: "Le Wagon",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -316,8 +317,8 @@ Patricia = User.create({
     email: "yo2+3@yoann.co",
     password: "lewagon",
     first_name: "Patricia",
-    last_name: "Toubib",
-    job: "Médecin",
+    last_name: "Toubib (Phd)",
+    job: "VP Doctors",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -330,7 +331,7 @@ William = User.create({
     password: "lewagon",
     first_name: "William",
     last_name: "Patient",
-    job: "Testeur d'applications",
+    job: "VP Marketing",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -343,7 +344,20 @@ Reza = User.create({
     password: "lewagon",
     first_name: "Reza",
     last_name: "Benzema",
-    job: "Entrepreneur",
+    job: "VP New Markets",
+    company: "Hôpitaux Publics de Paris",
+    bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
+    phone: "0687335370",
+    diet: "no allergies",
+    organiser: false
+  })
+
+Timo = User.create({
+    email: "yo2+z3@yoann.,nco",
+    password: "lewagon",
+    first_name: "Timo",
+    last_name: "Hector",
+    job: "VP Partnerships",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
@@ -371,7 +385,7 @@ Participation.create(user: Patricia, expedition: lex)
 Participation.create(user: Marie, expedition: lex)
 Participation.create(user: Reza, expedition: lex)
 Participation.create(user: William, expedition: lex)
-
+Participation.create(user: Timo, expedition: lex)
 
 
 # response = open("https://angel.co/companies")

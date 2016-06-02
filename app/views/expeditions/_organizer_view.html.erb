@@ -63,7 +63,7 @@
       <div class="row">
         <ul class="collapsible z-depth-0 pp-no-margin" data-collapsible="accordion">
           <li>
-            <div class="collapsible-header active"><i class="material-icons">view_list</i>View All (<%= @expedition.participations.size %>)
+            <div class="collapsible-header active"><i class="material-icons">view_list</i>View All (<%= @expedition.participations.size + @cleaned_invitations.size %>)
             </div>
             <div class="collapsible-body">
               <%= render 'participations/participant_show' %>
