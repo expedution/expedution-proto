@@ -1,22 +1,23 @@
 <div class="container">
-  <div class="card-form">
-    <div id="#modal<%= user.id %>" class="modal-mat modal-fixed-footer">
-      <%= simple_form_for(user) do |f| %>
-        <div class="modal-content">
-          <h4>Edit your profil</h4>
-            <%= f.input :first_name, class: "form-control", placeholder: "First Name" %>
-            <%= f.input :last_name, class: "form-control", placeholder: "Last Name" %>
-            <%= f.input :job, class: "form-control", placeholder: "Job Title" %>
-            <%= f.input :company, class: "form-control", input_html: {maxlength: 20}, placeholder: "Company"  %>
-            <%= f.input :bio, input_html: {maxlength: 140}, placeholder: "Describe Yourself in 140 Char. Max"  %>
-            <%= f.input :diet, class: "form-control", placeholder: "Diet" %>
-            <%= f.input :photo, class: "form-control"  %>
-            <%= f.input :photo_cache, as: :hidden %>
-        </div>
-        <div class="modal-footer">
-          <%= f.submit "Submit", :class => "modal-action modal-close waves-effect waves-green btn-flat" %>
-        </div>
-      <% end %>
+  <div id="modal<%= user.id %>" class="modal-mat">
+    <div class="modal-content" style="padding-left: 50px; padding-right: 50px;">
+      <h4 class="center">Edit your profil</h4>
+    <%= simple_form_for(user) do |f| %>
+    <div class="row">
+        
+          <%= f.input :first_name, class: "form-control", placeholder: "First Name" %>
+          <%= f.input :last_name, class: "form-control", placeholder: "Last Name" %>
+          <%= f.input :job, class: "form-control", placeholder: "Job Title" %>
+          <%= f.input :company, class: "form-control", input_html: {maxlength: 20}, placeholder: "Company"  %>
+          <%= f.input :bio, input_html: {maxlength: 140}, placeholder: "Describe Yourself in 140 Char. Max"  %>
+          <%= f.input :diet, class: "form-control", placeholder: "Diet" %>
+          <%= f.input :photo, class: "form-control"  %>
+          <%= f.input :photo_cache, as: :hidden %>
+    </div>
+      <div class="modal-footer">
+        <%= f.submit "Submit", :class => "modal-action modal-close waves-effect waves-green btn-flat" %>
+      </div>
+    <% end %>
     </div>
   </div>
 </div>

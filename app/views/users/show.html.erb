@@ -1,16 +1,13 @@
-
-
-<div class="wrapper style1">
   <div class="container">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <div class="col s12 col m10 col-sm-offset-1">
         <div class="flex-box">
           <div class="img-box">
             <% if @user.photo.url == nil %>
               <img src="http://placehold.it/100" class="avatar-xl">
             <% else %>
               <%= image_tag @user.photo.url, class: "avatar-xl" %>
-            <% end %>
+            <% end %>         
           </div>
           <div class="headbox text-center">
             <h2><%= @user.first_name %> <%= @user.last_name %></h2>
@@ -22,13 +19,12 @@
               <li>Mail: <%= @user.email %></li>
               <li>Company: <%= @user.company %></li>
             </ul>
-            <% if policy(@user).update? %>
-
+            <% if policy(@user).update? %>             
               <!-- Modal Trigger -->
-              <div class="text-center"><%= link_to "Edit profile", "#modal#{@user.id}", class: "modal-trigger waves-effect waves-light btn" %></div>
-
+              <div class="text-center">
+                <%= link_to "Edit profile", "#modal#{@user.id}", class: "modal-trigger waves-effect waves-light btn" %>
+              </div>
               <%= render 'users/edit', user: @user %>
-
             <% end %>
           </div>
         </div>
@@ -44,7 +40,7 @@
       </div>
     </div>
   </div>
-</div>
+
 
 <%= render 'shared/lateral_navbar' %>
 
