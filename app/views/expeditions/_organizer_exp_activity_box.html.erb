@@ -36,7 +36,7 @@
         <% elsif activity.category == "Hotel" %>
           <p class="label-activity label-hotel"><%= activity.starts_on.strftime("%I:%M%p") %> CHECK-IN</p>
         <% elsif activity.category == "Transportation" %>
-          <p class="label-activity label-transportation"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (length : <%= activity.ends_on - activity.starts_on %> min)</p>
+          <p class="label-activity label-transportation"><%= activity.starts_on.strftime("%I:%M%p") %> DEPARTURE (length : <%= ((activity.ends_on - activity.starts_on) / 60 ).to_i %> min)</p>
         <% elsif activity.category == "Restaurant" %>
           <p class="label-activity label-restaurant"><%= activity.starts_on.strftime("%I:%M%p") %></p>
         <% elsif activity.category == "Meeting" %>
