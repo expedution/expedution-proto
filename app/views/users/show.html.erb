@@ -1,45 +1,94 @@
-  <div class="container">
-    <div class="row">
-      <div class="col s12 col m10 col-sm-offset-1">
-        <div class="flex-box">
-          <div class="img-box">
-            <% if @user.photo.url == nil %>
-              <img src="http://placehold.it/100" class="avatar-xl">
-            <% else %>
-              <%= image_tag @user.photo.url, class: "avatar-xl" %>
-            <% end %>         
-          </div>
-          <div class="headbox text-center">
-            <h2><%= @user.first_name %> <%= @user.last_name %></h2>
-            <ul class="list-inline list-unstyled">
-              <li><%= @user.job %></li>
-            </ul>
-            <h4 class="bio">" <%= @user.bio %> "</h4>
-            <ul class="list-inline list-unstyled">
-              <li>Mail: <%= @user.email %></li>
-              <li>Company: <%= @user.company %></li>
-            </ul>
-            <% if policy(@user).update? %>             
-              <!-- Modal Trigger -->
-              <div class="text-center">
-                <%= link_to "Edit profile", "#modal#{@user.id}", class: "modal-trigger waves-effect waves-light btn" %>
-              </div>
-              <%= render 'users/edit', user: @user %>
-            <% end %>
-          </div>
+ <div class="container">
+   <div class="row">
+     <div class="col s12 m2 l2">
+       <div class="picture-box" style="padding-top: 50px">
+        <% if @user.photo.url == nil %>
+        <img src="http://placehold.it/100" class="avatar-xl">
+        <% else %>
+        <%= image_tag @user.photo.url, class: "avatar-xl" %>
+        <% end %>   
         </div>
-        <% if policy(@user).update? %>
-          <div class="box-line-top">
-            <h3>Private information</h3>
-            <p>All informations displayed here are only visible by you and the organiser of the Event</p>
-            <ul class="list-inline list-unstyled">
-              <li><%= @user.diet %></li>
-            </ul>
-          </div>
-        <% end %>
+     </div>
+     <div class="col s12 m10 l10">
+      <div class="contenu-header" style="position: relative">
+        <div class="title-profile" style="position: absolute; top: 30px; left: 40px;">
+          <h2>hey, I'm <%= @user.first_name %> <%= @user.last_name %>!</h2>
+          <h5><%= @user.job %></h5>
+        </div>
       </div>
-    </div>
-  </div>
+      <div class="contenu-description" style="position: relative;">
+        <div class="contenu-bio" style="position: absolute; top: 200px; left: 40px;">
+          <p> <%= @user.bio %></p>
+        </div>
+        <div class="contenu-informations">
+          <ul class="list" style="position: absolute; top: 270px; left: 40px;">
+            <li><strong>Mail:</strong> <%= @user.email %></li>
+            <li><strong>Company:</strong> <%= @user.company %></li>
+            <% if policy(@user).update? %>
+              <div class="box-line-top">
+                <h3>Private information</h3>
+                <p>All informations displayed here are only visible by you and the organiser of the Event</p>
+                <ul class="list-inline list-unstyled">
+                  <li><%= @user.diet %></li>
+                </ul>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+        <div class="user-edit" style="position: absolute; top: 520px; left: 40px;">
+        <% if policy(@user).update? %>             
+        <!-- Modal Trigger -->
+        <div class="text-center">
+          <%= link_to "Edit profile", "#modal#{@user.id}", class: "modal-trigger waves-effect waves-light btn" %>
+        </div>
+        <%= render 'users/edit', user: @user %>
+        <% end %>  
+        </div>
+      </div>
+     </div>
+   </div>
+ </div> 
+
+
+
+
+
+
+              
+      
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <%= render 'shared/lateral_navbar' %>

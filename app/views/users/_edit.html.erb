@@ -1,22 +1,24 @@
 <div class="container">
   <div id="modal<%= user.id %>" class="modal-mat">
     <div class="modal-content" style="padding-left: 50px; padding-right: 50px;">
-      <h4 class="center">Edit your profil</h4>
-    <%= simple_form_for(user) do |f| %>
+      <h4 class="center black-text">Edit your profil</h4>
+      <%= simple_form_for(user) do |f| %>
     <div class="row">
-        
-          <%= f.input :first_name, class: "form-control", placeholder: "First Name" %>
-          <%= f.input :last_name, class: "form-control", placeholder: "Last Name" %>
-          <%= f.input :job, class: "form-control", placeholder: "Job Title" %>
-          <%= f.input :company, class: "form-control", input_html: {maxlength: 20}, placeholder: "Company"  %>
+      <div class="col s12">
+          <%= f.input :first_name, placeholder: "First Name", input_html: {style: "border-bottom: 1px solid black;"} %>
+          <%= f.input :last_name, placeholder: "Last Name", input_html: {style: "border-bottom: 1px solid black;"} %>
+          <%= f.input :job, placeholder: "Job Title", input_html: {style: "border-bottom: 1px solid black;"} %>
+          <%= f.input :company, input_html: {maxlength: 20, style: "border-bottom: 1px solid black;"}, placeholder: "Company"  %>
           <%= f.input :bio, input_html: {maxlength: 140}, placeholder: "Describe Yourself in 140 Char. Max"  %>
-          <%= f.input :diet, class: "form-control", placeholder: "Diet" %>
-          <%= f.input :photo, class: "form-control"  %>
+          <%= f.input :diet, placeholder: "Diet", input_html: {style: "border-bottom: 1px solid black;"} %>
+          <%= f.input :photo %>
           <%= f.input :photo_cache, as: :hidden %>
-    </div>
-      <div class="modal-footer">
-        <%= f.submit "Submit", :class => "modal-action modal-close waves-effect waves-green btn-flat" %>
       </div>
+    </div>
+    <div class="modal-footer center">
+      <%= f.submit "Submit", :class => "modal-action modal-close waves-effect waves-green btn" %>
+      <%= link_to "Cancel", dashboard_path, class: "modal-action modal-close waves-effect waves-green btn red" %>
+    </div>
     <% end %>
     </div>
   </div>
