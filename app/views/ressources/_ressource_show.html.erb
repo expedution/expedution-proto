@@ -14,13 +14,14 @@
           <% end %>
 
           <div class="resource-photo" style='background: url(
-            <%# if activity.photo == nil %>
+            <% if activity.photo == nil %>
               <%= "https://unsplash.it/50/50" %>
-            <%# else %>
-              <%#= image_tag activity.photo %>
-            <%# end %>
+            <% else %>
+              <%= image_path ressource.photo.url %>
+            <% end %>
           )'></div>
           <p class="resource-title"><%= ressource.name %></p>
+          <p class="resource-description"><%= ressource.description %></p>
           <p class="resource-url"><%= ressource.url %></p>
         </div>
       </div>
