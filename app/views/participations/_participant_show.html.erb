@@ -14,9 +14,11 @@
       <p><%= participation.user.job.first(20) %></p>
     </div>
     <div class="link-top-r">
-      <%= link_to "#modal#{participation.user.id}", class: "modal-trigger waves-effect waves-light" do %>
-        <%= image_tag 'edit-icon.png', class: "small-logo" %>
-      <% end %>
+      <%#= link_to "#modal#{participation.user.id}", class: "modal-trigger waves-effect waves-light" do %>
+        <%#= image_tag 'edit-icon.png', class: "small-logo" %>
+      <%# end %>
+
+
       <%= link_to expedition_participation_path(@expedition.id, participation.id), method: :delete do %>
         <%= image_tag 'delete-icon.png', class: "small-logo"%>
       <% end %>
@@ -24,7 +26,7 @@
     <!-- Label: la personne a activé son compte -->
     <a href="#" class="custom-btn link-bottom-r" style="font-size: 10px; background-color: #3BE8B0; color: white; border: transparent">Activated account</a>
   </div>
-  <%= render 'users/edit', user: @user %>
+  <%= render 'users/edit', user: participation.user %>
 <% end %>
 
 <div class="all-invitations" >
