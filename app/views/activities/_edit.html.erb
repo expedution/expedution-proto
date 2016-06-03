@@ -13,7 +13,7 @@
             <%= f.input :address, label: "Address", input_html: {maxlength: 100, style: "border-bottom: 1px solid black;"} %>
             <%= f.input :description, label: "Activity description", input_html: {maxlength: 1000} %>
           <div class="input-file-container">
-            <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
+            <%= f.input :photo, label: "add a picture", input_html: { class: "hidden", id: "activity_#{activity.id}_photo" }, label_html: { for: "activity_#{activity.id}_photo" } %>
             <p class="file-return"></p>
           </div>
             <%#= f.input :photo_cache, as: :hidden %>
@@ -30,13 +30,14 @@
 
 <%= content_for :after_js do %>
   <script>
-    $( ".import-file-container label").on( "click", function() {
-       $('#activity_photo').focus();
-       return false;
-    });
+    // $( ".input-file-container label").on( "click", function() {
+    //    $('#activity_<%= activity.id %>_photo').focus();
+    //    return false;
+    // });
 
-    $('#activity_photo').change(function(e) {
-        $(".file-return").html(this.value);
+    $('#activity_<%= activity.id %>_photo').change(function(e) {
+      var fileContainer = $(this).parents(".input-file-container:first");
+      $(fileContainer).find(".file-return").html(this.value);
     });
   </script>
 
