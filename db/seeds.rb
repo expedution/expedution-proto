@@ -31,18 +31,27 @@ t3 = Time.new(2017, 01, 03, 11, 00, 00)
 t4 = Time.new(2017, 01, 03, 12, 00, 00)
 
 lex = Expedition.create!({
-  title: "The future of Medicine",
+  title: "Pfizer - The future of Medicine",
   description: "Take this tour of medicine's future with some of the trailblazing doctors charting its course. Once you've seen a transplantable human kidney created from a 3D printer, almost anything is imaginable ...",
   theme: "medtech",
   user_id: organiser.id,
-  starts_on: Date.new(2017,01,03),
-  ends_on: Date.new(2017,02,07),
+  starts_on: Date.new(2016,07,02),
+  ends_on: Date.new(2016,07,06),
   location: "San Francisco"
   })
 
 lex2 = Expedition.create!({
   title: "The future of Transportation",
   description: "Take this tour on the future of transportation, cities and AI.",
+  user_id: organiser.id,
+  starts_on: Date.new(2016,09,03),
+  ends_on: Date.new(2016,09,07),
+  location: "San Francisco"
+  })
+
+lex3 = Expedition.create!({
+  title: "Food, permaculture and cities in 2025.",
+  description: "Take this tour on the future of how we grow, consume and share food in our cities.",
   user_id: organiser.id,
   starts_on: Date.new(2017,01,03),
   ends_on: Date.new(2017,02,07),
@@ -134,7 +143,7 @@ t9 = Time.new(2016, 07, 04, 23, 00, 00)
   activity4 = Activity.create({
     title: "Reflexion lunch",
     category: "Restaurant",
-    description: "What did we learn this morning?",
+    description: "What did we learn this morning? What does it mean for Pfizer?",
     starts_on: t5,
     ends_on: t6,
     day_id: d2.id,
@@ -343,7 +352,7 @@ Reza = User.create({
     email: "yo2ssz3@yoann.co",
     password: "lewagon",
     first_name: "Reza",
-    last_name: "Benzema",
+    last_name: "Benzima",
     job: "VP New Markets",
     company: "Hôpitaux Publics de Paris",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
