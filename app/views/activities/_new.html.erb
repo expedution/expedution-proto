@@ -29,13 +29,13 @@
 
 <%= content_for :after_js do %>
   <script>
-    $( ".import-file-container label").on( "click", function() {
-       $('#activity_photo').focus();
-       return false;
-    });
+    // $( ".input-file-container label").on( "click", function() {
+    //    $('#activity_photo').focus();
+    //    return false;
+    // });
 
     $('#activity_photo').change(function(e) {
-        $(".file-return").html(this.value);
+      $(".file-return").html(this.value);
     });
   </script>
 <% end %>
