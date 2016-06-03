@@ -38,18 +38,27 @@
 
 #flex-column1 {
   // width: 100px;
+  position: fixed;
+  margin-left: -260px;
+  margin-top: -8px;
 }
 #flex-column2 {
   width: 800px;
   margin: 0px 20px;
+  margin-left: -160px;
+  
 }
 #flex-column3 {
   width: 250px;
+  position: fixed;
+  margin-left: 0px;
+  margin-top: -8px;
 }
 
-.expedition-description {
+.expedition-description-participant {
   padding: 0 20px;
 }
+
 
 /* TABS IN ORGANIZER VIEW OF AN EXPEDITION */
 

@@ -30,17 +30,20 @@
                 <h2><%= @expedition.title %></h2>
               </div>
             </div>
-
+          
             <!-- Description =================== -->
-            <div class="expedition-description">
+            <div class="expedition-description-participant">
               <h5><%= @expedition.title %></h5>
               <div class="padded-extra-small">
                 <p><%= @expedition.description %></p>
               </div>
             </div>
 
+            
+
             <!-- Map ======================== -->
             <div id="map" style="width: auto; height: 200px;"></div>
+
 
             <div>
               <!-- Days ========= -->
@@ -132,6 +135,4 @@
   });
 
 </script>
-
-
 
