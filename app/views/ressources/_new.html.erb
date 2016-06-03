@@ -10,8 +10,8 @@
           <%= f.input :url, label: "Resource URL", placeholder: "Resource URL", input_html: {style: "border-bottom: 1px solid black;"} %>
           <%= f.input :description, label: "Resource description", input_html: {maxlength: 1000}, placeholder: "Provide a resource description" %>
           <div class="input-file-container">
-            <%= f.input :photo, label: "add a picture", input_html: { class: "hidden" }%>
-            <%= f.input :photo_cache, as: :hidden %>
+            <%= f.input :photo, label: "add a picture", input_html: { class: "hidden", id: "activity_#{activity.id}_resource_photo" }, label_html: { for: "activity_#{activity.id}_resource_photo" } %>
+            <%= f.input :photo_cache, as: :hidden, input_html: { id: "activity_#{activity.id}_resource_photo_cache" } %>
             <p class="file-return"></p>
           </div>
           <%= f.input :activity_id, as: :hidden %>
@@ -26,17 +26,16 @@
   </div>
 </div>
 
-
 <%= content_for :after_js do %>
   <script>
-    $( ".import-file-container label").on( "click", function() {
-       $('#activity_photo').focus();
-       return false;
-    });
+    // $( ".input-file-container label").on( "click", function() {
+    //    $('#activity_<%= activity.id %>_resource_photo').focus();
+    //    return false;
+    // });
 
-    $('#activity_photo').change(function(e) {
-        $(".file-return").html(this.value);
+    $('#activity_<%= activity.id %>_resource_photo').change(function(e) {
+      var fileContainer = $(this).parents(".input-file-container:first");
+      $(fileContainer).find(".file-return").html(this.value);
     });
   </script>
-
 <% end %>
