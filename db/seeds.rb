@@ -13,12 +13,12 @@ User.delete_all
 
 
 organiser = User.create!({
-    email: "Michael.Magic@gmail.com",
+    email: "Romain.cky@gmail.com",
     password: "lewagon",
-    first_name: "Michael",
-    last_name: "Magic",
-    job: "Team Leader",
-    company: "Le Wagon",
+    first_name: "Romain",
+    last_name: "Martins",
+    job: "Learning expedition organiser",
+    company: "Seminars & co",
     bio: "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occ",
     phone: "0687335370",
     diet: "no allergies",
@@ -60,18 +60,56 @@ d1.expedition = lex
 d1.save
 
 t0 = Time.new(2016, 07, 02, 19, 30, 00)
-t00 = Time.new(2016, 07, 02, 23, 00, 00)
+t00 = Time.new(2016, 07, 02, 22, 00, 00)
+t01 = Time.new(2016, 07, 02, 23, 00, 00)
+t02 = Time.new(2016, 07, 02, 23, 30, 00)
+
 
   activity0 = Activity.create({
     title: "Flight to SF",
     category: "Flight",
-    description: "Let's meet at the airport and get to SF together.",
+    description: "Flight AF 2480 to San Francisco (SFO). Meetup at the AF business lounge",
     starts_on: t0,
     ends_on: t00,
     day_id: d1.id,
-    address: "888 Post Stree, San Francisco, USA"
+    address: "CDG airport, Terminal 2, Paris"
     })
 
+    ressource002 = Ressource.create({
+        name: "Boarding pass",
+        category: "File",
+        description: "Flight booking confirmation",
+        url: "https://we.tl/h0PDwJNteb",
+        activity_id: activity0.id
+        })
+
+  activity01 = Activity.create({
+    title: "Shuttle",
+    category: "Transportation",
+    description: "Private shuttle to Hotel (driver waiting with company board at the main exit)",
+    starts_on: t00,
+    ends_on: t01,
+    day_id: d1.id,
+    address: "SFO International Arrivals, USA"
+    })
+
+  activity02 = Activity.create({
+    title: "Hotel check-in",
+    category: "Hotel",
+    description: "Sofitel junior suites with WiFi and breakfast included",
+    starts_on: t01,
+    ends_on: t02,
+    day_id: d1.id,
+    address: "223 Twin Dolphin Dr, Redwood City, CA 94065, USA"
+    })
+
+    ressource001 = Ressource.create({
+          name: "Sofitel booking",
+          category: "File",
+          description: "Booking confirmation",
+          url: "https://we.tl/hSJltgDQBm",
+          activity_id: activity02.id
+          })
 
 # DAY 2
 #
@@ -84,9 +122,9 @@ d2.expedition = lex
 d2.save
 
 t1 = Time.new(2016, 07, 04, 8, 30, 00)
-t2 = Time.new(2016, 07, 04, 10, 00, 00)
-t3 = Time.new(2016, 07, 04, 10, 30, 00)
-t4 = Time.new(2016, 07, 04, 12, 00, 00)
+t2 = Time.new(2016, 07, 04, 9, 30, 00)
+t3 = Time.new(2016, 07, 04, 9, 45, 00)
+t4 = Time.new(2016, 07, 04, 10, 00, 00)
 t5 = Time.new(2016, 07, 04, 12, 30, 00)
 t6 = Time.new(2016, 07, 04, 13, 45, 00)
 t7 = Time.new(2016, 07, 04, 18, 00, 00)
@@ -95,42 +133,41 @@ t9 = Time.new(2016, 07, 04, 23, 00, 00)
 
   activity1 = Activity.create({
     title: "Welcome Breakfast",
-    category: "Meeting",
-    description: "Let's share food and perspective on this week",
+    category: "Restaurant",
+    description: "Short talk from the trip organizer. Let's share food and perspective on this week",
     starts_on: t1,
     ends_on: t2,
     day_id: d2.id,
-    address: "888 Post Stree, San Francisco, USA"
+    address: "SOFITEL, 223 Twin Dolphin Dr, Redwood City, CA 94065, USA"
+    })
+
+  activity3 = Activity.create({
+    title: "Transport to Keynote",
+    category: "Transportation",
+    description: "Taxis",
+    starts_on: t3,
+    ends_on: t4,
+    day_id: d2.id,
+    address: "SOFITEL, 223 Twin Dolphin Dr, Redwood City, CA 94065, USA"
     })
 
   activity2 = Activity.create({
     title: "Keynote - Predictive medicine.",
     category: "Meeting",
     description: "Health is occupying an ever-larger proportion of the economy. In the United States, health already accounts for 17% of GDP. Aging populations, increased expectations, more advanced—and expensive—treatments, and entrenched health industry structures mean costs will continue to rise. However, it remains possible to create far more effective and efficient systems. Personal health records, pro-active health measures, expertise networks, and robotic assistance are just some of the issues that will drive the future of health. Ross Dawson can lead your audience on an engaging futurist’s journey through where the health industry may go, and what actions today could drive a healthier society tomorrow.",
-    starts_on: t3,
-    ends_on: t4,
-    day_id: d2.id,
-    address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
-    })
-
-    ressource1 = Ressource.create({
-      name: "23andMe",
-      category: "Website",
-      description: "One of the key players those days",
-      url: "www.23andme.com",
-      activity_id: activity2.id
-      })
-
-
-  activity3 = Activity.create({
-    title: "Transport to lunch",
-    category: "Transportation",
-    description: "We'll be walking to the restaurant.",
     starts_on: t4,
     ends_on: t5,
     day_id: d2.id,
     address: "1 Rocket Rd, Hawthorne, CA 90250, USA"
     })
+
+    ressource1 = Ressource.create({
+      name: "Seminar handout",
+      category: "File",
+      description: "One of the key players those days",
+      url: "https://we.tl/hSJltgDQBm",
+      activity_id: activity2.id
+      })
 
   activity4 = Activity.create({
     title: "Reflexion lunch",
@@ -185,12 +222,12 @@ d2t9 = Time.new(2016, 07, 04, 23, 00, 00)
 
   activity1 = Activity.create({
     title: "Breakfast",
-    category: "Meeting",
+    category: "Restaurant",
     description: "Let's share food and perspective on the meetings of the day",
     starts_on: d2t1,
     ends_on: d2t2,
     day_id: d3.id,
-    address: "888 Post Stree, San Francisco, USA"
+    address: "SOFITEL"
     })
 
   activity2 = Activity.create({
