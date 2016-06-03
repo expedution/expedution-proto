@@ -73,7 +73,7 @@
                   <% if ressource.photo == nil %>
                     <%= "https://unsplash.it/50/50" %>
                   <% else %>
-                    <%= image_tag ressource.photo.url, class: "responsive-img" %>
+                    <%= image_path ressource.photo.url, class: "responsive-img" %>
                   <% end %>
                 )'></div>
                 <p class="resource-title"><%= ressource.name %></p>
