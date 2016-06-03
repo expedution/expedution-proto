@@ -44,7 +44,6 @@ class ExpeditionsController < ApplicationController
     end.sort
     @feedback = Feedback.new
     @feedbacks = Feedback.all
-    @user = User.find(params[:id])
 
   end
 
